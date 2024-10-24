@@ -1171,89 +1171,89 @@ export default function Page() {
 
 
           {/* Projects Section */}
-          <section id="proyectos" className="py-20">
-            <div className="max-w-7xl mx-auto px-6">
-              <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                  className="text-center mb-16"
-              >
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-                  Proyectos Destacados
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                  Una selección de proyectos que demuestran mi experiencia en diseño y desarrollo.
-                </p>
-              </motion.div>
+          {/*<section id="proyectos" className="py-20">*/}
+          {/*  <div className="max-w-7xl mx-auto px-6">*/}
+          {/*    <motion.div*/}
+          {/*        initial={{ opacity: 0, y: 20 }}*/}
+          {/*        whileInView={{ opacity: 1, y: 0 }}*/}
+          {/*        transition={{ duration: 0.6 }}*/}
+          {/*        viewport={{ once: true }}*/}
+          {/*        className="text-center mb-16"*/}
+          {/*    >*/}
+          {/*      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">*/}
+          {/*        Proyectos Destacados*/}
+          {/*      </h2>*/}
+          {/*      <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">*/}
+          {/*        Una selección de proyectos que demuestran mi experiencia en diseño y desarrollo.*/}
+          {/*      </p>*/}
+          {/*    </motion.div>*/}
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {projects.map((project, index) => (
-                    <motion.div
-                        key={project.title}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.1 }}
-                        viewport={{ once: true }}
-                        whileHover={{ y: -5 }}
-                        className="group"
-                    >
-                      <div className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg
-                                                dark:shadow-gray-900/50 transform transition-all duration-300
-                                                hover:shadow-xl border border-gray-200 dark:border-gray-700">
-                        <div className="aspect-video relative overflow-hidden">
-                          <div className="absolute inset-0 bg-accent-red/10 dark:bg-accent-yellow/10
-                                                        group-hover:bg-transparent transition-all duration-300 z-10" />
-                          <Image
-                              src={project.image}
-                              alt={project.title}
-                              width={600}
-                              height={400}
-                              className="object-cover w-full h-full transform transition-transform
-                                                         duration-300 group-hover:scale-105"
-                          />
-                          <div className="absolute top-4 right-4 bg-white dark:bg-gray-900
-                                                         px-3 py-1 rounded-full text-xs font-medium
-                                                         text-accent-red dark:text-accent-yellow">
-                            {project.category}
-                          </div>
-                        </div>
-                        <div className="p-6">
-                          <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
-                            {project.title}
-                          </h3>
-                          <p className="text-gray-600 dark:text-gray-400 mb-4">
-                            {project.description}
-                          </p>
-                          <div className="flex flex-wrap gap-2 mb-4">
-                            {project.tags.map((tag) => (
-                                <span
-                                    key={tag}
-                                    className="text-xs px-2 py-1 rounded-full bg-accent-red/10
-                                                                 dark:bg-accent-yellow/10 text-accent-red
-                                                                 dark:text-accent-yellow"
-                                >
-                                                        {tag}
-                                                    </span>
-                            ))}
-                          </div>
-                          <Link
-                              href={project.link}
-                              className="group/link inline-flex items-center gap-2 text-accent-red
-                                                         dark:text-accent-yellow hover:underline"
-                          >
-                            Ver proyecto
-                            <ExternalLink className="w-4 h-4 transform group-hover/link:translate-x-1
-                                                                      group-hover/link:-translate-y-1 transition-transform" />
-                          </Link>
-                        </div>
-                      </div>
-                    </motion.div>
-                ))}
-              </div>
-            </div>
-          </section>
+          {/*    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">*/}
+          {/*      {projects.map((project, index) => (*/}
+          {/*          <motion.div*/}
+          {/*              key={project.title}*/}
+          {/*              initial={{ opacity: 0, y: 20 }}*/}
+          {/*              whileInView={{ opacity: 1, y: 0 }}*/}
+          {/*              transition={{ duration: 0.6, delay: index * 0.1 }}*/}
+          {/*              viewport={{ once: true }}*/}
+          {/*              whileHover={{ y: -5 }}*/}
+          {/*              className="group"*/}
+          {/*          >*/}
+          {/*            <div className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg*/}
+          {/*                                      dark:shadow-gray-900/50 transform transition-all duration-300*/}
+          {/*                                      hover:shadow-xl border border-gray-200 dark:border-gray-700">*/}
+          {/*              <div className="aspect-video relative overflow-hidden">*/}
+          {/*                <div className="absolute inset-0 bg-accent-red/10 dark:bg-accent-yellow/10*/}
+          {/*                                              group-hover:bg-transparent transition-all duration-300 z-10" />*/}
+          {/*                <Image*/}
+          {/*                    src={project.image}*/}
+          {/*                    alt={project.title}*/}
+          {/*                    width={600}*/}
+          {/*                    height={400}*/}
+          {/*                    className="object-cover w-full h-full transform transition-transform*/}
+          {/*                                               duration-300 group-hover:scale-105"*/}
+          {/*                />*/}
+          {/*                <div className="absolute top-4 right-4 bg-white dark:bg-gray-900*/}
+          {/*                                               px-3 py-1 rounded-full text-xs font-medium*/}
+          {/*                                               text-accent-red dark:text-accent-yellow">*/}
+          {/*                  {project.category}*/}
+          {/*                </div>*/}
+          {/*              </div>*/}
+          {/*              <div className="p-6">*/}
+          {/*                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">*/}
+          {/*                  {project.title}*/}
+          {/*                </h3>*/}
+          {/*                <p className="text-gray-600 dark:text-gray-400 mb-4">*/}
+          {/*                  {project.description}*/}
+          {/*                </p>*/}
+          {/*                <div className="flex flex-wrap gap-2 mb-4">*/}
+          {/*                  {project.tags.map((tag) => (*/}
+          {/*                      <span*/}
+          {/*                          key={tag}*/}
+          {/*                          className="text-xs px-2 py-1 rounded-full bg-accent-red/10*/}
+          {/*                                                       dark:bg-accent-yellow/10 text-accent-red*/}
+          {/*                                                       dark:text-accent-yellow"*/}
+          {/*                      >*/}
+          {/*                                              {tag}*/}
+          {/*                                          </span>*/}
+          {/*                  ))}*/}
+          {/*                </div>*/}
+          {/*                <Link*/}
+          {/*                    href={project.link}*/}
+          {/*                    className="group/link inline-flex items-center gap-2 text-accent-red*/}
+          {/*                                               dark:text-accent-yellow hover:underline"*/}
+          {/*                >*/}
+          {/*                  Ver proyecto*/}
+          {/*                  <ExternalLink className="w-4 h-4 transform group-hover/link:translate-x-1*/}
+          {/*                                                            group-hover/link:-translate-y-1 transition-transform" />*/}
+          {/*                </Link>*/}
+          {/*              </div>*/}
+          {/*            </div>*/}
+          {/*          </motion.div>*/}
+          {/*      ))}*/}
+          {/*    </div>*/}
+          {/*  </div>*/}
+          {/*</section>*/}
 
           {/* Price Calculator Section */}
           <PriceCalculator />
@@ -1359,7 +1359,7 @@ export default function Page() {
           <AboutMe />
 
           {/* Blog Section */}
-          <Blog />
+          {/*<Blog />*/}
 
         </main>
         <Footer />

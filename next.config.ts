@@ -58,7 +58,9 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'cdn.hashnode.com',
+                hostname: 'images.ctfassets.net',
+                port: '',
+                pathname: '/**',
             },
         ],
     },

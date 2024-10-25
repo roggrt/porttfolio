@@ -937,8 +937,10 @@ import Footer from '@/components/layout/Footer';
 import PriceCalculator from '@/components/PriceCalculator';
 import AboutMe from '@/components/AboutMe';
 
-import Blog from '@/components/Blog';
 import ContactForm from '@/components/ContactForm';
+import BlogPostContent from "@/components/BlogPostContent";
+import BlogCard from "@/components/BlogCard";
+
 
 // Actualiza la constante de proyectos al inicio del archivo
 const projects = [
@@ -1008,11 +1010,10 @@ const services = [
 ];
 
 
-
-
-
-
 export default function Page() {
+
+
+
   return (
       <>
         <Navbar />
@@ -1083,7 +1084,7 @@ export default function Page() {
                                                      rounded-lg font-medium transition-colors inline-flex
                                                      items-center gap-2"
                       >
-                        Ver proyectos
+                        Ver proyectos de software
                         <ExternalLink className="w-4 h-4 transform group-hover:translate-x-1
                                                                    group-hover:-translate-y-1 transition-transform" />
                       </Link>
@@ -1169,194 +1170,8 @@ export default function Page() {
                         </div>
                        </section>
 
-
-
-          {/* Projects Section */}
-          {/*<section id="proyectos" className="py-20">*/}
-          {/*  <div className="max-w-7xl mx-auto px-6">*/}
-          {/*    <motion.div*/}
-          {/*        initial={{ opacity: 0, y: 20 }}*/}
-          {/*        whileInView={{ opacity: 1, y: 0 }}*/}
-          {/*        transition={{ duration: 0.6 }}*/}
-          {/*        viewport={{ once: true }}*/}
-          {/*        className="text-center mb-16"*/}
-          {/*    >*/}
-          {/*      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">*/}
-          {/*        Proyectos Destacados*/}
-          {/*      </h2>*/}
-          {/*      <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">*/}
-          {/*        Una selección de proyectos que demuestran mi experiencia en diseño y desarrollo.*/}
-          {/*      </p>*/}
-          {/*    </motion.div>*/}
-
-          {/*    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">*/}
-          {/*      {projects.map((project, index) => (*/}
-          {/*          <motion.div*/}
-          {/*              key={project.title}*/}
-          {/*              initial={{ opacity: 0, y: 20 }}*/}
-          {/*              whileInView={{ opacity: 1, y: 0 }}*/}
-          {/*              transition={{ duration: 0.6, delay: index * 0.1 }}*/}
-          {/*              viewport={{ once: true }}*/}
-          {/*              whileHover={{ y: -5 }}*/}
-          {/*              className="group"*/}
-          {/*          >*/}
-          {/*            <div className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg*/}
-          {/*                                      dark:shadow-gray-900/50 transform transition-all duration-300*/}
-          {/*                                      hover:shadow-xl border border-gray-200 dark:border-gray-700">*/}
-          {/*              <div className="aspect-video relative overflow-hidden">*/}
-          {/*                <div className="absolute inset-0 bg-accent-red/10 dark:bg-accent-yellow/10*/}
-          {/*                                              group-hover:bg-transparent transition-all duration-300 z-10" />*/}
-          {/*                <Image*/}
-          {/*                    src={project.image}*/}
-          {/*                    alt={project.title}*/}
-          {/*                    width={600}*/}
-          {/*                    height={400}*/}
-          {/*                    className="object-cover w-full h-full transform transition-transform*/}
-          {/*                                               duration-300 group-hover:scale-105"*/}
-          {/*                />*/}
-          {/*                <div className="absolute top-4 right-4 bg-white dark:bg-gray-900*/}
-          {/*                                               px-3 py-1 rounded-full text-xs font-medium*/}
-          {/*                                               text-accent-red dark:text-accent-yellow">*/}
-          {/*                  {project.category}*/}
-          {/*                </div>*/}
-          {/*              </div>*/}
-          {/*              <div className="p-6">*/}
-          {/*                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">*/}
-          {/*                  {project.title}*/}
-          {/*                </h3>*/}
-          {/*                <p className="text-gray-600 dark:text-gray-400 mb-4">*/}
-          {/*                  {project.description}*/}
-          {/*                </p>*/}
-          {/*                <div className="flex flex-wrap gap-2 mb-4">*/}
-          {/*                  {project.tags.map((tag) => (*/}
-          {/*                      <span*/}
-          {/*                          key={tag}*/}
-          {/*                          className="text-xs px-2 py-1 rounded-full bg-accent-red/10*/}
-          {/*                                                       dark:bg-accent-yellow/10 text-accent-red*/}
-          {/*                                                       dark:text-accent-yellow"*/}
-          {/*                      >*/}
-          {/*                                              {tag}*/}
-          {/*                                          </span>*/}
-          {/*                  ))}*/}
-          {/*                </div>*/}
-          {/*                <Link*/}
-          {/*                    href={project.link}*/}
-          {/*                    className="group/link inline-flex items-center gap-2 text-accent-red*/}
-          {/*                                               dark:text-accent-yellow hover:underline"*/}
-          {/*                >*/}
-          {/*                  Ver proyecto*/}
-          {/*                  <ExternalLink className="w-4 h-4 transform group-hover/link:translate-x-1*/}
-          {/*                                                            group-hover/link:-translate-y-1 transition-transform" />*/}
-          {/*                </Link>*/}
-          {/*              </div>*/}
-          {/*            </div>*/}
-          {/*          </motion.div>*/}
-          {/*      ))}*/}
-          {/*    </div>*/}
-          {/*  </div>*/}
-          {/*</section>*/}
-
           {/* Price Calculator Section */}
           <PriceCalculator />
-
-          {/* Contact Section */}
-
-{/*           
-          <section id="contacto" className="py-20 bg-gray-50 dark:bg-gray-800/50">
-            <div className="max-w-3xl mx-auto px-6">
-              <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                  className="text-center mb-16"
-              >
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-                  Hablemos de tu proyecto
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                  ¿Tienes un proyecto en mente? Cuéntame más sobre él y veamos cómo puedo ayudarte.
-                </p>
-              </motion.div>
-
-              <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  className="bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-gray-900/50 p-8"
-              >
-                <form className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                        Nombre
-                      </label>
-                      <input
-                          type="text"
-                          placeholder="Tu nombre"
-                          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700
-                                                     bg-white dark:bg-gray-800 text-gray-900 dark:text-white
-                                                     focus:ring-2 focus:ring-accent-red dark:focus:ring-accent-yellow
-                                                     focus:border-transparent transition-all duration-300"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                        Email
-                      </label>
-                      <input
-                          type="email"
-                          placeholder="tu@email.com"
-                          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700
-                                                     bg-white dark:bg-gray-800 text-gray-900 dark:text-white
-                                                     focus:ring-2 focus:ring-accent-red dark:focus:ring-accent-yellow
-                                                     focus:border-transparent transition-all duration-300"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                      Asunto
-                    </label>
-                    <input
-                        type="text"
-                        placeholder="Asunto de tu mensaje"
-                        className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700
-                                                 bg-white dark:bg-gray-800 text-gray-900 dark:text-white
-                                                 focus:ring-2 focus:ring-accent-red dark:focus:ring-accent-yellow
-                                                 focus:border-transparent transition-all duration-300"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                      Mensaje
-                    </label>
-                    <textarea
-                        placeholder="Cuéntame sobre tu proyecto"
-                        rows={4}
-                        className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700
-                                                 bg-white dark:bg-gray-800 text-gray-900 dark:text-white
-                                                 focus:ring-2 focus:ring-accent-red dark:focus:ring-accent-yellow
-                                                 focus:border-transparent transition-all duration-300"
-                    />
-                  </div>
-                  <motion.button
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      type="submit"
-                      className="w-full px-6 py-3 text-white bg-accent-red hover:bg-accent-red/90
-                                             dark:bg-accent-yellow dark:hover:bg-accent-yellow/90
-                                             dark:text-gray-900 rounded-lg font-medium
-                                             transition-colors duration-300"
-                  >
-                    Enviar mensaje
-                  </motion.button>
-                </form>
-              </motion.div>
-            </div>
-          </section> */}
-
 
 {/* Projects Section */}
 <section id="proyectos" className="py-20 bg-gray-50 dark:bg-gray-800/50">
@@ -1436,16 +1251,6 @@ export default function Page() {
 </section>
 
 
-
-
-
-
-
-
-
-
-
-
 {/* Contact Section */}
 <section id="contacto" className="py-20 bg-gray-50 dark:bg-gray-800/50">
   <div className="max-w-3xl mx-auto px-6">
@@ -1489,6 +1294,10 @@ export default function Page() {
 
           {/* Blog Section */}
           {/*<Blog />*/}
+          {/*<BlogCard />*/}
+
+            {/* contenido del post */}
+
 
         </main>
         <Footer />

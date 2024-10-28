@@ -1,164 +1,3 @@
-// // src/app/services/frontend-development/page.tsx
-// 'use client';
-
-// import React from 'react';
-// import { motion } from 'framer-motion';
-// import { Code, Laptop, Zap, Shield, BarChart, Smartphone } from 'lucide-react';
-// import Navbar from '@/components/layout/Navbar';
-// import Footer from '@/components/layout/Footer';
-
-// const technologies = [
-//   {
-//     name: 'React/Next.js',
-//     description: 'Desarrollo de aplicaciones web modernas y escalables'
-//   },
-//   {
-//     name: 'TypeScript',
-//     description: 'Código más seguro y mantenible con tipado estático'
-//   },
-//   {
-//     name: 'Tailwind CSS',
-//     description: 'Diseños responsivos y personalizados con utilidades CSS'
-//   },
-//   {
-//     name: 'Framer Motion',
-//     description: 'Animaciones fluidas y microinteracciones'
-//   }
-// ];
-
-// const features = [
-//   {
-//     icon: Laptop,
-//     title: 'Desarrollo Web Moderno',
-//     description: 'Aplicaciones web rápidas y escalables usando las últimas tecnologías.'
-//   },
-//   {
-//     icon: Zap,
-//     title: 'Rendimiento Optimizado',
-//     description: 'Optimización de carga y rendimiento para una experiencia fluida.'
-//   },
-//   {
-//     icon: Shield,
-//     title: 'Mejores Prácticas',
-//     description: 'Código limpio y mantenible siguiendo estándares de la industria.'
-//   },
-//   {
-//     icon: BarChart,
-//     title: 'SEO y Analytics',
-//     description: 'Implementación de mejores prácticas SEO y seguimiento de métricas.'
-//   },
-//   {
-//     icon: Code,
-//     title: 'Integración API',
-//     description: 'Conexión seamless con backends y servicios externos.'
-//   },
-//   {
-//     icon: Smartphone,
-//     title: 'Diseño Responsivo',
-//     description: 'Interfaces adaptables a todos los dispositivos y tamaños de pantalla.'
-//   }
-// ];
-
-// export default function FrontendDevelopmentPage() {
-//   return (
-//     <>
-//       <Navbar />
-//       <main className="min-h-screen bg-white dark:bg-gray-900 pt-20">
-//         {/* Hero Section */}
-//         <section className="py-20">
-//           <div className="max-w-7xl mx-auto px-6">
-//             <motion.div
-//               initial={{ opacity: 0, y: 20 }}
-//               animate={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.6 }}
-//               className="text-center max-w-3xl mx-auto"
-//             >
-//               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-//                 Desarrollo Frontend
-//               </h1>
-//               <p className="text-xl text-gray-600 dark:text-gray-400 mb-12">
-//                 Construyendo interfaces modernas y eficientes que brindan experiencias 
-//                 excepcionales a tus usuarios.
-//               </p>
-//             </motion.div>
-//           </div>
-//         </section>
-
-//         {/* Technologies Section */}
-//         <section className="py-20 bg-gray-50 dark:bg-gray-800/50">
-//           <div className="max-w-7xl mx-auto px-6">
-//             <motion.div
-//               initial={{ opacity: 0, y: 20 }}
-//               whileInView={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.6 }}
-//               viewport={{ once: true }}
-//               className="text-center mb-16"
-//             >
-//               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-//                 Tecnologías
-//               </h2>
-//               <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-//                 Utilizamos las herramientas más modernas y eficientes del desarrollo frontend
-//               </p>
-//             </motion.div>
-
-//             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-//               {technologies.map((tech, index) => (
-//                 <motion.div
-//                   key={tech.name}
-//                   initial={{ opacity: 0, y: 20 }}
-//                   whileInView={{ opacity: 1, y: 0 }}
-//                   transition={{ duration: 0.6, delay: index * 0.1 }}
-//                   viewport={{ once: true }}
-//                   className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg"
-//                 >
-//                   <h3 className="text-xl font-semibold mb-2 text-accent-red dark:text-accent-yellow">
-//                     {tech.name}
-//                   </h3>
-//                   <p className="text-gray-600 dark:text-gray-400">
-//                     {tech.description}
-//                   </p>
-//                 </motion.div>
-//               ))}
-//             </div>
-//           </div>
-//         </section>
-
-//         {/* Features Section */}
-//         <section className="py-20">
-//           <div className="max-w-7xl mx-auto px-6">
-//             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-//               {features.map((feature, index) => (
-//                 <motion.div
-//                   key={feature.title}
-//                   initial={{ opacity: 0, y: 20 }}
-//                   whileInView={{ opacity: 1, y: 0 }}
-//                   transition={{ duration: 0.6, delay: index * 0.1 }}
-//                   viewport={{ once: true }}
-//                   className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg"
-//                 >
-//                   <feature.icon className="w-12 h-12 mb-4 text-accent-red dark:text-accent-yellow" />
-//                   <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
-//                     {feature.title}
-//                   </h3>
-//                   <p className="text-gray-600 dark:text-gray-400">
-//                     {feature.description}
-//                   </p>
-//                 </motion.div>
-//               ))}
-//             </div>
-//           </div>
-//         </section>
-//       </main>
-//       <Footer />
-//     </>
-//   );
-// }
-
-
-
-
-
 
 
 // src/app/services/frontend-development/page.tsx
@@ -251,7 +90,7 @@ export default function FrontendDevelopmentPage() {
                 Desarrollo Frontend
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400 mb-12">
-                Construyendo interfaces modernas y eficientes que brindan experiencias 
+                Construyendo interfaces modernas y eficientes que brindan experiencias
                 excepcionales a tus usuarios.
               </p>
             </motion.div>
@@ -259,7 +98,7 @@ export default function FrontendDevelopmentPage() {
         </section>
 
         {/* WordPress Promo Banner */}
-     
+
 
 
 
@@ -327,7 +166,7 @@ export default function FrontendDevelopmentPage() {
                 Desarrollo frontend de alta calidad con enfoque en rendimiento y experiencia de usuario
               </p>
             </motion.div>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
                 <motion.div
@@ -386,7 +225,7 @@ export default function FrontendDevelopmentPage() {
               <span className="text-sm text-gray-600 dark:text-gray-400 font-mono">page.tsx</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="px-2 py-1 rounded text-xs bg-accent-red/20 dark:bg-accent-yellow/20 
+              <span className="px-2 py-1 rounded text-xs bg-accent-red/20 dark:bg-accent-yellow/20
                            text-accent-red dark:text-accent-yellow">
                 Next.js 14
               </span>
@@ -464,7 +303,7 @@ export default async function Page() {
         {/* Background Decorations */}
         <div className="absolute inset-0 -z-10">
           <motion.div
-            className="absolute top-1/4 right-1/4 w-32 h-32 bg-accent-red/20 dark:bg-accent-yellow/20 
+            className="absolute top-1/4 right-1/4 w-32 h-32 bg-accent-red/20 dark:bg-accent-yellow/20
                      rounded-full blur-2xl"
             animate={{
               scale: [1, 1.2, 1],
@@ -477,7 +316,7 @@ export default async function Page() {
             }}
           />
           <motion.div
-            className="absolute bottom-1/4 left-1/4 w-40 h-40 bg-accent-red/10 dark:bg-accent-yellow/10 
+            className="absolute bottom-1/4 left-1/4 w-40 h-40 bg-accent-red/10 dark:bg-accent-yellow/10
                      rounded-full blur-3xl"
             animate={{
               scale: [1.2, 1, 1.2],
@@ -501,7 +340,7 @@ export default async function Page() {
           viewport={{ once: true }}
         >
           <div className="flex items-center gap-3 mb-6">
-            <div className="flex items-center justify-center w-12 h-12 rounded-xl 
+            <div className="flex items-center justify-center w-12 h-12 rounded-xl
                          bg-accent-red/10 dark:bg-accent-yellow/10">
               <Image
                 src="/next.svg"
@@ -522,7 +361,7 @@ export default async function Page() {
           </h2>
 
           <p className="text-gray-600 dark:text-gray-300 text-lg mb-8">
-            Implementamos soluciones escalables utilizando las últimas tecnologías 
+            Implementamos soluciones escalables utilizando las últimas tecnologías
             y mejores prácticas del desarrollo web.
           </p>
 
@@ -552,7 +391,7 @@ export default async function Page() {
                 viewport={{ once: true }}
                 className="flex items-start gap-4"
               >
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent-red/10 dark:bg-accent-yellow/10 
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent-red/10 dark:bg-accent-yellow/10
                              flex items-center justify-center">
                   <feature.icon className="w-5 h-5 text-accent-red dark:text-accent-yellow" />
                 </div>
@@ -572,9 +411,9 @@ export default async function Page() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/#contacto"
-                className="inline-flex items-center gap-2 bg-accent-red hover:bg-accent-red/90 
-                         dark:bg-accent-yellow dark:hover:bg-accent-yellow/90 
-                         text-white dark:text-gray-900 px-6 py-3 rounded-xl font-medium 
+                className="inline-flex items-center gap-2 bg-accent-red hover:bg-accent-red/90
+                         dark:bg-accent-yellow dark:hover:bg-accent-yellow/90
+                         text-white dark:text-gray-900 px-6 py-3 rounded-xl font-medium
                          transition-colors"
               >
                 Iniciar proyecto
@@ -595,7 +434,7 @@ export default async function Page() {
 
 
 
-        
+
 
 
 
@@ -605,7 +444,7 @@ export default async function Page() {
 {/* Animated Promo Banner */}
 <section className="py-12">
   <div className="max-w-7xl mx-auto px-6">
-    <motion.div 
+    <motion.div
       className="relative overflow-hidden rounded-3xl"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -624,14 +463,14 @@ export default async function Page() {
             >
               <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-accent-red/10 dark:bg-accent-yellow/10">
                 <Image
-                  src="/wordpress-icon.svg"
+                  src="/wordpress.svg"
                   alt="WordPress"
                   width={32}
                   height={32}
                   className="w-8 h-8 dark:invert" // Invertir color en modo oscuro
                 />
               </div>
-              <motion.span 
+              <motion.span
                 className="text-accent-red dark:text-accent-yellow font-semibold"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -640,7 +479,7 @@ export default async function Page() {
                 WordPress Premium
               </motion.span>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -657,7 +496,7 @@ export default async function Page() {
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="grid sm:grid-cols-2 gap-4 mb-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -678,7 +517,7 @@ export default async function Page() {
                   transition={{ duration: 0.4, delay: 0.1 * index }}
                   className="flex items-center gap-2"
                 >
-                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-accent-red/20 dark:bg-accent-yellow/20 
+                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-accent-red/20 dark:bg-accent-yellow/20
                                flex items-center justify-center">
                     <Check className="w-3 h-3 text-accent-red dark:text-accent-yellow" />
                   </div>
@@ -695,19 +534,19 @@ export default async function Page() {
             >
               <Link
                 href="/services/wordpress"
-                className="group inline-flex items-center gap-2 bg-accent-red hover:bg-accent-red/90 
-                         dark:bg-accent-yellow dark:hover:bg-accent-yellow/90 text-white dark:text-gray-900 
+                className="group inline-flex items-center gap-2 bg-accent-red hover:bg-accent-red/90
+                         dark:bg-accent-yellow dark:hover:bg-accent-yellow/90 text-white dark:text-gray-900
                          px-6 py-3 rounded-xl font-medium transition-all duration-300"
               >
                 Descubre más
                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
               </Link>
-              
+
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   href="#contacto"
-                  className="inline-flex items-center gap-2 bg-gray-900/10 hover:bg-gray-900/20 
-                           dark:bg-white/10 dark:hover:bg-white/20 
+                  className="inline-flex items-center gap-2 bg-gray-900/10 hover:bg-gray-900/20
+                           dark:bg-white/10 dark:hover:bg-white/20
                            text-gray-900 dark:text-white px-6 py-3 rounded-xl font-medium transition-colors"
                 >
                   Cotizar ahora
@@ -717,7 +556,7 @@ export default async function Page() {
           </div>
 
           {/* Animated Illustration Side */}
-          <motion.div 
+          <motion.div
             className="relative lg:h-full min-h-[300px] z-10"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -726,7 +565,7 @@ export default async function Page() {
             <div className="absolute inset-0">
               {/* Animated Floating Elements */}
               <motion.div
-                className="absolute top-1/4 left-1/4 w-32 h-32 bg-accent-red/20 dark:bg-accent-yellow/20 
+                className="absolute top-1/4 left-1/4 w-32 h-32 bg-accent-red/20 dark:bg-accent-yellow/20
                          rounded-full blur-2xl"
                 animate={{
                   scale: [1, 1.2, 1],
@@ -740,7 +579,7 @@ export default async function Page() {
                 }}
               />
               <motion.div
-                className="absolute bottom-1/3 right-1/3 w-40 h-40 bg-accent-red/30 dark:bg-accent-yellow/30 
+                className="absolute bottom-1/3 right-1/3 w-40 h-40 bg-accent-red/30 dark:bg-accent-yellow/30
                          rounded-full blur-3xl"
                 animate={{
                   scale: [1.2, 1, 1.2],
@@ -769,7 +608,7 @@ export default async function Page() {
                 className="rounded-lg"
                 priority
               />
-              
+
               {/* Floating Stats Cards */}
               <motion.div
                 className="absolute -top-6 -right-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg"
@@ -843,8 +682,8 @@ export default async function Page() {
               </p>
               <Link
                 href="/#contacto"
-                className="inline-flex items-center gap-2 bg-accent-red hover:bg-accent-red/90 
-                dark:bg-accent-yellow dark:hover:bg-accent-yellow/90 text-white dark:text-gray-900 
+                className="inline-flex items-center gap-2 bg-accent-red hover:bg-accent-red/90
+                dark:bg-accent-yellow dark:hover:bg-accent-yellow/90 text-white dark:text-gray-900
                 px-8 py-4 rounded-lg font-medium transition-colors"
               >
                 Solicitar Cotización

@@ -3,7 +3,9 @@
 
 import Script from 'next/script';
 
-export default function GoogleAnalytics({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_ID: string }) {
+export default function GoogleAnalytics() {
+    const GA_MEASUREMENT_ID = 'G-8RTG6CG3GF';
+
     return (
         <>
             <Script
@@ -23,5 +25,5 @@ export default function GoogleAnalytics({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_
                 }}
             />
         </>
-    );
+    )
 }

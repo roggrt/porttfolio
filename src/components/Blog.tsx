@@ -1,35 +1,234 @@
-//
-// // src/components/Blog.tsx
+
+// // // src/components/Blog.tsx
+// // 'use client';
+
+// // import { useState, useEffect } from 'react';
+// // import { useRouter } from 'next/navigation';
+// // import Image from 'next/image';
+// // import { motion } from 'framer-motion';
+// // import { Loader2, Search, Calendar, User, ArrowRight } from 'lucide-react';
+// // import Navbar from '@/components/layout/Navbar';
+// // import Footer from '@/components/layout/Footer';
+
+// // interface BlogPost {
+// //     sys: {
+// //         id: string;
+// //         createdAt: string;
+// //     };
+// //     fields: {
+// //         title: string;
+// //         body: {
+// //             content: Array<{
+// //                 content: Array<{
+// //                     value: string;
+// //                 }>;
+// //             }>;
+// //         };
+// //         image?: {
+// //             fields?: {
+// //                 file: {
+// //                     url: string;
+// //                 };
+// //             };
+// //         };
+// //         categories?: string[];
+// //         authorInfo?: {
+// //             fields?: {
+// //                 title: string;
+// //             };
+// //         };
+// //     };
+// // }
+
+// // export default function BlogComponent() {
+// //     const router = useRouter();
+// //     const [posts, setPosts] = useState<BlogPost[]>([]);
+// //     const [isLoading, setIsLoading] = useState(true);
+// //     const [searchQuery, setSearchQuery] = useState('');
+
+// //     useEffect(() => {
+// //         const fetchPosts = async () => {
+// //             try {
+// //                 const response = await fetch(
+// //                     'https://cdn.contentful.com/spaces/sfme6nh4wom2/environments/master/entries?content_type=blogPost&access_token=jn7dH3bS0f5p6ypvIHavVJTRpfigF6QY9R1jOyHv7A4'
+// //                 );
+// //                 const data = await response.json();
+// //                 setPosts(data.items);
+// //             } catch (error) {
+// //                 console.error('Error fetching posts:', error);
+// //             } finally {
+// //                 setIsLoading(false);
+// //             }
+// //         };
+
+// //         fetchPosts();
+// //     }, []);
+
+// //     const handlePostClick = (postId: string) => {
+// //         router.push(`/blog/${postId}`);
+// //     };
+
+// //     const filteredPosts = posts.filter(post => 
+// //         post.fields.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+// //         post.fields.body.content[0].content[0].value.toLowerCase().includes(searchQuery.toLowerCase())
+// //     );
+
+// //     return (
+// //         <>
+// //             <Navbar />
+// //             <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
+// //                 {/* Hero Section */}
+// //                 <section className="pt-24 pb-12 px-6 bg-white dark:bg-gray-800">
+// //                     <div className="max-w-7xl mx-auto">
+// //                         <motion.div
+// //                             initial={{ opacity: 0, y: 20 }}
+// //                             animate={{ opacity: 1, y: 0 }}
+// //                             transition={{ duration: 0.6 }}
+// //                             className="text-center max-w-3xl mx-auto"
+// //                         >
+// //                             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+// //                                 Blog
+// //                             </h1>
+// //                             <p className="text-xl text-gray-600 dark:text-gray-400 mb-12">
+// //                                 Explora artículos sobre desarrollo web, tecnología y programación
+// //                             </p>
+
+// //                             {/* Search Bar */}
+// //                             <div className="relative max-w-2xl mx-auto">
+// //                                 <input
+// //                                     type="text"
+// //                                     placeholder="Buscar artículos..."
+// //                                     value={searchQuery}
+// //                                     onChange={(e) => setSearchQuery(e.target.value)}
+// //                                     className="w-full px-6 py-4 rounded-xl bg-gray-100 dark:bg-gray-700 
+// //                                            text-gray-900 dark:text-white border border-gray-200 dark:border-gray-600
+// //                                            focus:outline-none focus:ring-2 focus:ring-accent-red dark:focus:ring-accent-yellow
+// //                                            placeholder-gray-500 dark:placeholder-gray-400"
+// //                                 />
+// //                                 <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 
+// //                                                 text-gray-400 dark:text-gray-500 w-5 h-5" />
+// //                             </div>
+// //                         </motion.div>
+// //                     </div>
+// //                 </section>
+
+// //                 {/* Posts Grid Section */}
+// //                 <section className="py-12 px-6">
+// //                     <div className="max-w-7xl mx-auto">
+// //                         {isLoading ? (
+// //                             <div className="flex flex-col items-center justify-center min-h-[400px] gap-4">
+// //                                 <Loader2 className="w-12 h-12 animate-spin text-accent-red dark:text-accent-yellow" />
+// //                                 <p className="text-gray-600 dark:text-gray-400">Cargando artículos...</p>
+// //                             </div>
+// //                         ) : (
+// //                             <motion.div 
+// //                                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+// //                                 initial={{ opacity: 0, y: 20 }}
+// //                                 animate={{ opacity: 1, y: 0 }}
+// //                                 transition={{ duration: 0.6 }}
+// //                             >
+// //                                 {filteredPosts.map((post, index) => (
+// //                                     <motion.article
+// //                                         key={post.sys.id}
+// //                                         initial={{ opacity: 0, y: 20 }}
+// //                                         animate={{ opacity: 1, y: 0 }}
+// //                                         transition={{ duration: 0.6, delay: index * 0.1 }}
+// //                                         onClick={() => handlePostClick(post.sys.id)}
+// //                                         className="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden 
+// //                                                  border border-gray-200 dark:border-gray-700 shadow-sm 
+// //                                                  hover:shadow-xl transition-all cursor-pointer"
+// //                                     >
+// //                                         {post.fields.image?.fields?.file?.url && (
+// //                                             <div className="relative h-56 w-full overflow-hidden">
+// //                                                 <Image
+// //                                                     src={`https:${post.fields.image.fields.file.url}`}
+// //                                                     alt={post.fields.title}
+// //                                                     fill
+// //                                                     className="object-cover group-hover:scale-105 transition-transform duration-500"
+// //                                                 />
+// //                                             </div>
+// //                                         )}
+
+// //                                         <div className="p-6">
+// //                                             {post.fields.categories && (
+// //                                                 <div className="flex flex-wrap gap-2 mb-4">
+// //                                                     {post.fields.categories.map((category) => (
+// //                                                         <span
+// //                                                             key={category}
+// //                                                             className="text-xs font-medium text-accent-red dark:text-accent-yellow 
+// //                                                                      bg-accent-red/10 dark:bg-accent-yellow/10 rounded-full 
+// //                                                                      px-3 py-1"
+// //                                                         >
+// //                                                             {category}
+// //                                                         </span>
+// //                                                     ))}
+// //                                                 </div>
+// //                                             )}
+
+// //                                             <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 
+// //                                                        group-hover:text-accent-red dark:group-hover:text-accent-yellow 
+// //                                                        transition-colors">
+// //                                                 {post.fields.title}
+// //                                             </h2>
+
+// //                                             <p className="text-gray-600 dark:text-gray-400 mb-6 line-clamp-3">
+// //                                                 {post.fields.body.content[0].content[0].value}
+// //                                             </p>
+
+// //                                             <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+// //                                                 <span className="flex items-center gap-2">
+// //                                                     <Calendar className="w-4 h-4" />
+// //                                                     {new Date(post.sys.createdAt).toLocaleDateString('es-ES', {
+// //                                                         year: 'numeric',
+// //                                                         month: 'long',
+// //                                                         day: 'numeric'
+// //                                                     })}
+// //                                                 </span>
+// //                                                 {post.fields.authorInfo?.fields?.title && (
+// //                                                     <span className="flex items-center gap-2">
+// //                                                         <User className="w-4 h-4" />
+// //                                                         {post.fields.authorInfo.fields.title}
+// //                                                     </span>
+// //                                                 )}
+// //                                             </div>
+
+// //                                             <div className="mt-6 flex items-center gap-2 text-accent-red 
+// //                                                          dark:text-accent-yellow font-medium">
+// //                                                 Leer más
+// //                                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+// //                                             </div>
+// //                                         </div>
+// //                                     </motion.article>
+// //                                 ))}
+// //                             </motion.div>
+// //                         )}
+
+// //                         {!isLoading && filteredPosts.length === 0 && (
+// //                             <div className="text-center py-12">
+// //                                 <p className="text-gray-600 dark:text-gray-400">
+// //                                     No se encontraron artículos que coincidan con tu búsqueda.
+// //                                 </p>
+// //                             </div>
+// //                         )}
+// //                     </div>
+// //                 </section>
+// //             </main>
+// //             <Footer />
+// //         </>
+// //     );
+// // }
+
 // 'use client';
-//
+
 // import { useState, useEffect } from 'react';
-// import { Search, Filter, Loader2 } from 'lucide-react';
-// import Link from 'next/link';
+// import { useRouter } from 'next/navigation';
 // import Image from 'next/image';
-// import {
-//     getBlogPosts,
-//     getCategories,
-//     getTags,
-//     searchBlogPosts,
-// } from '@/lib/contentful';
-//
-// // Definimos interfaces más precisas
-// interface ContentfulImage {
-//     fields?: {
-//         file: {
-//             url: string;
-//         };
-//         title?: string;
-//     };
-// }
-//
-// interface ContentfulAuthor {
-//     fields?: {
-//         title?: string;
-//     };
-// }
-//
-// interface BlogPost {
+// import { motion } from 'framer-motion';
+// import { Loader2, Search, Calendar, User, ArrowRight } from 'lucide-react';
+// import Navbar from '@/components/layout/Navbar';
+// import Footer from '@/components/layout/Footer';
+
+// interface BlogPage {
 //     sys: {
 //         id: string;
 //         createdAt: string;
@@ -38,177 +237,227 @@
 //         title: string;
 //         body: {
 //             content: Array<{
+//                 nodeType: string;
 //                 content: Array<{
 //                     value: string;
+//                     nodeType: string;
 //                 }>;
 //             }>;
 //         };
-//         image?: ContentfulImage;
-//         featuredImageAltText?: string;
-//         categories?: string[];
-//         authorInfo?: ContentfulAuthor;
+//         image?: {
+//             fields: {
+//                 file: {
+//                     url: string;
+//                 };
+//             };
+//         };
+//         tags?: string[];
+//         author?: {
+//             fields: {
+//                 title: string;
+//             };
+//         };
+//         recommendedPosts?: Array<{
+//             fields: {
+//                 title: string;
+//                 slug: string;
+//             };
+//         }>;
+//         slug: string;
 //     };
 // }
-//
-// function BlogComponent() {
-//     const [posts, setPosts] = useState<BlogPost[]>([]);
-//     const [categories, setCategories] = useState<string[]>([]);
-//     const [tags, setTags] = useState<string[]>([]);
-//     const [selectedCategory, setSelectedCategory] = useState<string>('');
-//     const [selectedTag, setSelectedTag] = useState<string>('');
-//     const [searchQuery, setSearchQuery] = useState<string>('');
+
+// export default function BlogComponent() {
+//     const router = useRouter();
+//     const [posts, setPosts] = useState<BlogPage[]>([]);
 //     const [isLoading, setIsLoading] = useState(true);
-//     const [showFilters, setShowFilters] = useState(false);
-//
+//     const [searchQuery, setSearchQuery] = useState('');
+
 //     useEffect(() => {
-//         const loadInitialData = async () => {
+//         const fetchPosts = async () => {
 //             try {
-//                 const [postsData, categoriesData, tagsData] = await Promise.all([
-//                     getBlogPosts(),
-//                     getCategories(),
-//                     getTags()
-//                 ]);
-//                 setPosts(postsData);
-//                 setCategories(categoriesData);
-//                 setTags(tagsData);
+//                 const response = await fetch(
+//                     'https://cdn.contentful.com/spaces/sfme6nh4wom2/environments/master/entries?content_type=blogPage&access_token=jn7dH3bS0f5p6ypvIHavVJTRpfigF6QY9R1jOyHv7A4'
+//                 );
+//                 const data = await response.json();
+//                 setPosts(data.items);
 //             } catch (error) {
-//                 console.error('Error loading initial data:', error);
+//                 console.error('Error fetching posts:', error);
 //             } finally {
 //                 setIsLoading(false);
 //             }
 //         };
-//
-//         loadInitialData();
+
+//         fetchPosts();
 //     }, []);
-//
-//     // Función segura para obtener la URL de la imagen
-//     const getImageUrl = (post: BlogPost): string | null => {
-//         return post.fields.image?.fields?.file?.url
-//             ? `https:${post.fields.image.fields.file.url}`
-//             : null;
+
+//     const handlePostClick = (slug: string) => {
+//         router.push(`/blog/${slug}`);
 //     };
-//
-//     // Función segura para obtener el nombre del autor
-//     const getAuthorName = (post: BlogPost): string | null => {
-//         return post.fields.authorInfo?.fields?.title || null;
+
+//     const getPostContent = (post: BlogPage) => {
+//         const content = post.fields.body?.content?.[0]?.content?.[0]?.value;
+//         return content || '';
 //     };
-//
+
+//     const filteredPosts = posts.filter(post => 
+//         post.fields.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+//         getPostContent(post).toLowerCase().includes(searchQuery.toLowerCase())
+//     );
+
 //     return (
-//         <div className="min-h-screen pt-24 px-6">
-//             <div className="max-w-7xl mx-auto">
-//                 {/* Header */}
-//                 <div className="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-//                     <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
-//                         Blog
-//                     </h1>
-//
-//                     {/* Búsqueda */}
-//                     <div className="flex items-center gap-4 w-full md:w-auto">
-//                         <div className="relative flex-1 md:w-64">
-//                             <input
-//                                 type="text"
-//                                 placeholder="Buscar artículos..."
-//                                 value={searchQuery}
-//                                 onChange={(e) => setSearchQuery(e.target.value)}
-//                                 className="w-full px-4 py-2 pl-10 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-accent-red dark:focus:ring-accent-yellow outline-none transition-all"
-//                             />
-//                             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
-//                         </div>
+//         <>
+//             <Navbar />
+//             <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
+//                 {/* Hero Section */}
+//                 <section className="pt-24 pb-12 px-6 bg-white dark:bg-gray-800">
+//                     <div className="max-w-7xl mx-auto">
+//                         <motion.div
+//                             initial={{ opacity: 0, y: 20 }}
+//                             animate={{ opacity: 1, y: 0 }}
+//                             transition={{ duration: 0.6 }}
+//                             className="text-center max-w-3xl mx-auto"
+//                         >
+//                             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+//                                 Blog
+//                             </h1>
+//                             <p className="text-xl text-gray-600 dark:text-gray-400 mb-12">
+//                                 Explora artículos sobre desarrollo web, tecnología y programación
+//                             </p>
+
+//                             {/* Search Bar */}
+//                             <div className="relative max-w-2xl mx-auto">
+//                                 <input
+//                                     type="text"
+//                                     placeholder="Buscar artículos..."
+//                                     value={searchQuery}
+//                                     onChange={(e) => setSearchQuery(e.target.value)}
+//                                     className="w-full px-6 py-4 rounded-xl bg-gray-100 dark:bg-gray-700 
+//                                            text-gray-900 dark:text-white border border-gray-200 dark:border-gray-600
+//                                            focus:outline-none focus:ring-2 focus:ring-accent-red dark:focus:ring-accent-yellow
+//                                            placeholder-gray-500 dark:placeholder-gray-400"
+//                                 />
+//                                 <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 
+//                                                 text-gray-400 dark:text-gray-500 w-5 h-5" />
+//                             </div>
+//                         </motion.div>
 //                     </div>
-//                 </div>
-//
-//                 {/* Lista de posts */}
-//                 {isLoading ? (
-//                     <div className="flex justify-center items-center min-h-[400px]">
-//                         <Loader2 className="w-8 h-8 animate-spin text-accent-red dark:text-accent-yellow" />
-//                     </div>
-//                 ) : posts.length > 0 ? (
-//                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-//                         {posts.map((post) => {
-//                             const imageUrl = getImageUrl(post);
-//                             const authorName = getAuthorName(post);
-//
-//                             return (
-//                                 <article
-//                                     key={post.sys.id}
-//                                     className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all"
-//                                 >
-//                                     {imageUrl && (
-//                                         <Link href={`/blog/${post.sys.id}`}>
-//                                             <div className="relative h-48 w-full">
+//                 </section>
+
+//                 {/* Posts Grid Section */}
+//                 <section className="py-12 px-6">
+//                     <div className="max-w-7xl mx-auto">
+//                         {isLoading ? (
+//                             <div className="flex flex-col items-center justify-center min-h-[400px] gap-4">
+//                                 <Loader2 className="w-12 h-12 animate-spin text-accent-red dark:text-accent-yellow" />
+//                                 <p className="text-gray-600 dark:text-gray-400">Cargando artículos...</p>
+//                             </div>
+//                         ) : (
+//                             <motion.div 
+//                                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+//                                 initial={{ opacity: 0, y: 20 }}
+//                                 animate={{ opacity: 1, y: 0 }}
+//                                 transition={{ duration: 0.6 }}
+//                             >
+//                                 {filteredPosts.map((post, index) => (
+//                                     <motion.article
+//                                         key={post.sys.id}
+//                                         initial={{ opacity: 0, y: 20 }}
+//                                         animate={{ opacity: 1, y: 0 }}
+//                                         transition={{ duration: 0.6, delay: index * 0.1 }}
+//                                         onClick={() => handlePostClick(post.fields.slug)}
+//                                         className="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden 
+//                                                  border border-gray-200 dark:border-gray-700 shadow-sm 
+//                                                  hover:shadow-xl transition-all cursor-pointer"
+//                                     >
+//                                         {post.fields.image?.fields?.file?.url && (
+//                                             <div className="relative h-56 w-full overflow-hidden">
 //                                                 <Image
-//                                                     src={imageUrl}
-//                                                     alt={post.fields.featuredImageAltText || post.fields.title}
+//                                                     src={`https:${post.fields.image.fields.file.url}`}
+//                                                     alt={post.fields.title}
 //                                                     fill
-//                                                     className="object-cover"
+//                                                     className="object-cover group-hover:scale-105 transition-transform duration-500"
 //                                                 />
 //                                             </div>
-//                                         </Link>
-//                                     )}
-//
-//                                     <div className="p-6">
-//                                         {/* Categorías */}
-//                                         {post.fields.categories && post.fields.categories.length > 0 && (
-//                                             <div className="flex flex-wrap gap-2 mb-3">
-//                                                 {post.fields.categories.map((category) => (
-//                                                     <span
-//                                                         key={category}
-//                                                         className="text-xs text-accent-red dark:text-accent-yellow bg-red-50 dark:bg-yellow-900/20 rounded-full px-3 py-1"
-//                                                     >
-//                                                         {category}
-//                                                     </span>
-//                                                 ))}
-//                                             </div>
 //                                         )}
-//
-//                                         <Link href={`/blog/${post.sys.id}`}>
-//                                             <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 hover:text-accent-red dark:hover:text-accent-yellow transition-colors">
+
+//                                         <div className="p-6">
+//                                             {post.fields.tags && (
+//                                                 <div className="flex flex-wrap gap-2 mb-4">
+//                                                     {post.fields.tags.map((tag) => (
+//                                                         <span
+//                                                             key={tag}
+//                                                             className="text-xs font-medium text-accent-red dark:text-accent-yellow 
+//                                                                      bg-accent-red/10 dark:bg-accent-yellow/10 rounded-full 
+//                                                                      px-3 py-1"
+//                                                         >
+//                                                             {tag}
+//                                                         </span>
+//                                                     ))}
+//                                                 </div>
+//                                             )}
+
+//                                             <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 
+//                                                        group-hover:text-accent-red dark:group-hover:text-accent-yellow 
+//                                                        transition-colors">
 //                                                 {post.fields.title}
 //                                             </h2>
-//                                         </Link>
-//
-//                                         <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-//                                             {post.fields.body.content[0].content[0].value}
-//                                         </p>
-//
-//                                         <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
-//                                             <span>
-//                                                 {new Date(post.sys.createdAt).toLocaleDateString('es-ES', {
-//                                                     year: 'numeric',
-//                                                     month: 'long',
-//                                                     day: 'numeric'
-//                                                 })}
-//                                             </span>
-//                                             {authorName && (
-//                                                 <span>{authorName}</span>
-//                                             )}
+
+//                                             <p className="text-gray-600 dark:text-gray-400 mb-6 line-clamp-3">
+//                                                 {getPostContent(post)}
+//                                             </p>
+
+//                                             <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+//                                                 <span className="flex items-center gap-2">
+//                                                     <Calendar className="w-4 h-4" />
+//                                                     {new Date(post.sys.createdAt).toLocaleDateString('es-ES', {
+//                                                         year: 'numeric',
+//                                                         month: 'long',
+//                                                         day: 'numeric'
+//                                                     })}
+//                                                 </span>
+//                                                 {post.fields.author?.fields?.title && (
+//                                                     <span className="flex items-center gap-2">
+//                                                         <User className="w-4 h-4" />
+//                                                         {post.fields.author.fields.title}
+//                                                     </span>
+//                                                 )}
+//                                             </div>
+
+//                                             <div className="mt-6 flex items-center gap-2 text-accent-red 
+//                                                          dark:text-accent-yellow font-medium">
+//                                                 Leer más
+//                                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+//                                             </div>
 //                                         </div>
-//                                     </div>
-//                                 </article>
-//                             );
-//                         })}
+//                                     </motion.article>
+//                                 ))}
+//                             </motion.div>
+//                         )}
+
+//                         {!isLoading && filteredPosts.length === 0 && (
+//                             <div className="text-center py-12">
+//                                 <p className="text-gray-600 dark:text-gray-400">
+//                                     No se encontraron artículos que coincidan con tu búsqueda.
+//                                 </p>
+//                             </div>
+//                         )}
 //                     </div>
-//                 ) : (
-//                     <div className="text-center py-12">
-//                         <p className="text-gray-600 dark:text-gray-400">
-//                             No se encontraron artículos que coincidan con tu búsqueda.
-//                         </p>
-//                     </div>
-//                 )}
-//             </div>
-//         </div>
+//                 </section>
+//             </main>
+//             <Footer />
+//         </>
 //     );
 // }
-//
-// export default BlogComponent;
 
-// src/components/Blog.tsx
+// components/Blog.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { Loader2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Loader2, Search, Calendar, User, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
@@ -227,18 +476,19 @@ interface BlogPost {
             }>;
         };
         image?: {
-            fields?: {
+            fields: {
                 file: {
                     url: string;
                 };
             };
         };
-        categories?: string[];
-        authorInfo?: {
-            fields?: {
+        tags?: string[];
+        author?: {
+            fields: {
                 title: string;
             };
         };
+        slug: string;
     };
 }
 
@@ -246,12 +496,13 @@ export default function BlogComponent() {
     const router = useRouter();
     const [posts, setPosts] = useState<BlogPost[]>([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
         const fetchPosts = async () => {
             try {
                 const response = await fetch(
-                    'https://cdn.contentful.com/spaces/sfme6nh4wom2/environments/master/entries?content_type=blogPost&access_token=jn7dH3bS0f5p6ypvIHavVJTRpfigF6QY9R1jOyHv7A4'
+                    'https://cdn.contentful.com/spaces/sfme6nh4wom2/environments/master/entries?content_type=blogPage&access_token=jn7dH3bS0f5p6ypvIHavVJTRpfigF6QY9R1jOyHv7A4'
                 );
                 const data = await response.json();
                 setPosts(data.items);
@@ -265,82 +516,159 @@ export default function BlogComponent() {
         fetchPosts();
     }, []);
 
-    const handlePostClick = (postId: string) => {
-        router.push(`/blog/${postId}`);
+    const handlePostClick = (slug: string) => {
+        router.push(`/blog/${slug}`);
     };
+
+    const getPostContent = (post: BlogPost) => {
+        const content = post.fields.body?.content?.[0]?.content?.[0]?.value;
+        return content || '';
+    };
+
+    const filteredPosts = posts.filter(post => 
+        post.fields.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        getPostContent(post).toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
     return (
         <>
             <Navbar />
-            <main className="min-h-screen pt-24 px-6">
-                <div className="max-w-7xl mx-auto">
-                    <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">
-                        Blog
-                    </h1>
+            <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
+                {/* Hero Section */}
+                <section className="pt-24 pb-12 px-6 bg-white dark:bg-gray-800">
+                    <div className="max-w-7xl mx-auto">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="text-center max-w-3xl mx-auto"
+                        >
+                            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+                                Blog
+                            </h1>
+                            <p className="text-xl text-gray-600 dark:text-gray-400 mb-12">
+                                Explora artículos sobre desarrollo web, tecnología y programación
+                            </p>
 
-                    {isLoading ? (
-                        <div className="flex justify-center items-center min-h-[400px]">
-                            <Loader2 className="w-8 h-8 animate-spin text-accent-red dark:text-accent-yellow" />
-                        </div>
-                    ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {posts.map((post) => (
-                                <article
-                                    key={post.sys.id}
-                                    onClick={() => handlePostClick(post.sys.id)}
-                                    className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer"
-                                >
-                                    {post.fields.image?.fields?.file?.url && (
-                                        <div className="relative h-48 w-full overflow-hidden">
-                                            <Image
-                                                src={`https:${post.fields.image.fields.file.url}`}
-                                                alt={post.fields.title}
-                                                fill
-                                                className="object-cover hover:scale-105 transition-transform duration-300"
-                                            />
-                                        </div>
-                                    )}
+                            {/* Search Bar */}
+                            <div className="relative max-w-2xl mx-auto">
+                                <input
+                                    type="text"
+                                    placeholder="Buscar artículos..."
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    className="w-full px-6 py-4 rounded-xl bg-gray-100 dark:bg-gray-700 
+                                             text-gray-900 dark:text-white border border-gray-200 dark:border-gray-600
+                                             focus:outline-none focus:ring-2 focus:ring-accent-red dark:focus:ring-accent-yellow
+                                             placeholder-gray-500 dark:placeholder-gray-400"
+                                />
+                                <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 
+                                                text-gray-400 dark:text-gray-500 w-5 h-5" />
+                            </div>
+                        </motion.div>
+                    </div>
+                </section>
 
-                                    <div className="p-6">
-                                        {post.fields.categories && (
-                                            <div className="flex flex-wrap gap-2 mb-3">
-                                                {post.fields.categories.map((category) => (
-                                                    <span
-                                                        key={category}
-                                                        className="text-xs text-accent-red dark:text-accent-yellow bg-red-50 dark:bg-yellow-900/20 rounded-full px-3 py-1"
-                                                    >
-                                                        {category}
-                                                    </span>
-                                                ))}
+                {/* Posts Grid Section */}
+                <section className="py-12 px-6">
+                    <div className="max-w-7xl mx-auto">
+                        {isLoading ? (
+                            <div className="flex flex-col items-center justify-center min-h-[400px] gap-4">
+                                <Loader2 className="w-12 h-12 animate-spin text-accent-red dark:text-accent-yellow" />
+                                <p className="text-gray-600 dark:text-gray-400">Cargando artículos...</p>
+                            </div>
+                        ) : (
+                            <motion.div 
+                                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6 }}
+                            >
+                                {filteredPosts.map((post, index) => (
+                                    <motion.article
+                                        key={post.sys.id}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                                        onClick={() => handlePostClick(post.fields.slug)}
+                                        className="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden 
+                                                 border border-gray-200 dark:border-gray-700 shadow-sm 
+                                                 hover:shadow-xl transition-all cursor-pointer"
+                                    >
+                                        {post.fields.image?.fields?.file?.url && (
+                                            <div className="relative h-56 w-full overflow-hidden">
+                                                <Image
+                                                    src={`https:${post.fields.image.fields.file.url}`}
+                                                    alt={post.fields.title}
+                                                    fill
+                                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                                />
                                             </div>
                                         )}
 
-                                        <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 hover:text-accent-red dark:hover:text-accent-yellow transition-colors">
-                                            {post.fields.title}
-                                        </h2>
-
-                                        <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-                                            {post.fields.body.content[0].content[0].value}
-                                        </p>
-
-                                        <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
-                                            <span>
-                                                {new Date(post.sys.createdAt).toLocaleDateString('es-ES', {
-                                                    year: 'numeric',
-                                                    month: 'long',
-                                                    day: 'numeric'
-                                                })}
-                                            </span>
-                                            {post.fields.authorInfo?.fields?.title && (
-                                                <span>{post.fields.authorInfo.fields.title}</span>
+                                        <div className="p-6">
+                                            {post.fields.tags && (
+                                                <div className="flex flex-wrap gap-2 mb-4">
+                                                    {post.fields.tags.map((tag) => (
+                                                        <span
+                                                            key={tag}
+                                                            className="text-xs font-medium text-accent-red dark:text-accent-yellow 
+                                                                     bg-accent-red/10 dark:bg-accent-yellow/10 rounded-full 
+                                                                     px-3 py-1"
+                                                        >
+                                                            {tag}
+                                                        </span>
+                                                    ))}
+                                                </div>
                                             )}
+
+                                            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 
+                                                       group-hover:text-accent-red dark:group-hover:text-accent-yellow 
+                                                       transition-colors">
+                                                {post.fields.title}
+                                            </h2>
+
+                                            <p className="text-gray-600 dark:text-gray-400 mb-6 line-clamp-3">
+                                                {getPostContent(post)}
+                                            </p>
+
+                                            <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+                                                <span className="flex items-center gap-2">
+                                                    <Calendar className="w-4 h-4" />
+                                                    {new Date(post.sys.createdAt).toLocaleDateString('es-ES', {
+                                                        year: 'numeric',
+                                                        month: 'long',
+                                                        day: 'numeric'
+                                                    })}
+                                                </span>
+                                                {post.fields.author?.fields?.title && (
+                                                    <span className="flex items-center gap-2">
+                                                        <User className="w-4 h-4" />
+                                                        {post.fields.author.fields.title}
+                                                    </span>
+                                                )}
+                                            </div>
+
+                                            <div className="mt-6 flex items-center gap-2 text-accent-red 
+                                                         dark:text-accent-yellow font-medium">
+                                                Leer más
+                                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                            </div>
                                         </div>
-                                    </div>
-                                </article>
-                            ))}
-                        </div>
-                    )}
-                </div>
+                                    </motion.article>
+                                ))}
+                            </motion.div>
+                        )}
+
+                        {!isLoading && filteredPosts.length === 0 && (
+                            <div className="text-center py-12">
+                                <p className="text-gray-600 dark:text-gray-400">
+                                    No se encontraron artículos que coincidan con tu búsqueda.
+                                </p>
+                            </div>
+                        )}
+                    </div>
+                </section>
             </main>
             <Footer />
         </>

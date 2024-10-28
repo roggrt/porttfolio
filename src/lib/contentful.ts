@@ -88,8 +88,12 @@
 
 // lib/contentful.ts
 
+
+
+
+
 // Tipos de Contentful
-interface Asset {
+export interface Asset {
     fields: {
         title: string;
         description: string;
@@ -108,7 +112,7 @@ interface Asset {
     }
 }
 
-interface Author {
+export interface Author {
     fields: {
         title: string;
         body: {
@@ -124,7 +128,7 @@ interface Author {
     }
 }
 
-interface BlogPost {
+export interface BlogPost {
     sys: {
         id: string;
         createdAt: string;
@@ -159,7 +163,7 @@ interface BlogPost {
     };
 }
 
-interface ContentfulResponse {
+export interface ContentfulResponse {
     sys: {
         type: string;
     };
@@ -243,29 +247,6 @@ export async function getBlogPosts(options: {
         throw error;
     }
 }
-
-/**
- * Obtiene un post específico por ID
- */
-// export async function getBlogPostById(id: string): Promise<BlogPost | null> {
-//     try {
-//         const response = await fetch(
-//             `${BASE_URL}/entries/${id}?include=2`,
-//             { headers }
-//         );
-//
-//         if (!response.ok) {
-//             if (response.status === 404) return null;
-//             throw new Error(`Error: ${response.status}`);
-//         }
-//
-//         const data: BlogPost = await response.json();
-//         return data;
-//     } catch (error) {
-//         console.error(`Error fetching blog post with ID ${id}:`, error);
-//         throw error;
-//     }
-// }
 
 export async function getBlogPostById(id: string) {
     const response = await fetch(

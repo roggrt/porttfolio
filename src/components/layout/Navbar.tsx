@@ -88,7 +88,7 @@ export default function Navbar() {
                             href="/"
                             className="text-2xl font-bold text-accent-red dark:text-accent-yellow"
                         >
-                            roggrt.dev
+                            Torisoftt
                         </Link>
                     </motion.div>
 

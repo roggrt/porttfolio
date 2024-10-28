@@ -1,0 +1,14 @@
+{
+  "common": {
+    "navigation": {
+      "home": "Home",
+      "services": "Services",
+      "blog": "Blog",
+      "contact": "Contact"
+    }
+  },
+  "home": {
+    "title": "Boost your business with Torisoftt",
+    "subtitle": "We are a team of Software Architects, Full Stack Developers & UI/UX Designers"
+  }
+}

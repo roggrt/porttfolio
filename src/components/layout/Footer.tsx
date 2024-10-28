@@ -290,7 +290,7 @@ export default function Footer() {
                                 href="/"
                                 className="text-2xl font-bold text-accent-red dark:text-accent-yellow"
                             >
-                                roggrt.dev
+                                Torisoftt
                             </Link>
                         </motion.div>
                         <p className="text-gray-600 dark:text-gray-400 mt-4 mb-6 max-w-md">

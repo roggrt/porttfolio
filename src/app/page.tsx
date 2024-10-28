@@ -111,11 +111,11 @@ export default function Page() {
                     transition={{ duration: 0.6 }}
                 >
                   <h1 className="text-5xl md:text-6xl font-bold mb-6 text-accent-red dark:text-accent-yellow">
-                    Roger Rojas
+                    Impulsa tu negocio con Torisoftt
                   </h1>
                   <h2 className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-                    Software Architect & Full Stack Developer
-                    <span className="block mt-2">UI/UX Designer</span>
+                    Somos un equipo formado por Software Architects, Full Stack Developers & UI/UX Designers
+                    {/*<span className="block mt-2">UI/UX Designer</span>*/}
                   </h2>
                   <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-xl">
                     Creando experiencias digitales excepcionales a través del diseño intuitivo
@@ -364,23 +364,7 @@ export default function Page() {
   </div>
 </section>
 
-
-
-
-
-
-          
-
-
-          {/* About Me Section */}
           <AboutMe />
-
-          {/* Blog Section */}
-          {/*<Blog />*/}
-          {/*<BlogCard />*/}
-
-            {/* contenido del post */}
-
 
         </main>
         <Footer />

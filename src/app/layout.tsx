@@ -91,9 +91,12 @@ const montserrat = Montserrat({
     display: 'swap',
 });
 
+
 export const metadata: Metadata = {
-    // ... (mantener el metadata como estaba)
+    title: 'Torisoftt - Desarrollo de software y páginas web',
+    description: 'Portfolio personal de Roger Rojas, Software Architect y Full Stack Developer especializado en crear experiencias digitales excepcionales.',
 }
+
 
 interface RootLayoutProps {
     children: React.ReactNode;

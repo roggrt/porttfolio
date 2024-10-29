@@ -11,6 +11,7 @@ import {
   Terminal,
   Globe,
   Layers,
+  Search,
   Palette,
   ArrowRight,
   ExternalLink
@@ -89,6 +90,12 @@ const services = [
     title: "Diseño UI/UX",
     description: "Diseño de interfaces intuitivas y experiencias de usuario excepcionales.",
     tags: ["Figma", "Design Systems", "Prototyping"]
+  },
+  {
+    icon: Search,
+    title: "SEO y Posicionamiento",
+    description: "Optimización para motores de búsqueda y estrategias de posicionamiento para mayor visibilidad online.",
+    tags: ["SEO Técnico", "Keywords Research", "Google Analytics", "Link Building"]
   }
 ];
 
@@ -217,7 +224,7 @@ export default function Page() {
                             </p>
                            </motion.div>
 
-                           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                              {services.map((service, index) => (
                                  <motion.div
                                      key={service.title}

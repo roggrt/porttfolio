@@ -238,7 +238,9 @@ export default function Footer() {
         { name: 'Desarrollo Backend', href: '/services/backend-development' },
         { name: 'WordPress', href: '/services/wordpress' },
         { name: 'Arquitectura Software', href: '/services/software-architecture' },
-        { name: 'Design Systems', href: '/services/design-systems' }
+        { name: 'Design Systems', href: '/services/design-systems' },
+        { name: 'SEO y Posicionamiento', href: '/services/seo-y-posicionamiento' }
+
     ];
 
     const links = [

@@ -94,8 +94,30 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
     title: 'Torisoftt | Desarrollo de Software & Soluciones Web',
-    description: 'Agencia de desarrollo de software especializada en crear soluciones digitales robustas y escalables. Expertos en aplicaciones web, móviles y sistemas empresariales personalizados. Transformamos ideas en tecnología.',
-    keywords: 'desarrollo software, programación ecuador, aplicaciones web, sistemas empresariales,sitios web, e-commerce, desarrollo móvil, diseño ui ux, diseño web, Ecuador, Cuenca, Software',
+    description: 'Agencia de desarrollo de software especializada en crear soluciones digitales robustas y escalables. Expertos en aplicaciones web, móviles y sistemas empresariales personalizados.',
+    keywords: 'desarrollo software, programación ecuador, aplicaciones web, sistemas empresariales, sitios web, e-commerce, desarrollo móvil, diseño ui ux, diseño web, Ecuador, Cuenca',
+    openGraph: {
+        title: 'Torisoftt | Desarrollo de Software & Soluciones Web',
+        description: 'Agencia de desarrollo de software especializada en crear soluciones digitales robustas y escalables. Expertos en aplicaciones web, móviles y sistemas empresariales.',
+        url: 'https://torisoftt.com',
+        siteName: 'Torisoftt',
+        images: [
+            {
+                url: 'https://torisoftt.com/tori.jpeg',
+                width: 960,
+                height: 1280,
+                alt: 'Torisoftt Logo'
+            }
+        ],
+        locale: 'es_EC',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Torisoftt | Desarrollo de Software',
+        description: 'Soluciones digitales robustas y escalables',
+        images: ['https://torisoftt.com/tori.jpeg'],
+    }
 }
 
 interface RootLayoutProps {

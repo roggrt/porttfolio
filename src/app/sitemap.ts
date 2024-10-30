@@ -2,7 +2,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://torisoftt.vercel.app' // Ajusta esto a tu dominio
+    const baseUrl = 'https://torisoftt.com' // Ajusta esto a tu dominio
 
     return [
         {

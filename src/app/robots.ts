@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/api/', // Protege tus endpoints de API
         },
-        sitemap: 'https://torisoftt.vercel.app/sitemap.xml',
+        sitemap: 'https://torisoftt/sitemap.xml',
     }
 }

@@ -7,10 +7,12 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: 'torisoft@demo.hostingcuenca.com',
+    user: 'info@torisoftt.com',
     pass: 'Wn0968653953.'
   }
 });
+
+
 
 export async function POST(request: Request) {
   try {
@@ -18,7 +20,7 @@ export async function POST(request: Request) {
 
     // Email to site owner
     await transporter.sendMail({
-      from: 'torisoft@demo.hostingcuenca.com',
+      from: 'info@torisoftt.com',
       to: 'hostingcuenca@gmail.com',
       subject: `Torisoft Page Requerimiento: ${subject}`,
       html: `
@@ -33,7 +35,7 @@ export async function POST(request: Request) {
 
     // Auto-reply to sender
     await transporter.sendMail({
-      from: 'torisoft@demo.hostingcuenca.com',
+      from: 'info@torisoftt.com',
       to: email,
       subject: 'Recibimos tu mensaje - Torisoft',
       html: `

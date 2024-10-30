@@ -355,7 +355,7 @@ export default function Page() {
         Hablemos de tu proyecto
       </h2>
       <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-        ¿Tienes un proyecto en mente? Cuéntame más sobre él y veamos cómo puedo ayudarte.
+        ¿Tienes un proyecto en mente? Cuéntame más sobre él y veamos cómo puedo ayudarte, o envíanos un correo al info@torisoftt.com
       </p>
     </motion.div>
 

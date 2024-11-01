@@ -166,7 +166,7 @@ const designProcess: ProcessStep[] = [
         tools: [
             {
                 name: "Vercel",
-                icon: "/tools/vercel.svg",
+                icon: "/tools/favicon.png",
                 description: "Plataforma de deployment"
             },
             {

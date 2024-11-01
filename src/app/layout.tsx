@@ -96,6 +96,11 @@ export const metadata: Metadata = {
     title: 'Torisoftt | Desarrollo de Software & Soluciones Web',
     description: 'Agencia de desarrollo de software especializada en crear soluciones digitales robustas y escalables. Expertos en aplicaciones web, móviles y sistemas empresariales personalizados.',
     keywords: 'desarrollo software, programación ecuador, aplicaciones web, sistemas empresariales, sitios web, e-commerce, desarrollo móvil, diseño ui ux, diseño web, Ecuador, Cuenca',
+    icons: {
+        icon: '/favicon.png',
+        shortcut: '/favicon.png',
+        apple: '/favicon.png',
+    },
     openGraph: {
         title: 'Torisoftt | Desarrollo de Software & Soluciones Web',
         description: 'Agencia de desarrollo de software especializada en crear soluciones digitales robustas y escalables. Expertos en aplicaciones web, móviles y sistemas empresariales.',
@@ -132,6 +137,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             className={`${inter.variable} ${montserrat.variable}`}
         >
         <head>
+        <link rel="icon" href="/favicon.png" type="image/png" />
             <Script
                 src="https://www.googletagmanager.com/gtag/js?id=G-8RTG6CG3GF"
                 strategy="afterInteractive"

@@ -109,100 +109,100 @@ export default function Page() {
         <Navbar />
         <main className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
           {/* Hero Section */}
-          <section id="inicio" className="pt-28 pb-20">
-            <div className="max-w-7xl mx-auto px-6">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                >
-                  <h1 className="text-5xl md:text-6xl font-bold mb-6 text-accent-red dark:text-accent-yellow">
-                    Impulsa tu negocio con Torisoftt
-                  </h1>
-                  <h2 className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-                    Somos un equipo formado por Software Architects, Full Stack Developers & UI/UX Designers
-                    {/*<span className="block mt-2">UI/UX Designer</span>*/}
-                  </h2>
-                  <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-xl">
-                    Creando experiencias digitales excepcionales a través del diseño intuitivo
-                    y desarrollo robusto.
-                  </p>
-                  <motion.div
-                      className="flex flex-wrap gap-4"
-                      variants={{
-                        hidden: { opacity: 0, y: 20 },
-                        visible: {
-                          opacity: 1,
-                          y: 0,
-                          transition: {
-                            staggerChildren: 0.1
-                          }
-                        }
-                      }}
-                      initial="hidden"
-                      animate="visible"
-                  >
-                    <motion.div
-                        variants={{
-                          hidden: { opacity: 0, y: 20 },
-                          visible: { opacity: 1, y: 0 }
-                        }}
-                    >
-                      <Link
-                          href="#cotizador"
-                          className="group px-6 py-3 text-white bg-accent-red hover:bg-accent-red/90
-                                                     dark:bg-accent-yellow dark:hover:bg-accent-yellow/90
-                                                     dark:text-gray-900 rounded-lg font-medium transition-colors
-                                                     inline-flex items-center gap-2"
-                      >
-                        Cotizar Proyecto
-                        <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </motion.div>
-                    <motion.div
-                        variants={{
-                          hidden: { opacity: 0, y: 20 },
-                          visible: { opacity: 1, y: 0 }
-                        }}
-                    >
-                      <Link
-                          href="#proyectos"
-                          className="group px-6 py-3 text-accent-red dark:text-accent-yellow
-                                                     border-2 border-accent-red dark:border-accent-yellow
-                                                     hover:bg-accent-red/5 dark:hover:bg-accent-yellow/5
-                                                     rounded-lg font-medium transition-colors inline-flex
-                                                     items-center gap-2"
-                      >
-                        Ver proyectos de software
-                        <ExternalLink className="w-4 h-4 transform group-hover:translate-x-1
-                                                                   group-hover:-translate-y-1 transition-transform" />
-                      </Link>
-                    </motion.div>
-                  </motion.div>
-                </motion.div>
+    {/* Hero Section */}
 
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="relative aspect-square rounded-3xl overflow-hidden border-2
-                                         border-accent-red dark:border-accent-yellow shadow-2xl"
-                >
-                  <Image
-                      src="/tori.jpeg"
-                      alt="Roger Rojas"
-                      width={500}
-                      height={500}
-                      className="object-cover w-full h-full rounded-3xl transform
-                                             transition-transform duration-500 hover:scale-110"
-                      priority
-                  />
-                </motion.div>
-              </div>
-            </div>
-          </section>
+    {/* Hero Section */}
+<section id="inicio" className="pt-28 pb-20">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h1 className="text-5xl md:text-6xl font-bold mb-6 text-accent-red dark:text-accent-yellow">
+          Diseño de Páginas Web & Desarrollo de Software
+        </h1>
+        <h2 className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
+          Diseñamos y desarrollamos soluciones web, arquitectura de software para tu negocio, a tu medida
+        </h2>
+        <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-xl">
+          En Torisoftt somos un equipo de desarrolladores Full Stack & UI/UX designers especializados en páginas web, sistemas de gestión y desarrollo de software empresarial.
+        </p>
+        <motion.div
+          className="flex flex-wrap gap-4"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                staggerChildren: 0.1
+              }
+            }
+          }}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+          >
+            <Link
+              href="#cotizador"
+              className="group px-6 py-3 text-white bg-accent-red hover:bg-accent-red/90
+                                           dark:bg-accent-yellow dark:hover:bg-accent-yellow/90
+                                           dark:text-gray-900 rounded-lg font-medium transition-colors
+                                           inline-flex items-center gap-2"
+            >
+              Cotizar Proyecto
+              <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+          >
+            <Link
+              href="#proyectos"
+              className="group px-6 py-3 text-accent-red dark:text-accent-yellow
+                                           border-2 border-accent-red dark:border-accent-yellow
+                                           hover:bg-accent-red/5 dark:hover:bg-accent-yellow/5
+                                           rounded-lg font-medium transition-colors inline-flex
+                                           items-center gap-2"
+            >
+              Ver proyectos
+              <ExternalLink className="w-4 h-4 transform group-hover:translate-x-1
+                                                         group-hover:-translate-y-1 transition-transform" />
+            </Link>
+          </motion.div>
+        </motion.div>
+      </motion.div>
 
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="relative aspect-square rounded-3xl overflow-hidden border-2
+                               border-accent-red dark:border-accent-yellow shadow-2xl"
+      >
+        <Image
+          src="/tori.jpeg"
+          alt="Torisoftt - Diseño Web y Desarrollo de Software Profesional"
+          width={500}
+          height={500}
+          className="object-cover w-full h-full rounded-3xl transform
+                                   transition-transform duration-500 hover:scale-110"
+          priority
+        />
+      </motion.div>
+    </div>
+  </div>
+</section>
 
 
           {/* Services Section */}

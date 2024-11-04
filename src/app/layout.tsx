@@ -24,7 +24,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
     title: 'Torisoftt | Desarrollo de Software & Soluciones Web',
-    description: 'Agencia de desarrollo de software especializada en crear soluciones digitales robustas y escalables. Expertos en aplicaciones web, móviles y sistemas empresariales personalizados.',
+    description: 'Desarrollo de software y páginas web en Ecuador especializada en crear soluciones digitales robustas y escalables. Expertos en aplicaciones web, móviles y sistemas empresariales personalizados.',
     keywords: 'desarrollo software, programación ecuador, aplicaciones web, sistemas empresariales, sitios web, e-commerce, desarrollo móvil, diseño ui ux, diseño web, Ecuador, Cuenca',
     icons: {
         icon: '/favicon.png',
@@ -100,29 +100,118 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <Analytics />
         </ThemeProvider>
 
-        <Script
-            id="schema-org"
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "Organization",
-                    "name": "Torisoftt",
-                    "url": "https://torisoftt.com",
-                    "logo": "https://torisoftt.com/logo.png",
-                    "description": "Empresa líder en desarrollo web y software en Ecuador",
+   
+
+
+<Script
+    id="schema-org"
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Torisoftt",
+            "url": "https://torisoftt.com",
+            "logo": "https://torisoftt.com/logo.png",
+            "description": "Global software development and web solutions company specializing in cutting-edge digital experiences",
+            // Múltiples ubicaciones para presencia internacional
+            "location": [
+                {
+                    "@type": "Place",
                     "address": {
                         "@type": "PostalAddress",
-                        "addressCountry": "EC"
-                    },
-                    "sameAs": [
-                        "https://twitter.com/torisoftt",
-                        "https://linkedin.com/company/torisoftt",
-                        "https://github.com/torisoftt"
-                    ]
-                })
-            }}
-        />
+                        "addressCountry": "US",
+                        "availableLanguage": ["en"]
+                    }
+                },
+                {
+                    "@type": "Place",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "ES",
+                        "availableLanguage": ["es"]
+                    }
+                },
+                {
+                    "@type": "Place",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "EC",
+                        "availableLanguage": ["es"]
+                    }
+                }
+            ],
+            // Idiomas soportados
+            "availableLanguage": [
+                {
+                    "@type": "Language",
+                    "name": "English",
+                    "alternateName": "en"
+                },
+                {
+                    "@type": "Language",
+                    "name": "Español",
+                    "alternateName": "es"
+                }
+            ],
+            // Áreas de servicio global
+            "areaServed": [
+                {
+                    "@type": "GeoCircle",
+                    "name": "Global Services"
+                }
+            ],
+            // Redes sociales y presencia online
+            "sameAs": [
+                "https://twitter.com/torisoftt",
+                "https://linkedin.com/company/torisoftt",
+                "https://github.com/roggrt",
+                "https://instagram.com/torisoftt"
+            ],
+            // Servicios ofrecidos internacionalmente
+            "knowsAbout": [
+                "Web Development",
+                "Software Architecture",
+                "UI/UX Design",
+                "Mobile Development",
+                "Cloud Solutions",
+                "Digital Transformation"
+            ],
+            // Información de contacto internacional
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "contactType": "customer service",
+                    "availableLanguage": ["en", "es"],
+                    "email": "info@torisoftt.com"
+                },
+                {
+                    "@type": "ContactPoint",
+                    "contactType": "technical support",
+                    "availableLanguage": ["en", "es"],
+                    "email": "info@torisoftt.com"
+                }
+            ],
+            // Horas de operación globales
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday"
+                ],
+                "opens": "00:00",
+                "closes": "23:59",
+                "description": "24/7 Global Operations"
+            }
+        })
+    }}
+/>
+
+
+
         </body>
         </html>
     )

@@ -1,0 +1,114 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo con grid sutil -->
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(128,128,128,0.1)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+
+  <!-- Contenedores Principales -->
+  <g id="containers" fill="none" stroke-width="2">
+    <!-- Cliente -->
+    <rect x="50" y="50" width="150" height="80" rx="8" stroke="#FF4444" class="dark:stroke-yellow-400"/>
+    <text x="125" y="95" text-anchor="middle" fill="#FF4444" class="dark:fill-yellow-400" font-family="monospace">
+      Client App
+    </text>
+
+    <!-- API Gateway -->
+    <rect x="300" y="50" width="200" height="80" rx="8" stroke="#FF4444" class="dark:stroke-yellow-400"/>
+    <text x="400" y="95" text-anchor="middle" fill="#FF4444" class="dark:fill-yellow-400" font-family="monospace">
+      API Gateway
+    </text>
+
+    <!-- Servicios -->
+    <rect x="150" y="200" width="140" height="70" rx="8" stroke="#FF4444" class="dark:stroke-yellow-400"/>
+    <text x="220" y="240" text-anchor="middle" fill="#FF4444" class="dark:fill-yellow-400" font-family="monospace">
+      Auth Service
+    </text>
+
+    <rect x="330" y="200" width="140" height="70" rx="8" stroke="#FF4444" class="dark:stroke-yellow-400"/>
+    <text x="400" y="240" text-anchor="middle" fill="#FF4444" class="dark:fill-yellow-400" font-family="monospace">
+      Users Service
+    </text>
+
+    <rect x="510" y="200" width="140" height="70" rx="8" stroke="#FF4444" class="dark:stroke-yellow-400"/>
+    <text x="580" y="240" text-anchor="middle" fill="#FF4444" class="dark:fill-yellow-400" font-family="monospace">
+      Data Service
+    </text>
+
+    <!-- Bases de datos -->
+    <rect x="150" y="350" width="140" height="70" rx="8" stroke="#FF4444" class="dark:stroke-yellow-400"/>
+    <text x="220" y="390" text-anchor="middle" fill="#FF4444" class="dark:fill-yellow-400" font-family="monospace">
+      Auth DB
+    </text>
+
+    <rect x="330" y="350" width="140" height="70" rx="8" stroke="#FF4444" class="dark:stroke-yellow-400"/>
+    <text x="400" y="390" text-anchor="middle" fill="#FF4444" class="dark:fill-yellow-400" font-family="monospace">
+      Users DB
+    </text>
+
+    <rect x="510" y="350" width="140" height="70" rx="8" stroke="#FF4444" class="dark:stroke-yellow-400"/>
+    <text x="580" y="390" text-anchor="middle" fill="#FF4444" class="dark:fill-yellow-400" font-family="monospace">
+      Data DB
+    </text>
+
+    <!-- Conexiones -->
+    <g stroke="#FF4444" class="dark:stroke-yellow-400" stroke-dasharray="5,5">
+      <!-- Cliente a API Gateway -->
+      <path d="M 200 90 L 300 90"/>
+      
+      <!-- API Gateway a Servicios -->
+      <path d="M 400 130 L 400 160"/>
+      <path d="M 400 160 L 220 200"/>
+      <path d="M 400 160 L 400 200"/>
+      <path d="M 400 160 L 580 200"/>
+
+      <!-- Servicios a DBs -->
+      <path d="M 220 270 L 220 350"/>
+      <path d="M 400 270 L 400 350"/>
+      <path d="M 580 270 L 580 350"/>
+    </g>
+
+    <!-- Puntos de conexión -->
+    <g fill="#FF4444" class="dark:fill-yellow-400">
+      <circle cx="200" cy="90" r="3"/>
+      <circle cx="300" cy="90" r="3"/>
+      <circle cx="400" cy="130" r="3"/>
+      <circle cx="220" cy="200" r="3"/>
+      <circle cx="400" cy="200" r="3"/>
+      <circle cx="580" cy="200" r="3"/>
+      <circle cx="220" cy="270" r="3"/>
+      <circle cx="400" cy="270" r="3"/>
+      <circle cx="580" cy="270" r="3"/>
+      <circle cx="220" cy="350" r="3"/>
+      <circle cx="400" cy="350" r="3"/>
+      <circle cx="580" cy="350" r="3"/>
+    </g>
+  </g>
+
+  <!-- Animación de datos fluyendo -->
+  <circle r="4" fill="#FF4444" class="dark:fill-yellow-400">
+    <animateMotion 
+      dur="3s"
+      repeatCount="indefinite"
+      path="M 200 90 L 300 90 L 400 160 L 580 200 L 580 350"
+    />
+  </circle>
+
+  <circle r="4" fill="#FF4444" class="dark:fill-yellow-400">
+    <animateMotion 
+      dur="4s"
+      repeatCount="indefinite"
+      path="M 200 90 L 300 90 L 400 160 L 400 200 L 400 350"
+    />
+  </circle>
+
+  <circle r="4" fill="#FF4444" class="dark:fill-yellow-400">
+    <animateMotion 
+      dur="3.5s"
+      repeatCount="indefinite"
+      path="M 200 90 L 300 90 L 400 160 L 220 200 L 220 350"
+    />
+  </circle>
+</svg>

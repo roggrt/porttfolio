@@ -475,7 +475,7 @@
 
 
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
-import HotjarProvider from '@/components/providers/HotjarProvider'
+import HotjarProvider from '@/components/HotjarProvider'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'

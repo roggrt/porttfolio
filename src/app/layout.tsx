@@ -274,6 +274,9 @@
 
 
 // src/app/layout.tsx
+
+
+
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import './globals.css'
 import type { Metadata } from 'next'
@@ -282,7 +285,6 @@ import Script from 'next/script'
 import { Inter, Montserrat } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
-// Configuración de fuentes
 const inter = Inter({
     subsets: ['latin'],
     variable: '--font-inter',
@@ -295,7 +297,6 @@ const montserrat = Montserrat({
     display: 'swap',
 })
 
-// Definición única de metadatos usando la API de Next.js
 export const metadata: Metadata = {
     title: 'Torisoftt | Desarrollo de Software & Soluciones Web',
     description: 'Desarrollo de software y páginas web en Ecuador especializada en crear soluciones digitales robustas y escalables.',
@@ -333,25 +334,25 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html 
-            lang="es" 
-            suppressHydrationWarning 
+        <html
+            lang="es"
+            suppressHydrationWarning
             className={`${inter.variable} ${montserrat.variable}`}
         >
-            <body className="min-h-screen bg-background font-sans antialiased">
-                <ThemeProvider>
-                    <main>{children}</main>
-                    <SpeedInsights />
-                    <Analytics />
-                </ThemeProvider>
+        <body className="min-h-screen bg-background font-sans antialiased">
+        <ThemeProvider>
+            <main>{children}</main>
+            <SpeedInsights />
+            <Analytics />
+        </ThemeProvider>
 
-                {/* Google Analytics - Se mantiene como script porque es funcionalidad, no metadatos */}
-                <Script
-                    src="https://www.googletagmanager.com/gtag/js?id=G-8RTG6CG3GF"
-                    strategy="afterInteractive"
-                />
-                <Script id="google-analytics" strategy="afterInteractive">
-                    {`
+        {/* Google Analytics */}
+        <Script
+            src="https://www.googletagmanager.com/gtag/js?id=G-8RTG6CG3GF"
+            strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+            {`
                         window.dataLayer = window.dataLayer || [];
                         function gtag(){dataLayer.push(arguments);}
                         gtag('js', new Date());
@@ -360,8 +361,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                             debug_mode: ${process.env.NODE_ENV === 'development'}
                         });
                     `}
-                </Script>
-            </body>
+        </Script>
+
+        {/* HubSpot Tracking Code */}
+        <Script
+            id="hubspot-script"
+            src="//js.hs-scripts.com/47385882.js"
+            strategy="afterInteractive"
+            async
+            defer
+        />
+        </body>
         </html>
     )
 }

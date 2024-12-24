@@ -25,9 +25,9 @@ export default function PriceCalculator() {
     const services: ServiceOption[] = [
         {
             id: 'wordpress',
-            name: 'Sitio WordPress',
+            name: 'Sitio WordPress/PHP',
             basePrice: 199,
-            description: 'Sitio web profesional con WordPress, ideal para negocios y blogs'
+            description: 'Desarrollo de sitio web profesional con WordPress o PHP, ideal para negocios y si ya tienes tu diseño en figma'
         },
         {
             id: 'custom',
@@ -59,14 +59,14 @@ export default function PriceCalculator() {
         {
             id: 'maintenance',
             name: 'Mantenimiento Mensual',
-            price: 49,
-            description: 'Actualizaciones y soporte técnico mensual'
+            price: 29,
+            description: 'Actualizaciones (textos, contenido, precios) y soporte técnico mensual (mantenimiento)'
         },
         {
             id: 'design',
             name: 'Diseño Personalizado',
             price: 149,
-            description: 'Diseño único adaptado a tu marca'
+            description: 'Diseño UI UX único adaptado a tu imagen de marca, 5 páginas'
         }
     ];
 

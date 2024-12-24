@@ -22,8 +22,7 @@ import PriceCalculator from '@/components/PriceCalculator';
 import AboutMe from '@/components/AboutMe';
 
 import ContactForm from '@/components/ContactForm';
-import BlogPostContent from "@/components/BlogPostContent";
-import BlogCard from "@/components/BlogCard";
+
 
 
 // Actualiza la constante de proyectos al inicio del archivo

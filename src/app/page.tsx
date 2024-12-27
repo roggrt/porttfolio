@@ -23,6 +23,8 @@ import AboutMe from '@/components/AboutMe';
 
 import ContactForm from '@/components/ContactForm';
 
+import PromoPopup from '@/components/PromoPopup';
+
 
 
 // Actualiza la constante de proyectos al inicio del archivo
@@ -151,7 +153,7 @@ export default function Page() {
           >
             <Link
               href="#cotizador"
-              className="group px-6 py-3 text-white bg-accent-red hover:bg-accent-red/90
+              className="group px-6 py-3 text-white bg-accent-red hover:bg-accent-red/90 border-2 border-accent-red
                                            dark:bg-accent-yellow dark:hover:bg-accent-yellow/90
                                            dark:text-gray-900 rounded-lg font-medium transition-colors
                                            inline-flex items-center gap-2"
@@ -260,6 +262,8 @@ export default function Page() {
                        </section>
 
           {/* Price Calculator Section */}
+
+          <PromoPopup />
           <PriceCalculator />
 
 {/* Projects Section */}

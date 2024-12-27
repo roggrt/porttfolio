@@ -60,7 +60,7 @@ export default function PriceCalculator() {
             id: 'maintenance',
             name: 'Mantenimiento Mensual',
             price: 29,
-            description: 'Actualizaciones (textos, contenido, precios) y soporte técnico mensual (mantenimiento)'
+            description: 'Actualizaciones (textos, contenido, precios) y soporte técnico mensual'
         },
         {
             id: 'design',

@@ -231,8 +231,8 @@ export default function PrivacyPolicyPage() {
                                 <ul className="space-y-2">
                                     <li>Torisoftt</li>
                                     <li>Cuenca, Ecuador</li>
-                                    <li>Email: privacidad@torisoftt.com</li>
-                                    <li>Teléfono: +593 XX XXX XXXX</li>
+                                    <li>Email: info@torisoftt.com</li>
+                                    <li>Teléfono: +593 98 426 4910</li>
                                 </ul>
                             </div>
                         </motion.section>

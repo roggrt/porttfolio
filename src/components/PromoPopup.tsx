@@ -290,8 +290,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Maximize2, ChevronRight, Gift } from 'lucide-react';
+import { X, Maximize2, ChevronRight, Gift, PartyPopper } from 'lucide-react';
 
 const PromoPopup = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -374,11 +375,13 @@ const PromoPopup = () => {
 
                             <div className="space-y-4 mb-6">
                                 <div className="flex items-center gap-3">
-                                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent-red/10 dark:bg-accent-yellow/10 flex items-center justify-center">
-                                        <Gift className="w-6 h-6 text-accent-red dark:text-accent-yellow" />
+                                    <div
+                                        className="flex-shrink-0 w-10 h-10 rounded-full bg-accent-red/10 dark:bg-accent-yellow/10 flex items-center justify-center">
+                                        <PartyPopper className="w-6 h-6 text-accent-red dark:text-accent-yellow"/>
                                     </div>
                                     <p className="text-gray-600 dark:text-gray-300 font-medium">
-                                        Diseño web profesional + Desarrollo por solo <span className="text-accent-red dark:text-accent-yellow font-bold">$150</span>
+                                        Diseño web profesional + Desarrollo por solo <span
+                                        className="text-accent-red dark:text-accent-yellow font-bold">$150</span>
                                     </p>
                                 </div>
 

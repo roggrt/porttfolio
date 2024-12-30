@@ -94,7 +94,7 @@ const serviceRoutes: SitemapRoute[] = [
         url: '/services/wordpress',
         changeFrequency: 'monthly',
         priority: 0.8
-    }
+    },
 ]
 
 // Rutas principales
@@ -116,6 +116,11 @@ const mainRoutes: SitemapRoute[] = [
     },
     {
         url: '/privacy',
+        changeFrequency: 'yearly',
+        priority: 0.3
+    },
+    {
+        url: '/products',
         changeFrequency: 'yearly',
         priority: 0.3
     }

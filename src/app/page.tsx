@@ -111,274 +111,291 @@ export default function Page() {
         <Navbar />
         <main className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
           {/* Hero Section */}
-    {/* Hero Section */}
+          {/* Hero Section */}
 
-    {/* Hero Section */}
-<section id="inicio" className="pt-28 pb-20">
-  <div className="max-w-7xl mx-auto px-6">
-    <div className="grid md:grid-cols-2 gap-12 items-center">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 text-accent-red dark:text-accent-yellow">
-          Diseño de Páginas Web & Desarrollo de Software
-        </h1>
-        <h2 className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-          Diseñamos y desarrollamos soluciones web, arquitectura de software para tu negocio, a tu medida
-        </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-xl">
-          En Torisoftt somos un equipo de desarrolladores Full Stack & UI/UX designers especializados en páginas web, sistemas de gestión y desarrollo de software empresarial.
-        </p>
-        <motion.div
-          className="flex flex-wrap gap-4"
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: {
-                staggerChildren: 0.1
-              }
-            }
-          }}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 }
-            }}
-          >
-            <Link
-              href="#cotizador"
-              className="group px-6 py-3 text-white bg-accent-red hover:bg-accent-red/90 border-2 border-accent-red
+          {/* Hero Section */}
+          <section id="inicio" className="pt-28 pb-20">
+            <div className="max-w-7xl mx-auto px-6">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <motion.div
+                    initial={{opacity: 0, y: 20}}
+                    animate={{opacity: 1, y: 0}}
+                    transition={{duration: 0.6}}
+                >
+                  <h1 className="text-5xl md:text-6xl font-bold mb-6 text-accent-red dark:text-accent-yellow">
+                    Diseño de Páginas Web & Desarrollo de Software
+                  </h1>
+                  <h2 className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
+                    Diseñamos y desarrollamos soluciones web, arquitectura de software para tu negocio, a tu medida
+                  </h2>
+                  <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-xl">
+                    En Torisoftt somos un equipo de desarrolladores Full Stack & UI/UX designers especializados en
+                    páginas web, sistemas de gestión y desarrollo de software empresarial.
+                  </p>
+                  <motion.div
+                      className="flex flex-wrap gap-4"
+                      variants={{
+                        hidden: {opacity: 0, y: 20},
+                        visible: {
+                          opacity: 1,
+                          y: 0,
+                          transition: {
+                            staggerChildren: 0.1
+                          }
+                        }
+                      }}
+                      initial="hidden"
+                      animate="visible"
+                  >
+                    <motion.div
+                        variants={{
+                          hidden: {opacity: 0, y: 20},
+                          visible: {opacity: 1, y: 0}
+                        }}
+                    >
+                      <Link
+                          href="#cotizador"
+                          className="group px-6 py-3 text-white bg-accent-red hover:bg-accent-red/90 border-2 border-accent-red
                                            dark:bg-accent-yellow dark:hover:bg-accent-yellow/90
                                            dark:text-gray-900 rounded-lg font-medium transition-colors
                                            inline-flex items-center gap-2"
-            >
-              Cotizar Proyecto
-              <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </motion.div>
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 }
-            }}
-          >
-            <Link
-              href="#proyectos"
-              className="group px-6 py-3 text-accent-red dark:text-accent-yellow
+                      >
+                        Cotizar Proyecto
+                        <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"/>
+                      </Link>
+                    </motion.div>
+                    <motion.div
+                        variants={{
+                          hidden: {opacity: 0, y: 20},
+                          visible: {opacity: 1, y: 0}
+                        }}
+                    >
+                      <Link
+                          href="#proyectos"
+                          className="group px-6 py-3 text-accent-red dark:text-accent-yellow
                                            border-2 border-accent-red dark:border-accent-yellow
                                            hover:bg-accent-red/5 dark:hover:bg-accent-yellow/5
                                            rounded-lg font-medium transition-colors inline-flex
                                            items-center gap-2"
-            >
-              Ver proyectos
-              <ExternalLink className="w-4 h-4 transform group-hover:translate-x-1
-                                                         group-hover:-translate-y-1 transition-transform" />
-            </Link>
-          </motion.div>
-        </motion.div>
-      </motion.div>
+                      >
+                        Ver proyectos
+                        <ExternalLink className="w-4 h-4 transform group-hover:translate-x-1
+                                                         group-hover:-translate-y-1 transition-transform"/>
+                      </Link>
+                    </motion.div>
+                  </motion.div>
+                </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="relative aspect-square rounded-3xl overflow-hidden border-2
+                <motion.div
+                    initial={{opacity: 0, scale: 0.8}}
+                    animate={{opacity: 1, scale: 1}}
+                    transition={{duration: 0.6, delay: 0.2}}
+                    className="relative aspect-square rounded-3xl overflow-hidden border-2
                                border-accent-red dark:border-accent-yellow shadow-2xl"
-      >
-        <Image
-          src="/tori.jpeg"
-          alt="Torisoftt - Diseño Web y Desarrollo de Software Profesional"
-          width={500}
-          height={500}
-          className="object-cover w-full h-full rounded-3xl transform
+                >
+                  <Image
+                      src="/tori.jpeg"
+                      alt="Torisoftt - Diseño Web y Desarrollo de Software Profesional"
+                      width={500}
+                      height={500}
+                      className="object-cover w-full h-full rounded-3xl transform
                                    transition-transform duration-500 hover:scale-110"
-          priority
-        />
-      </motion.div>
-    </div>
-  </div>
-</section>
+                      priority
+                  />
+                </motion.div>
+              </div>
+            </div>
+          </section>
 
           {/*<PromoBanner />*/}
-          {/* Services Section */}
-                     <section id="servicios" className="py-20 bg-gray-50 dark:bg-gray-800/50">
-                      <div className="max-w-7xl mx-auto px-6">
-                        <motion.div
-                               initial={{ opacity: 0, y: 20 }}
-                               whileInView={{ opacity: 1, y: 0 }}
-                               transition={{ duration: 0.6 }}
-                               viewport={{ once: true }}
-                              className="text-center mb-16"
-                        >
-                            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-                              Servicios
-                            </h2>
-                           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                              Ofrezco soluciones completas desde el diseño hasta la implementación,
-                               asegurando productos digitales de alta calidad.
-                            </p>
-                           </motion.div>
+          <section id="servicios" className="py-20 bg-gray-50 dark:bg-gray-800/50">
+            <div className="max-w-7xl mx-auto px-6">
+              <motion.div
+                  initial={{opacity: 0, y: 20}}
+                  whileInView={{opacity: 1, y: 0}}
+                  transition={{duration: 0.6}}
+                  viewport={{once: true}}
+                  className="text-center mb-16"
+              >
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+                  Servicios
+                </h2>
+                <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                  Ofrezco soluciones completas desde el diseño hasta la implementación,
+                  asegurando productos digitales de alta calidad.
+                </p>
+              </motion.div>
 
-                           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                             {services.map((service, index) => (
-                                 <motion.div
-                                     key={service.title}
-                                     initial={{ opacity: 0, y: 20 }}
-                                     whileInView={{ opacity: 1, y: 0 }}
-                                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                                     viewport={{ once: true }}
-                                     whileHover={{ y: -5 }}
-                                 >
-                                   <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg  dark:shadow-gray-900/50 h-full transform transition-all duration-300 hover:shadow-xl">
-                                     <service.icon className="w-12 h-12 mb-4 text-accent-red dark:text-accent-yellow" />
-                                     <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
-                                       {service.title}
-                                     </h3>
-                                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                                      {service.description}
-                                    </p>
-                                     <div className="flex flex-wrap gap-2 mt-auto">
-                                      {service.tags.map((tag) => (
-                                           <span
-                                               key={tag}
-                                               className="text-xs px-2 py-1 rounded-full bg-accent-red/10 dark:bg-accent-yellow/10
-                                                text-accent-red dark:text-accent-yellow"
-                                           >
-                                      {tag}
-                                    </span>
-                                       ))}
-                                     </div>
-                                   </div>
-                                 </motion.div>
-                             ))}
-                           </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {services.map((service, index) => (
+                    <motion.div
+                        key={service.title}
+                        initial={{opacity: 0, y: 20}}
+                        whileInView={{opacity: 1, y: 0}}
+                        transition={{duration: 0.6, delay: index * 0.1}}
+                        viewport={{once: true}}
+                        whileHover={{y: -5}}
+                    >
+                      <div
+                          className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg dark:shadow-gray-900/50 h-full transform transition-all duration-300 hover:shadow-xl">
+                        <service.icon className="w-12 h-12 mb-4 text-accent-red dark:text-accent-yellow"/>
+                        <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+                          {service.title}
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-400 mb-4">
+                          {service.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2 mt-auto">
+                          {service.tags.map((tag) => (
+                              <span
+                                  key={tag}
+                                  className="text-xs px-2 py-1 rounded-full bg-accent-red/10 dark:bg-accent-yellow/10 text-accent-red dark:text-accent-yellow"
+                              >
+                 {tag}
+               </span>
+                          ))}
                         </div>
-                       </section>
+                      </div>
+                    </motion.div>
+                ))}
+              </div>
+
+              <motion.div
+                  initial={{opacity: 0, y: 20}}
+                  whileInView={{opacity: 1, y: 0}}
+                  transition={{delay: 0.3}}
+                  className="text-center mt-16"
+              >
+                <Link
+                    href="/products"
+                    className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white dark:text-gray-900 bg-accent-red dark:bg-accent-yellow rounded-lg shadow-lg hover:opacity-90 transition-all duration-300 gap-2 hover:gap-3"
+                >
+                  Ver todos los servicios
+                  <span aria-hidden="true" className="text-lg">→</span>
+                </Link>
+              </motion.div>
+            </div>
+          </section>
+
 
           {/* Price Calculator Section */}
 
-          <PromoPopup />
-          <PriceCalculator />
+          <PromoPopup/>
+          <PriceCalculator/>
 
-{/* Projects Section */}
-<section id="proyectos" className="py-20 bg-gray-50 dark:bg-gray-800/50">
-  <div className="max-w-7xl mx-auto px-6">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="text-center mb-16"
-    >
-      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-        Proyectos Destacados
-      </h2>
-      <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-        Una selección de proyectos que demuestran mi experiencia en diseño y desarrollo.
-      </p>
-    </motion.div>
+          {/* Projects Section */}
+          <section id="proyectos" className="py-20 bg-gray-50 dark:bg-gray-800/50">
+            <div className="max-w-7xl mx-auto px-6">
+              <motion.div
+                  initial={{opacity: 0, y: 20}}
+                  whileInView={{opacity: 1, y: 0}}
+                  transition={{duration: 0.6}}
+                  viewport={{once: true}}
+                  className="text-center mb-16"
+              >
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+                  Proyectos Destacados
+                </h2>
+                <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                  Una selección de proyectos que demuestran mi experiencia en diseño y desarrollo.
+                </p>
+              </motion.div>
 
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projects.map((project, index) => (
-        <motion.div
-          key={project.title}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: index * 0.1 }}
-          viewport={{ once: true }}
-          whileHover={{ y: -5 }}
-          className="group"
-        >
-          <div className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {projects.map((project, index) => (
+                    <motion.div
+                        key={project.title}
+                        initial={{opacity: 0, y: 20}}
+                        whileInView={{opacity: 1, y: 0}}
+                        transition={{duration: 0.6, delay: index * 0.1}}
+                        viewport={{once: true}}
+                        whileHover={{y: -5}}
+                        className="group"
+                    >
+                      <div className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg
                         dark:shadow-gray-900/50 transition-all duration-300
                         hover:shadow-xl border border-gray-200 dark:border-gray-700">
-            <div className="aspect-video relative overflow-hidden">
-              <div className="absolute inset-0 bg-accent-red/10 dark:bg-accent-yellow/10
-                           group-hover:bg-transparent transition-all duration-300 z-10" />
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={600}
-                height={400}
-                className="object-cover w-full h-full transform transition-transform
+                        <div className="aspect-video relative overflow-hidden">
+                          <div className="absolute inset-0 bg-accent-red/10 dark:bg-accent-yellow/10
+                           group-hover:bg-transparent transition-all duration-300 z-10"/>
+                          <Image
+                              src={project.image}
+                              alt={project.title}
+                              width={600}
+                              height={400}
+                              className="object-cover w-full h-full transform transition-transform
                          duration-300 group-hover:scale-105"
-                priority={index < 3} // Priorizar la carga de las primeras 3 imágenes
-              />
-              <div className="absolute top-4 right-4 bg-white dark:bg-gray-900
+                              priority={index < 3} // Priorizar la carga de las primeras 3 imágenes
+                          />
+                          <div className="absolute top-4 right-4 bg-white dark:bg-gray-900
                            px-3 py-1 rounded-full text-xs font-medium
                            text-accent-red dark:text-accent-yellow z-20">
-                {project.category}
-              </div>
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
-                {project.title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs px-2 py-1 rounded-full bg-accent-red/10
+                            {project.category}
+                          </div>
+                        </div>
+                        <div className="p-6">
+                          <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                            {project.title}
+                          </h3>
+                          <p className="text-gray-600 dark:text-gray-400 mb-4">
+                            {project.description}
+                          </p>
+                          <div className="flex flex-wrap gap-2">
+                            {project.tags.map((tag) => (
+                                <span
+                                    key={tag}
+                                    className="text-xs px-2 py-1 rounded-full bg-accent-red/10
                              dark:bg-accent-yellow/10 text-accent-red
                              dark:text-accent-yellow"
-                  >
+                                >
                     {tag}
                   </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
                 ))}
               </div>
             </div>
-          </div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+          </section>
 
 
-{/* Contact Section */}
-<section id="contacto" className="py-20 bg-gray-50 dark:bg-gray-800/50">
-  <div className="max-w-3xl mx-auto px-6">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="text-center mb-16"
-    >
-      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-        Hablemos de tu proyecto
-      </h2>
-      <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-        ¿Tienes un proyecto en mente? Cuéntame más sobre él y veamos cómo puedo ayudarte, o envíanos un correo al info@torisoftt.com
-      </p>
-    </motion.div>
+          {/* Contact Section */}
+          <section id="contacto" className="py-20 bg-gray-50 dark:bg-gray-800/50">
+            <div className="max-w-3xl mx-auto px-6">
+              <motion.div
+                  initial={{opacity: 0, y: 20}}
+                  whileInView={{opacity: 1, y: 0}}
+                  transition={{duration: 0.6}}
+                  viewport={{once: true}}
+                  className="text-center mb-16"
+              >
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+                  Hablemos de tu proyecto
+                </h2>
+                <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                  ¿Tienes un proyecto en mente? Cuéntame más sobre él y veamos cómo puedo ayudarte, o envíanos un correo
+                  al info@torisoftt.com
+                </p>
+              </motion.div>
 
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-      viewport={{ once: true }}
-      className="bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-gray-900/50 p-8"
-    >
-      <ContactForm />
-    </motion.div>
-  </div>
-</section>
+              <motion.div
+                  initial={{opacity: 0, y: 20}}
+                  whileInView={{opacity: 1, y: 0}}
+                  transition={{duration: 0.6, delay: 0.2}}
+                  viewport={{once: true}}
+                  className="bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-gray-900/50 p-8"
+              >
+                <ContactForm/>
+              </motion.div>
+            </div>
+          </section>
 
-          <AboutMe />
+          <AboutMe/>
 
         </main>
-        <Footer />
+        <Footer/>
       </>
   );
 }

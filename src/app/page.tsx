@@ -24,6 +24,7 @@ import AboutMe from '@/components/AboutMe';
 import ContactForm from '@/components/ContactForm';
 
 import PromoPopup from '@/components/PromoPopup';
+import PromoBanner from "@/components/PromoBanner";
 
 
 
@@ -205,7 +206,7 @@ export default function Page() {
   </div>
 </section>
 
-
+          {/*<PromoBanner />*/}
           {/* Services Section */}
                      <section id="servicios" className="py-20 bg-gray-50 dark:bg-gray-800/50">
                       <div className="max-w-7xl mx-auto px-6">

@@ -123,6 +123,11 @@ const mainRoutes: SitemapRoute[] = [
         url: '/products',
         changeFrequency: 'yearly',
         priority: 0.3
+    },
+    {
+        url: '/web',
+        changeFrequency: 'yearly',
+        priority: 0.3
     }
 ]
 

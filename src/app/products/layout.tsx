@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
     title: 'Soluciones Digitales | Desarrollo Web, Apps y Software | Torisoftt',
     description: 'Encuentra la solución digital perfecta para tu negocio. Desarrollo web desde $199, apps móviles, sistemas personalizados y consultoría técnica en Ecuador.',
-    keywords: 'desarrollo web ecuador, aplicaciones móviles, software empresarial, consultoria it cuenca',
+    keywords: 'desarrollo web ecuador, aplicaciones móviles, software empresarial, consultoria it cuenca, software ecuador, paginas web, agencia web',
     alternates: {
         canonical: 'https://torisoftt.com/products'
     },

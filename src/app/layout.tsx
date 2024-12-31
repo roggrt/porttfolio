@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     description: 'Desarrollo de software y páginas web en Ecuador especializada en crear soluciones digitales robustas y escalables.',
     keywords: 'desarrollo software, programación ecuador, aplicaciones web, sistemas empresariales',
     icons: {
-        icon: '/favicon.png',
-        shortcut: '/favicon.png',
-        apple: '/favicon.png',
+        icon: '/favicon1.png',
+        shortcut: '/favicon1.png',
+        apple: '/favicon1.png',
     },
     openGraph: {
         title: 'Torisoftt | Desarrollo de Software & Soluciones Web',

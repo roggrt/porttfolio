@@ -2061,7 +2061,22 @@ const support = [
     }
 ]
 
-const FeatureCard = ({ feature, isSelected, onClick }) => (
+interface Feature {
+    icon: React.ElementType;
+    title: string;
+    description: string;
+    image: string;
+    details: string[];
+}
+
+interface FeatureCardProps {
+    feature: Feature;
+    isSelected: boolean;
+    onClick: () => void;
+}
+
+const FeatureCard = ({ feature, isSelected, onClick }: FeatureCardProps) => (
+// const FeatureCard = ({ feature, isSelected, onClick }) => (
     <motion.div
         onClick={onClick}
         className={`cursor-pointer p-4 rounded-lg transition-colors ${

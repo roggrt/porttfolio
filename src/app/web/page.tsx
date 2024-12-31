@@ -2170,7 +2170,7 @@ export default function WebDevelopmentPage() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                         >
-                            Todo lo que necesitas para tu sitio web
+                            Tenemos todo lo que necesitas para tu sitio web
                         </motion.h2>
 
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">

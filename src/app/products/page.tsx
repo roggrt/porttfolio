@@ -509,7 +509,7 @@ export default function ProductsPage() {
                             onClick={handleWhatsApp}
                             className="bg-accent-red dark:bg-accent-yellow text-white dark:text-gray-900 px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity shadow-lg flex items-center gap-2"
                         >
-                            <span>Consultar Selección ({selectedServices.length})</span>
+                            <span>Consultar la Selección ({selectedServices.length})</span>
                         </button>
                     </motion.div>
                 )}

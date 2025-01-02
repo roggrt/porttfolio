@@ -26,8 +26,6 @@ import ContactForm from '@/components/ContactForm';
 import PromoPopup from '@/components/PromoPopup';
 import PromoBanner from "@/components/PromoBanner";
 
-
-
 // Actualiza la constante de proyectos al inicio del archivo
 const projects = [
   {
@@ -110,8 +108,6 @@ export default function Page() {
       <>
         <Navbar />
         <main className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-          {/* Hero Section */}
-          {/* Hero Section */}
 
           {/* Hero Section */}
           <section id="inicio" className="pt-28 pb-20">
@@ -280,7 +276,9 @@ export default function Page() {
 
           {/* Price Calculator Section */}
 
-          <PromoPopup/>
+
+                {/* Se acabo la promo, porque duro mucho */}
+          {/* <PromoPopup/> */}
           <PriceCalculator/>
 
           {/* Projects Section */}

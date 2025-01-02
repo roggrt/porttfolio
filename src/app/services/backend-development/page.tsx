@@ -41,7 +41,7 @@ const services = [
     {
         icon: Database,
         title: "Arquitectura Backend",
-        description: "Diseñamos arquitecturas escalables y mantenibles utilizando patrones de diseño modernos y mejores prácticas."
+        description: "Diseñamos arquitecturas y desarrollo backend escalables y mantenibles utilizando patrones de diseño modernos y mejores prácticas en Ecuador."
     },
     {
         icon: Cloud,

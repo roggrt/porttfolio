@@ -158,16 +158,16 @@ export default function BackendPage() {
                     >
                         <div className="flex flex-col lg:flex-row items-center gap-12">
                             <div className="flex-1">
-                                <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-                                    Desarrollo Backend
-                                    <span className="block text-blue-600 dark:text-blue-400">
-                                        Enterprise-Grade
-                                    </span>
-                                </h1>
-                                <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-                                    Arquitecturas escalables y APIs robustas para empresas que necesitan
-                                    soluciones backend de alto rendimiento.
-                                </p>
+                            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+    Desarrollo Backend en Cuenca
+    <span className="block text-blue-600 dark:text-blue-400">
+        Ecuador
+    </span>
+</h1>
+<p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
+    Empresa de desarrollo backend en Cuenca, Ecuador. Expertos en arquitecturas 
+    escalables, APIs y microservicios. Soluciones robustas para empresas.
+</p>
                                 <div className="flex gap-4">
                                     <motion.a
                                         href={whatsappLink}

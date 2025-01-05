@@ -89,20 +89,17 @@ export default function FrontendDevelopmentPage() {
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
                 Desarrollo Frontend
               </h1>
+           
               <p className="text-xl text-gray-600 dark:text-gray-400 mb-12">
-                Construyendo interfaces modernas y eficientes que brindan experiencias
-                excepcionales a tus usuarios.
-              </p>
+  Empresa de desarrollo Frontend en Cuenca, Ecuador. Expertos en React y Next.js. 
+  Construimos interfaces modernas y eficientes que impulsan la experiencia de tus usuarios y el crecimiento de 
+  tu negocio.
+</p>
             </motion.div>
           </div>
         </section>
 
         {/* WordPress Promo Banner */}
-
-
-
-
-
 
 
 
@@ -123,7 +120,7 @@ export default function FrontendDevelopmentPage() {
                 Tecnologías
               </h2>
               <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                Utilizamos las herramientas más modernas y eficientes del desarrollo frontend
+                Utilizamos las herramientas más modernas y eficientes del desarrollo frontend en Ecuador
               </p>
             </motion.div>
 
@@ -433,14 +430,6 @@ export default async function Page() {
 
 
 
-
-
-
-
-
-
-
-
 {/* Animated Promo Banner */}
 <section className="py-12">
   <div className="max-w-7xl mx-auto px-6">
@@ -656,13 +645,6 @@ export default async function Page() {
     </motion.div>
   </div>
 </section>
-
-
-
-
-
-
-
 
         {/* Pricing CTA */}
         <section className="py-20 bg-gray-50 dark:bg-gray-800/50">

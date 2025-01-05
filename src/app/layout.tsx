@@ -10,6 +10,8 @@ import Script from 'next/script'
 import { Inter, Montserrat } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
+import MetaPixel from '@/components/MetaPixel'
+
 const inter = Inter({
     subsets: ['latin'],
     variable: '--font-inter',
@@ -67,6 +69,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <body className="min-h-screen bg-background font-sans antialiased">
         <ThemeProvider>
             <HotjarProvider />
+
+            <MetaPixel />
+
             <main>{children}</main>
             <SpeedInsights />
             <Analytics />

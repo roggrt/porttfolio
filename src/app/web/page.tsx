@@ -2136,7 +2136,7 @@ export default function WebDevelopmentPage() {
                                  Diseño Web Profesional y Landing Pages de Alto Impacto
                             </h1>
                             <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-                                Creamos páginas web que convierten visitantes en clientes.
+                                Creamos páginas web en Ecuador, que convierten visitantes en clientes.
                                 Diseño personalizado, hosting premium y soporte técnico incluido.
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-4">

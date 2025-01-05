@@ -2,7 +2,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Desarrollo Backend en Ecuador | Servicios de Desarrollo Backend Cuenca | Torisoftt',
+  title: 'Desarrollo Backend en Ecuador Cuenca | Torisoftt',
   description: 'Empresa de desarrollo backend en Cuenca, Ecuador. Expertos en arquitecturas escalables, APIs y microservicios. Soluciones robustas para empresas.',
   keywords: 'desarrollo backend ecuador, backend cuenca, desarrollo apis ecuador, microservicios cuenca, nodejs ecuador',
   openGraph: {

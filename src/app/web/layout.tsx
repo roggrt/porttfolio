@@ -5,12 +5,12 @@ export const metadata: Metadata = {
     description: 'Creamos páginas web profesionales en Ecuador. Diseño web optimizado para SEO, hosting incluido y soporte técnico. Desde $199 con dominio gratis. ¡Contáctanos!',
     keywords: 'desarrollo web ecuador, paginas web cuenca, diseño web profesional, hosting ecuador, dominios ecuador',
     alternates: {
-        canonical: 'https://torisoftt.com/services/web-development'
+        canonical: 'https://torisoftt.com/web'
     },
     openGraph: {
         title: 'Desarrollo Web Profesional | Torisoftt',
         description: 'Páginas web que convierten visitantes en clientes. Diseño web profesional en Ecuador.',
-        url: 'https://torisoftt.com/services/web-development',
+        url: 'https://torisoftt.com/web',
         siteName: 'Torisoftt',
         locale: 'es_EC',
         type: 'website',

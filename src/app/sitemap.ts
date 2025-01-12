@@ -128,7 +128,13 @@ const mainRoutes: SitemapRoute[] = [
         url: '/web',
         changeFrequency: 'yearly',
         priority: 0.3
-    }
+    },
+    {
+        url: '/faq/web-design-ecuador',
+        changeFrequency: 'yearly',
+        priority: 0.3
+    },
+    
 ]
 
 // Función para obtener los posts del blog

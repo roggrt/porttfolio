@@ -22,9 +22,12 @@ export default function Footer() {
         { name: 'WordPress', href: '/services/wordpress' },
         { name: 'Arquitectura Software', href: '/services/software-architecture' },
         { name: 'Design Systems', href: '/services/design-systems' },
-        { name: 'SEO y Posicionamiento', href: '/services/seo-y-posicionamiento' }
-
+        { name: 'SEO y Posicionamiento', href: '/services/seo-y-posicionamiento' },
+        // Agregar nuevo link de FAQ al array de services
+        { name: 'Preguntas Frecuentes', href: '/faq/web-design-ecuador' }
     ];
+    
+    // El resto del Footer se mantiene igual
 
     const links = [
         { name: 'Inicio', href: '/' },

@@ -30,11 +30,13 @@ export default function Footer() {
     // El resto del Footer se mantiene igual
 
     const links = [
+        { name: '🇪🇨 Web Ecuador', href: '/paginas-web-ecuador' },
         { name: 'Inicio', href: '/' },
         { name: 'Servicios', href: '/#servicios' },
         { name: 'Proyectos', href: '/#proyectos' },
         { name: 'Blog', href: '/blog' },
         { name: 'Contacto', href: '/#contacto' }
+
     ];
 
     const containerVariants = {

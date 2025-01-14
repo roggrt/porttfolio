@@ -134,6 +134,11 @@ const mainRoutes: SitemapRoute[] = [
         changeFrequency: 'yearly',
         priority: 0.3
     },
+    {
+        url: '/paginas-web-ecuador',
+        changeFrequency: 'weekly',
+        priority: 0.3
+    },
     
 ]
 

@@ -282,6 +282,7 @@ export default function Page() {
           <PriceCalculator/>
 
           {/* Projects Section */}
+          {/* Projects Section */}
           <section id="proyectos" className="py-20 bg-gray-50 dark:bg-gray-800/50">
             <div className="max-w-7xl mx-auto px-6">
               <motion.div
@@ -299,7 +300,7 @@ export default function Page() {
                 </p>
               </motion.div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 {projects.map((project, index) => (
                     <motion.div
                         key={project.title}
@@ -311,23 +312,23 @@ export default function Page() {
                         className="group"
                     >
                       <div className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg
-                        dark:shadow-gray-900/50 transition-all duration-300
-                        hover:shadow-xl border border-gray-200 dark:border-gray-700">
+            dark:shadow-gray-900/50 transition-all duration-300
+            hover:shadow-xl border border-gray-200 dark:border-gray-700">
                         <div className="aspect-video relative overflow-hidden">
                           <div className="absolute inset-0 bg-accent-red/10 dark:bg-accent-yellow/10
-                           group-hover:bg-transparent transition-all duration-300 z-10"/>
+               group-hover:bg-transparent transition-all duration-300 z-10"/>
                           <Image
                               src={project.image}
                               alt={project.title}
                               width={600}
                               height={400}
                               className="object-cover w-full h-full transform transition-transform
-                         duration-300 group-hover:scale-105"
-                              priority={index < 3} // Priorizar la carga de las primeras 3 imágenes
+               duration-300 group-hover:scale-105"
+                              priority={index < 3}
                           />
                           <div className="absolute top-4 right-4 bg-white dark:bg-gray-900
-                           px-3 py-1 rounded-full text-xs font-medium
-                           text-accent-red dark:text-accent-yellow z-20">
+               px-3 py-1 rounded-full text-xs font-medium
+               text-accent-red dark:text-accent-yellow z-20">
                             {project.category}
                           </div>
                         </div>
@@ -343,8 +344,8 @@ export default function Page() {
                                 <span
                                     key={tag}
                                     className="text-xs px-2 py-1 rounded-full bg-accent-red/10
-                             dark:bg-accent-yellow/10 text-accent-red
-                             dark:text-accent-yellow"
+                    dark:bg-accent-yellow/10 text-accent-red
+                    dark:text-accent-yellow"
                                 >
                     {tag}
                   </span>
@@ -355,12 +356,39 @@ export default function Page() {
                     </motion.div>
                 ))}
               </div>
+
+              {/* CTA Button */}
+              <motion.div
+                  initial={{opacity: 0, y: 20}}
+                  whileInView={{opacity: 1, y: 0}}
+                  transition={{duration: 0.6, delay: 0.2}}
+                  viewport={{once: true}}
+                  className="text-center"
+              >
+                <motion.div
+                    className="inline-block"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                  <Link
+                      href="/paginas-web-ecuador"
+                      className="group inline-flex items-center gap-2 bg-white dark:bg-gray-900 text-accent-red dark:text-accent-yellow
+            px-8 py-4 rounded-xl font-medium border-2 border-accent-red dark:border-accent-yellow
+            hover:bg-accent-red/5 dark:hover:bg-accent-yellow/5 transition-all duration-300"
+                  >
+                    <span>Más información sobre desarrollo web</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </motion.div>
+                <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+                  Descubre cómo podemos crear tu próximo proyecto web
+                </p>
+              </motion.div>
             </div>
           </section>
 
-
           {/* Contact Section */}
-          <section id="contacto" className="py-20 bg-gray-50 dark:bg-gray-800/50">
+          <section id="contacto" className="py-10 bg-gray-50 dark:bg-gray-800/50">
             <div className="max-w-3xl mx-auto px-6">
               <motion.div
                   initial={{opacity: 0, y: 20}}

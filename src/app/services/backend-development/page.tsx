@@ -232,7 +232,7 @@ export default function BackendPage() {
                                 Servicios Backend
                             </h2>
                             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                                Soluciones backend robustas y escalables para cualquier caso de uso.
+                                Soluciones backend en Ecuador robustas y escalables para cualquier caso de uso.
                             </p>
                         </motion.div>
 

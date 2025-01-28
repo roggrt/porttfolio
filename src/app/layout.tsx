@@ -1,6 +1,3 @@
-
-
-
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import HotjarProvider from '@/components/HotjarProvider'
 import './globals.css'
@@ -9,7 +6,6 @@ import { Analytics } from '@vercel/analytics/react'
 import Script from 'next/script'
 import { Inter, Montserrat } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-
 import MetaPixel from '@/components/MetaPixel'
 
 const inter = Inter({
@@ -57,6 +53,9 @@ export const metadata: Metadata = {
     },
     viewport: 'width=device-width, initial-scale=1',
     themeColor: '#ffffff',
+    other: {
+        'trustpilot-one-time-domain-verification-id': '6f65b079-279e-490f-9575-e91a47079299'
+    }
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -66,12 +65,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             suppressHydrationWarning
             className={`${inter.variable} ${montserrat.variable}`}
         >
+        <head>
+            <meta name="trustpilot-one-time-domain-verification-id" content="6f65b079-279e-490f-9575-e91a47079299"/>
+        </head>
         <body className="min-h-screen bg-background font-sans antialiased">
         <ThemeProvider>
             <HotjarProvider />
-
             <MetaPixel />
-
             <main>{children}</main>
             <SpeedInsights />
             <Analytics />
@@ -84,14 +84,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <Script id="google-analytics" strategy="afterInteractive">
             {`
-                        window.dataLayer = window.dataLayer || [];
-                        function gtag(){dataLayer.push(arguments);}
-                        gtag('js', new Date());
-                        gtag('config', 'G-8RTG6CG3GF', {
-                            page_path: window.location.pathname,
-                            debug_mode: ${process.env.NODE_ENV === 'development'}
-                        });
-                    `}
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-8RTG6CG3GF', {
+                    page_path: window.location.pathname,
+                    debug_mode: ${process.env.NODE_ENV === 'development'}
+                });
+            `}
         </Script>
         </body>
         </html>

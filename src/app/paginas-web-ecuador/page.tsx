@@ -408,7 +408,131 @@ export default function WebDevelopmentPage() {
 
 
 
+                {/* eCommerce Section */}
+                <section className="py-24 bg-gray-50 dark:bg-gray-800/50">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <motion.div
+                            className="text-center max-w-3xl mx-auto mb-16"
+                            initial="hidden"
+                            whileInView="visible"
+                            variants={containerVariants}
+                            viewport={{ once: true }}
+                        >
+                            <motion.h2
+                                className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white"
+                                variants={itemVariants}
+                            >
+                                eCommerce en Ecuador
+                            </motion.h2>
+                            <motion.h3
+                                className="text-xl md:text-2xl font-semibold mb-4 text-accent-red dark:text-accent-yellow"
+                                variants={itemVariants}
+                            >
+                                Expertos en eCommerce en Cuenca
+                            </motion.h3>
+                            <motion.p
+                                className="text-lg text-gray-600 dark:text-gray-400"
+                                variants={itemVariants}
+                            >
+                                Desarrollamos plataformas de comercio electrónico adaptadas al mercado ecuatoriano,
+                                integrando pasarelas de pago locales y optimizando la experiencia de compra para el
+                                consumidor nacional.
+                            </motion.p>
+                        </motion.div>
 
+                        <motion.div
+                            className="grid md:grid-cols-3 gap-8"
+                            initial="hidden"
+                            whileInView="visible"
+                            variants={containerVariants}
+                            viewport={{ once: true }}
+                        >
+                            <motion.div
+                                className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg"
+                                variants={itemVariants}
+                                whileHover={{ scale: 1.02 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <div className="w-12 h-12 rounded-full flex items-center justify-center bg-accent-red/10 dark:bg-accent-yellow/10 mb-6">
+                                    <DollarSign className="w-6 h-6 text-accent-red dark:text-accent-yellow" />
+                                </div>
+                                <h4 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
+                                    Pasarelas de Pago Locales
+                                </h4>
+                                <ul className="space-y-3">
+                                    <li className="flex items-start gap-2 text-gray-600 dark:text-gray-400">
+                                        <CheckCircle className="w-5 h-5 text-accent-red dark:text-accent-yellow mt-0.5" />
+                                        <span>Integración con <a href="https://www.payphone.app/" target="_blank" rel="noopener noreferrer" className="text-accent-red dark:text-accent-yellow hover:underline">PayPhone</a></span>
+                                    </li>
+                                    <li className="flex items-start gap-2 text-gray-600 dark:text-gray-400">
+                                        <CheckCircle className="w-5 h-5 text-accent-red dark:text-accent-yellow mt-0.5" />
+                                        <span>Soporte para <a href="https://www.kushkipagos.com/" target="_blank" rel="noopener noreferrer" className="text-accent-red dark:text-accent-yellow hover:underline">Kushki</a></span>
+                                    </li>
+                                    <li className="flex items-start gap-2 text-gray-600 dark:text-gray-400">
+                                        <CheckCircle className="w-5 h-5 text-accent-red dark:text-accent-yellow mt-0.5" />
+                                        <span><a href="https://www.datafast.com.ec/" target="_blank" rel="noopener noreferrer" className="text-accent-red dark:text-accent-yellow hover:underline">Datafast</a> y otras pasarelas nacionales</span>
+                                    </li>
+                                </ul>
+                            </motion.div>
+
+                            <motion.div
+                                className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg"
+                                variants={itemVariants}
+                                whileHover={{ scale: 1.02 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <div className="w-12 h-12 rounded-full flex items-center justify-center bg-accent-red/10 dark:bg-accent-yellow/10 mb-6">
+                                    <ShoppingCart className="w-6 h-6 text-accent-red dark:text-accent-yellow" />
+                                </div>
+                                <h4 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
+                                    Optimización para Ecuador
+                                </h4>
+                                <ul className="space-y-3">
+                                    <li className="flex items-start gap-2 text-gray-600 dark:text-gray-400">
+                                        <CheckCircle className="w-5 h-5 text-accent-red dark:text-accent-yellow mt-0.5" />
+                                        <span>Sistema de envíos nacionales</span>
+                                    </li>
+                                    <li className="flex items-start gap-2 text-gray-600 dark:text-gray-400">
+                                        <CheckCircle className="w-5 h-5 text-accent-red dark:text-accent-yellow mt-0.5" />
+                                        <span>Facturación electrónica <a href="https://www.sri.gob.ec/facturacion-electronica" target="_blank" rel="noopener noreferrer" className="text-accent-red dark:text-accent-yellow hover:underline">SRI</a></span>
+                                    </li>
+                                    <li className="flex items-start gap-2 text-gray-600 dark:text-gray-400">
+                                        <CheckCircle className="w-5 h-5 text-accent-red dark:text-accent-yellow mt-0.5" />
+                                        <span>Adaptado al consumidor ecuatoriano</span>
+                                    </li>
+                                </ul>
+                            </motion.div>
+
+                            <motion.div
+                                className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg"
+                                variants={itemVariants}
+                                whileHover={{ scale: 1.02 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <div className="w-12 h-12 rounded-full flex items-center justify-center bg-accent-red/10 dark:bg-accent-yellow/10 mb-6">
+                                    <LineChart className="w-6 h-6 text-accent-red dark:text-accent-yellow" />
+                                </div>
+                                <h4 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
+                                    Análisis y Crecimiento
+                                </h4>
+                                <ul className="space-y-3">
+                                    <li className="flex items-start gap-2 text-gray-600 dark:text-gray-400">
+                                        <CheckCircle className="w-5 h-5 text-accent-red dark:text-accent-yellow mt-0.5" />
+                                        <span>Reportes de ventas en tiempo real</span>
+                                    </li>
+                                    <li className="flex items-start gap-2 text-gray-600 dark:text-gray-400">
+                                        <CheckCircle className="w-5 h-5 text-accent-red dark:text-accent-yellow mt-0.5" />
+                                        <span>Análisis de comportamiento</span>
+                                    </li>
+                                    <li className="flex items-start gap-2 text-gray-600 dark:text-gray-400">
+                                        <CheckCircle className="w-5 h-5 text-accent-red dark:text-accent-yellow mt-0.5" />
+                                        <span>Estrategias de optimización</span>
+                                    </li>
+                                </ul>
+                            </motion.div>
+                        </motion.div>
+                    </div>
+                </section>
 
 
                 {/* Services Section */}

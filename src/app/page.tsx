@@ -7,10 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {
   Code,
-  Figma,
-  Terminal,
   Globe,
-  Layers,
   Search,
   Palette,
   ArrowRight,
@@ -94,7 +91,7 @@ const services = [
   {
     icon: Search,
     title: "SEO y Posicionamiento",
-    description: "Optimización para motores de búsqueda y estrategias de posicionamiento para mayor visibilidad online.",
+    description: "Optimización para motores de búsqueda y estrategias de posicionamiento web para mayor visibilidad online.",
     tags: ["SEO Técnico", "Keywords Research", "Google Analytics", "Link Building"]
   }
 ];
@@ -202,6 +199,8 @@ export default function Page() {
               </div>
             </div>
           </section>
+          {/* Hero Section */}
+
 
           {/*<PromoBanner />*/}
           <section id="servicios" className="py-20 bg-gray-50 dark:bg-gray-800/50">
@@ -273,15 +272,11 @@ export default function Page() {
             </div>
           </section>
 
-
-          {/* Price Calculator Section */}
-
-
-                {/* Se acabo la promo, porque duro mucho */}
+          {/* Se acabo la promo, porque duro mucho */}
           {/* <PromoPopup/> */}
           <PriceCalculator/>
 
-          {/* Projects Section */}
+
           {/* Projects Section */}
           <section id="proyectos" className="py-20 bg-gray-50 dark:bg-gray-800/50">
             <div className="max-w-7xl mx-auto px-6">

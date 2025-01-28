@@ -204,14 +204,14 @@ export default function WebDevelopmentPage() {
                                 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white"
                                 variants={itemVariants}
                             >
-                                Desarrollo de Páginas Web Profesionales en Ecuador
+                                Desarrollo de Sitios Web en Ecuador
                             </motion.h1>
                             <motion.p
                                 className="text-xl text-gray-600 dark:text-gray-400 mb-12"
                                 variants={itemVariants}
                             >
                                 Creamos sitios web modernos y efectivos que impulsan tu negocio.
-                                Expertos en desarrollo web desde Cuenca, Ecuador con más de 10 años de experiencia.
+                                Expertos en desarrollo web en Cuenca, Ecuador con más de 10 años de experiencia.
                             </motion.p>
                             <motion.div
                                 className="flex flex-col sm:flex-row justify-center gap-4"

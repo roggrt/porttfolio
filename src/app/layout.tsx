@@ -26,7 +26,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
     title: 'Torisoftt | Desarrollo de Software & Soluciones Web',
-    description: 'Desarrollo de software y páginas web en Ecuador especializada en crear soluciones digitales robustas y escalables.',
+    description: 'Desarrollo de software y posicionamiento web en Ecuador especializada en crear sitios y páginas web robustas y escalables.',
     keywords: 'desarrollo software, programación ecuador, aplicaciones web, sistemas empresariales',
     icons: {
         icon: '/favicon1.png',

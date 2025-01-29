@@ -22,6 +22,7 @@ import ContactForm from '@/components/ContactForm';
 
 import PromoPopup from '@/components/PromoPopup';
 import PromoBanner from "@/components/PromoBanner";
+import CookieBanner from "@/components/CookieBanner";
 
 // Actualiza la constante de proyectos al inicio del archivo
 const projects = [
@@ -104,6 +105,7 @@ export default function Page() {
   return (
       <>
         <Navbar />
+        <CookieBanner />
         <main className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
 
           {/* Hero Section */}

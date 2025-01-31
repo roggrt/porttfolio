@@ -210,7 +210,7 @@ export default function WebDevelopmentPage() {
                                 className="text-xl text-gray-600 dark:text-gray-400 mb-12"
                                 variants={itemVariants}
                             >
-                                Creamos sitios web modernos y efectivos que impulsan tu negocio.
+                                Creamos páginas web modernas y efectivas que impulsan tu negocio.
                                 Expertos en desarrollo web en Cuenca, Ecuador con más de 10 años de experiencia.
                             </motion.p>
                             <motion.div

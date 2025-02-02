@@ -17,7 +17,6 @@ export default function Footer() {
 
     const services = [
         { name: 'UI/UX Design', href: '/services/uiux-design' },
-        { name: 'Correos Corporativos', href: '/services/correos-corporativos' },
         { name: 'Desarrollo Frontend', href: '/services/frontend-development' },
         { name: 'Desarrollo Backend', href: '/services/backend-development' },
         { name: 'WordPress', href: '/services/wordpress' },

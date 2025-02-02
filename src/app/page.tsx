@@ -21,7 +21,10 @@ import AboutMe from '@/components/AboutMe';
 import ContactForm from '@/components/ContactForm';
 
 import PromoPopup from '@/components/PromoPopup';
-import PromoBanner from "@/components/PromoBanner";
+import PromoBanner from "@/components/PromoBanner"; 
+
+import TawkToChat from '@/components/TawkToChat';
+
 import CookieBanner from "@/components/CookieBanner";
 
 // Actualiza la constante de proyectos al inicio del archivo
@@ -106,8 +109,9 @@ export default function Page() {
       <>
         <Navbar />
         <CookieBanner />
+        
         <main className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-
+<TawkToChat />
           {/* Hero Section */}
           <section id="inicio" className="pt-28 pb-20">
             <div className="max-w-7xl mx-auto px-6">

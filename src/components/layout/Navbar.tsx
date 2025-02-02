@@ -93,7 +93,7 @@ export default function Navbar() {
         },
         {
             name: 'SEO',
-            href: '/services/seo',
+            href: '/services/seo-y-posicionamiento',
             icon: Search,
             description: 'Posicionamiento web'
         }

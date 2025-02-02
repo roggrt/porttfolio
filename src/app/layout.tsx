@@ -110,6 +110,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import MetaPixel from '@/components/MetaPixel'
 import IubendaBanner from "@/components/IubendaBanner";
 
+import TawkToChat from '@/components/TawkToChat';
+
 declare global {
     interface Window {
         dataLayer: any[];
@@ -201,6 +203,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <HotjarProvider />
             <MetaPixel />
             <main>{children}</main>
+            <TawkToChat />
             <SpeedInsights />
             <Analytics />
             <IubendaBanner />

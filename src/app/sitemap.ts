@@ -95,6 +95,11 @@ const serviceRoutes: SitemapRoute[] = [
         changeFrequency: 'monthly',
         priority: 0.8
     },
+    {
+        url: '/services/correos-corporativos',
+        changeFrequency: 'monthly',
+        priority: 0.8
+    },
 ]
 
 // Rutas principales

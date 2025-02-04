@@ -1,267 +1,29 @@
-// 'use client';
-//
-// import React, { useState } from 'react';
-// import { motion } from 'framer-motion';
-// import { Calculator, Check } from 'lucide-react';
-//
-// type ServiceOption = {
-//     id: string;
-//     name: string;
-//     basePrice: number;
-//     description: string;
-// };
-//
-// type AdditionalFeature = {
-//     id: string;
-//     name: string;
-//     price: number;
-//     description: string;
-// };
-//
-// export default function PriceCalculator() {
-//     const [selectedService, setSelectedService] = useState<string>('');
-//     const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
-//
-//     const services: ServiceOption[] = [
-//         {
-//             id: 'wordpress',
-//             name: 'Sitio WordPress/PHP',
-//             basePrice: 199,
-//             description: 'Desarrollo de sitio web profesional con WordPress o PHP, ideal para negocios y si ya tienes tu diseño en figma'
-//         },
-//         {
-//             id: 'custom',
-//             name: 'Desarrollo a Medida',
-//             basePrice: 299,
-//             description: 'Desarrollo personalizado con código nativo, mayor flexibilidad y rendimiento'
-//         },
-//         {
-//             id: 'ecommerce',
-//             name: 'E-commerce',
-//             basePrice: 399,
-//             description: 'Tienda online completa con gestión de productos y pagos'
-//         }
-//     ];
-//
-//     const additionalFeatures: AdditionalFeature[] = [
-//         {
-//             id: 'seo',
-//             name: 'Optimización SEO',
-//             price: 99,
-//             description: 'Mejora el posicionamiento en buscadores'
-//         },
-//         {
-//             id: 'hosting',
-//             name: 'Hosting Premium',
-//             price: 79,
-//             description: 'Alojamiento de alto rendimiento con SSL'
-//         },
-//         {
-//             id: 'maintenance',
-//             name: 'Mantenimiento Mensual',
-//             price: 29,
-//             description: 'Actualizaciones (textos, contenido, precios) y soporte técnico mensual'
-//         },
-//         {
-//             id: 'design',
-//             name: 'Diseño Personalizado',
-//             price: 149,
-//             description: 'Diseño UI UX único adaptado a tu imagen de marca, 5 páginas'
-//         }
-//     ];
-//
-//     const calculateTotal = () => {
-//         const basePrice = services.find(s => s.id === selectedService)?.basePrice || 0;
-//         const featuresTotal = selectedFeatures.reduce((total, featureId) => {
-//             const feature = additionalFeatures.find(f => f.id === featureId);
-//             return total + (feature?.price || 0);
-//         }, 0);
-//         return basePrice + featuresTotal;
-//     };
-//
-//     const toggleFeature = (featureId: string) => {
-//         setSelectedFeatures(prev =>
-//             prev.includes(featureId)
-//                 ? prev.filter(id => id !== featureId)
-//                 : [...prev, featureId]
-//         );
-//     };
-//
-//     return (
-//         <section id="cotizador" className="py-20 bg-gray-50 dark:bg-gray-800/50">
-//             <div className="max-w-7xl mx-auto px-6">
-//                 <motion.div
-//                     initial={{ opacity: 0, y: 20 }}
-//                     whileInView={{ opacity: 1, y: 0 }}
-//                     transition={{ duration: 0.6 }}
-//                     viewport={{ once: true }}
-//                     className="text-center mb-16"
-//                 >
-//                     <Calculator className="w-12 h-12 mx-auto mb-4 text-accent-red dark:text-accent-yellow" />
-//                     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-//                         Cotizador de Proyectos
-//                     </h2>
-//                     <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-//                         Calcula el costo estimado de tu proyecto seleccionando el tipo de servicio
-//                         y las características adicionales que necesites.
-//                     </p>
-//                 </motion.div>
-//
-//                 <div className="grid md:grid-cols-2 gap-8">
-//                     <div className="space-y-6">
-//                         <div className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg">
-//                             <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-//                                 Tipo de Proyecto
-//                             </h3>
-//                             <div className="space-y-3">
-//                                 {services.map((service) => (
-//                                     <motion.div
-//                                         key={service.id}
-//                                         whileHover={{ scale: 1.02 }}
-//                                         whileTap={{ scale: 0.98 }}
-//                                         className={`p-4 rounded-lg cursor-pointer border-2 transition-all ${
-//                                             selectedService === service.id
-//                                                 ? 'border-accent-red dark:border-accent-yellow bg-accent-red/5 dark:bg-accent-yellow/5'
-//                                                 : 'border-gray-200 dark:border-gray-700 hover:border-accent-red dark:hover:border-accent-yellow'
-//                                         }`}
-//                                         onClick={() => setSelectedService(service.id)}
-//                                     >
-//                                         <div className="flex justify-between items-center">
-//                                             <div>
-//                                                 <h4 className="font-medium text-gray-900 dark:text-white">
-//                                                     {service.name}
-//                                                 </h4>
-//                                                 <p className="text-sm text-gray-600 dark:text-gray-400">
-//                                                     {service.description}
-//                                                 </p>
-//                                             </div>
-//                                             <div className="text-lg font-semibold text-accent-red dark:text-accent-yellow">
-//                                                 ${service.basePrice}
-//                                             </div>
-//                                         </div>
-//                                     </motion.div>
-//                                 ))}
-//                             </div>
-//                         </div>
-//
-//                         <div className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg">
-//                             <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-//                                 Características Adicionales
-//                             </h3>
-//                             <div className="space-y-3">
-//                                 {additionalFeatures.map((feature) => (
-//                                     <motion.div
-//                                         key={feature.id}
-//                                         whileHover={{ scale: 1.02 }}
-//                                         whileTap={{ scale: 0.98 }}
-//                                         className={`p-4 rounded-lg cursor-pointer border-2 transition-all ${
-//                                             selectedFeatures.includes(feature.id)
-//                                                 ? 'border-accent-red dark:border-accent-yellow bg-accent-red/5 dark:bg-accent-yellow/5'
-//                                                 : 'border-gray-200 dark:border-gray-700 hover:border-accent-red dark:hover:border-accent-yellow'
-//                                         }`}
-//                                         onClick={() => toggleFeature(feature.id)}
-//                                     >
-//                                         <div className="flex justify-between items-center">
-//                                             <div>
-//                                                 <h4 className="font-medium text-gray-900 dark:text-white">
-//                                                     {feature.name}
-//                                                 </h4>
-//                                                 <p className="text-sm text-gray-600 dark:text-gray-400">
-//                                                     {feature.description}
-//                                                 </p>
-//                                             </div>
-//                                             <div className="text-lg font-semibold text-accent-red dark:text-accent-yellow">
-//                                                 +${feature.price}
-//                                             </div>
-//                                         </div>
-//                                     </motion.div>
-//                                 ))}
-//                             </div>
-//                         </div>
-//                     </div>
-//
-//                     <div className="sticky top-24">
-//                         <motion.div
-//                             className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg"
-//                             initial={{ opacity: 0, x: 20 }}
-//                             whileInView={{ opacity: 1, x: 0 }}
-//                             transition={{ duration: 0.6 }}
-//                         >
-//                             <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">
-//                                 Resumen del Proyecto
-//                             </h3>
-//                             {selectedService && (
-//                                 <div className="space-y-4">
-//                                     <div className="flex justify-between items-center pb-4 border-b border-gray-200 dark:border-gray-700">
-//                                         <span className="text-gray-600 dark:text-gray-400">Servicio Base</span>
-//                                         <span className="font-semibold text-gray-900 dark:text-white">
-//                                             ${services.find(s => s.id === selectedService)?.basePrice}
-//                                         </span>
-//                                     </div>
-//                                     {selectedFeatures.length > 0 && (
-//                                         <div className="space-y-2">
-//                                             {selectedFeatures.map(featureId => {
-//                                                 const feature = additionalFeatures.find(f => f.id === featureId);
-//                                                 return (
-//                                                     <div key={featureId} className="flex justify-between items-center">
-//                                                         <span className="text-gray-600 dark:text-gray-400">
-//                                                             {feature?.name}
-//                                                         </span>
-//                                                         <span className="font-semibold text-gray-900 dark:text-white">
-//                                                             +${feature?.price}
-//                                                         </span>
-//                                                     </div>
-//                                                 );
-//                                             })}
-//                                         </div>
-//                                     )}
-//                                     <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-//                                         <div className="flex justify-between items-center">
-//                                             <span className="text-lg font-semibold text-gray-900 dark:text-white">
-//                                                 Total Estimado
-//                                             </span>
-//                                             <span className="text-2xl font-bold text-accent-red dark:text-accent-yellow">
-//                                                 ${calculateTotal()}
-//                                             </span>
-//                                         </div>
-//                                     </div>
-//                                     <motion.button
-//                                         whileHover={{ scale: 1.02 }}
-//                                         whileTap={{ scale: 0.98 }}
-//                                         className="w-full py-3 px-6 mt-6 bg-accent-red dark:bg-accent-yellow
-//                                                  text-white dark:text-gray-900 rounded-lg font-medium
-//                                                  hover:bg-accent-red/90 dark:hover:bg-accent-yellow/90
-//                                                  transition-colors duration-300"
-//                                     >
-//                                         Solicitar Cotización
-//                                     </motion.button>
-//                                 </div>
-//                             )}
-//                             {!selectedService && (
-//                                 <p className="text-gray-600 dark:text-gray-400 text-center">
-//                                     Selecciona un tipo de proyecto para ver el presupuesto estimado
-//                                 </p>
-//                             )}
-//                         </motion.div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </section>
-//     );
-// }
-
-
 'use client';
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Calculator, Check } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Calculator, Check, ChevronDown, ChevronUp, Monitor, ShoppingCart, Code, Search, Mail, Phone, Server, Paintbrush, Wrench, MessageSquare, AlertCircle, Globe, Database, Smartphone, Store } from 'lucide-react';
+import Image from 'next/image';
+
+type ServicePath = {
+    id: string;
+    name: string;
+    description: string;
+    icon: any;
+    basePrice: number;
+    features: string[];
+    image?: string;
+};
 
 type ServiceOption = {
     id: string;
     name: string;
-    basePrice: number;
     description: string;
+    icon: any;
+    basePrice: number;
+    features: string[];
+    paths: ServicePath[];
+    image: string;
 };
 
 type AdditionalFeature = {
@@ -269,283 +31,728 @@ type AdditionalFeature = {
     name: string;
     price: number;
     description: string;
+    icon: any;
+    popular?: boolean;
+};
+
+type CardProps = {
+    isSelected: boolean;
+    onSelect: () => void;
+    children: React.ReactNode;
+};
+
+const WhatsAppIcon = () => (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+);
+
+const BaseCard: React.FC<CardProps> = ({ isSelected, onSelect, children }) => {
+    return (
+        <motion.div
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className={`relative p-6 rounded-xl cursor-pointer border-2 transition-all h-full
+                ${isSelected
+                ? 'border-accent-red dark:border-accent-yellow bg-accent-red/5 dark:bg-accent-yellow/5'
+                : 'border-gray-200 dark:border-gray-800 hover:border-accent-red/50 dark:hover:border-accent-yellow/50'
+            }`}
+            onClick={onSelect}
+        >
+            {children}
+        </motion.div>
+    );
 };
 
 export default function PriceCalculator() {
+    const [expandedSection, setExpandedSection] = useState<string>('service');
     const [selectedService, setSelectedService] = useState<string>('');
+    const [selectedPath, setSelectedPath] = useState<string>('');
     const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
 
     const services: ServiceOption[] = [
         {
             id: 'wordpress',
-            name: 'Sitio WordPress/PHP',
+            name: 'WordPress/PHP',
+            description: 'Desarrollo profesional con WordPress, ideal para sitios dinámicos y escalables',
+            icon: Monitor,
             basePrice: 199,
-            description: 'Desarrollo de sitio web profesional con WordPress o PHP, ideal para negocios y si ya tienes tu diseño en figma'
+            image: '/ilustraciones/illustrate-a-wordpress-development-scene-with-a-hi__30684.png',
+            features: [
+                'Panel administrable intuitivo',
+                'Temas personalizados',
+                'Plugins premium incluidos',
+                'Optimización básica'
+            ],
+            paths: [
+                {
+                    id: 'informative',
+                    name: 'Sitio Informativo',
+                    description: 'Ideal para presentar tu negocio de manera profesional y establecer presencia online',
+                    icon: Globe,
+                    basePrice: 299,
+                    image: '/ilustraciones/an-outdoor-cafe-scene-with-two-middleeastern-men-a__30688.png',
+                    features: [
+                        'Páginas informativas optimizadas',
+                        'Blog corporativo personalizado',
+                        'Formularios avanzados de contacto',
+                        'Integración con redes sociales'
+                    ]
+                },
+                {
+                    id: 'catalog',
+                    name: 'Catálogo Digital',
+                    description: 'Showcase profesional para mostrar productos y servicios con detalles completos',
+                    icon: Store,
+                    basePrice: 399,
+                    image: '/ilustraciones/create-illustrations-for-wordpress-development-fea__30685.png',
+                    features: [
+                        'Catálogo con filtros avanzados',
+                        'Galería de productos profesional',
+                        'Sistema de búsqueda inteligente',
+                        'Cotizaciones automáticas'
+                    ]
+                },
+                {
+                    id: 'authority',
+                    name: 'Sitio de Autoridad',
+                    description: 'Plataforma completa para posicionarte como líder en tu industria',
+                    icon: Globe,
+                    basePrice: 499,
+                    image: '/ilustraciones/diverse-group-of-four-people-in-a-modern-office-__30691.png',
+                    features: [
+                        'Blog con funciones avanzadas',
+                        'Sistema de membresía premium',
+                        'Portal de recursos exclusivos',
+                        'Newsletter y automatizaciones'
+                    ]
+                }
+            ]
         },
         {
             id: 'custom',
             name: 'Desarrollo a Medida',
-            basePrice: 299,
-            description: 'Desarrollo personalizado con código nativo, mayor flexibilidad y rendimiento'
+            description: 'Solución personalizada con tecnologías modernas y arquitectura escalable',
+            icon: Code,
+            basePrice: 399,
+            image: '/ilustraciones/create-an-image-of-an-asian-female-developer-colla__30686.png',
+            features: [
+                'Arquitectura moderna y escalable',
+                'Alto rendimiento garantizado',
+                'Personalización completa',
+                'Código optimizado y limpio'
+            ],
+            paths: [
+                {
+                    id: 'frontend',
+                    name: 'Frontend Profesional',
+                    description: 'Desarrollo frontend moderno con Next.js/React y las mejores prácticas',
+                    icon: Monitor,
+                    basePrice: 299,
+                    features: [
+                        'Interfaces modernas y responsivas',
+                        'Componentes reutilizables',
+                        'SEO técnico avanzado',
+                        'Progressive Web App (PWA)'
+                    ]
+                },
+                {
+                    id: 'backend',
+                    name: 'Backend Robusto',
+                    description: 'Desarrollo backend escalable con Node.js/Python y arquitectura moderna',
+                    icon: Database,
+                    basePrice: 399,
+                    features: [
+                        'APIs RESTful optimizadas',
+                        'GraphQL integration',
+                        'Microservicios escalables',
+                        'Cloud-native ready'
+                    ]
+                },
+                {
+                    id: 'mobile',
+                    name: 'App Móvil Nativa',
+                    description: 'Aplicaciones móviles nativas con React Native/Flutter para iOS y Android',
+                    icon: Smartphone,
+                    basePrice: 499,
+                    features: [
+                        'Apps para iOS y Android',
+                        'Sistema de notificaciones',
+                        'Modo sin conexión',
+                        'Optimización de tiendas'
+                    ]
+                }
+            ]
         },
         {
             id: 'ecommerce',
-            name: 'E-commerce',
-            basePrice: 399,
-            description: 'Tienda online completa con gestión de productos y pagos'
+            name: 'E-commerce Completo',
+            description: 'Plataforma de comercio electrónico completa con gestión avanzada',
+            icon: ShoppingCart,
+            basePrice: 599,
+            image: '/ilustraciones/design-an-illustration-of-a-black-male-developer-s__30687.png',
+            features: [
+                'Gestión avanzada de productos',
+                'Multiple pasarelas de pago',
+                'Panel administrativo completo',
+                'Análisis y reportes en tiempo real'
+            ],
+            paths: [
+                {
+                    id: 'basic',
+                    name: 'Tienda Básica',
+                    description: 'Solución ideal para emprendedores que inician en e-commerce',
+                    icon: Store,
+                    basePrice: 699,
+                    features: [
+                        'Hasta 100 productos con variantes',
+                        'PayPal y Stripe integrados',
+                        'Panel de gestión intuitivo',
+                        'SEO para e-commerce'
+                    ]
+                },
+                {
+                    id: 'advanced',
+                    name: 'Tienda Avanzada',
+                    description: 'Para negocios en crecimiento que necesitan más funcionalidades',
+                    icon: ShoppingCart,
+                    basePrice: 999,
+                    features: [
+                        'Productos y variantes ilimitados',
+                        'Múltiples métodos de pago',
+                        'CRM y marketing integrado',
+                        'Automatizaciones avanzadas'
+                    ]
+                },
+                {
+                    id: 'marketplace',
+                    name: 'Marketplace Completo',
+                    description: 'Plataforma multi-vendedor con gestión avanzada y comisiones',
+                    icon: Store,
+                    basePrice: 1499,
+                    features: [
+                        'Sistema multi-vendedor completo',
+                        'Gestión de comisiones flexible',
+                        'Chat entre usuarios integrado',
+                        'Analytics y reportes avanzados'
+                    ]
+                }
+            ]
         }
     ];
 
     const additionalFeatures: AdditionalFeature[] = [
         {
             id: 'seo',
-            name: 'Optimización SEO',
-            price: 99,
-            description: 'Mejora el posicionamiento en buscadores'
+            name: 'SEO Avanzado',
+            price: 199,
+            description: 'Optimización completa para motores de búsqueda, incluyendo investigación de palabras clave, meta tags, estructura de URLs, optimización de contenido y seguimiento de rankings',
+            icon: Search,
+            popular: true
         },
         {
             id: 'hosting',
             name: 'Hosting Premium',
-            price: 79,
-            description: 'Alojamiento de alto rendimiento con SSL'
+            price: 99,
+            description: 'Alojamiento empresarial con alta velocidad, certificado SSL gratuito, copias de seguridad diarias, protección DDoS y soporte técnico 24/7',
+            icon: Server
         },
         {
             id: 'maintenance',
-            name: 'Mantenimiento Mensual',
+            name: 'Mantenimiento',
             price: 29,
-            description: 'Actualizaciones (textos, contenido, precios) y soporte técnico mensual'
+            description: 'Plan mensual de mantenimiento que incluye actualizaciones de seguridad, optimización de rendimiento, respaldos y 2 horas de soporte técnico prioritario',
+            icon: Wrench
         },
         {
             id: 'design',
-            name: 'Diseño Personalizado',
-            price: 149,
-            description: 'Diseño UI UX único adaptado a tu imagen de marca, 5 páginas'
+            name: 'Diseño Premium',
+            price: 299,
+            description: 'Diseño exclusivo y personalizado incluyendo investigación UX, wireframes, mockups y diseño responsivo con atención al detalle',
+            icon: Paintbrush,
+            popular: true
         }
     ];
 
+    const sections = [
+        {
+            id: 'service',
+            title: 'Tipo de Servicio',
+            description: 'Selecciona la base de tu proyecto',
+            isComplete: !!selectedService,
+            canExpand: true,
+        },
+        {
+            id: 'path',
+            title: 'Especialización',
+            description: 'Personaliza según tus necesidades',
+            isComplete: !!selectedPath,
+            canExpand: !!selectedService,
+        },
+        {
+            id: 'features',
+            title: 'Características Adicionales',
+            description: 'Mejora tu proyecto con extras',
+            isComplete: true,
+            canExpand: !!selectedService && !!selectedPath,
+        }
+    ];
+
+    const handleSectionClick = (sectionId: string) => {
+        const section = sections.find(s => s.id === sectionId);
+        if (section?.canExpand) {
+            setExpandedSection(expandedSection === sectionId ? '' : sectionId);
+        }
+    };
+
     const calculateTotal = () => {
-        const basePrice = services.find(s => s.id === selectedService)?.basePrice || 0;
+        const serviceData = services.find(s => s.id === selectedService);
+        const pathData = serviceData?.paths.find(p => p.id === selectedPath);
+
+        const basePrice = serviceData?.basePrice || 0;
+        const pathPrice = pathData?.basePrice || 0;
         const featuresTotal = selectedFeatures.reduce((total, featureId) => {
             const feature = additionalFeatures.find(f => f.id === featureId);
             return total + (feature?.price || 0);
         }, 0);
-        return basePrice + featuresTotal;
-    };
 
-    const toggleFeature = (featureId: string) => {
-        setSelectedFeatures(prev =>
-            prev.includes(featureId)
-                ? prev.filter(id => id !== featureId)
-                : [...prev, featureId]
-        );
+        return basePrice + pathPrice + featuresTotal;
     };
 
     const handleRequestQuote = () => {
-        const selectedServiceDetails = services.find(s => s.id === selectedService);
+        const serviceData = services.find(s => s.id === selectedService);
+        const pathData = serviceData?.paths.find(p => p.id === selectedPath);
 
-        // Generate the quote message
-        let message = `¡Hola! Me interesa cotizar un proyecto web con las siguientes características:\n\n`;
-        message += `📌 Tipo de Proyecto: ${selectedServiceDetails?.name}\n`;
-        message += `💰 Precio Base: $${selectedServiceDetails?.basePrice}\n\n`;
+        let message = `¡Hola! Me interesa cotizar este proyecto:\n\n`;
+        message += `📌 Tipo de servicio: ${serviceData?.name}\n`;
+        message += `🎯 Especialización: ${pathData?.name}\n`;
+        message += `💰 Precio base: $${serviceData?.basePrice}\n`;
+        message += `📦 Especialización: $${pathData?.basePrice}\n\n`;
 
         if (selectedFeatures.length > 0) {
-            message += `✨ Características Adicionales:\n`;
+            message += `✨ Características adicionales:\n`;
             selectedFeatures.forEach(featureId => {
                 const feature = additionalFeatures.find(f => f.id === featureId);
                 message += `- ${feature?.name}: $${feature?.price}\n`;
             });
-            message += `\n`;
+            message += '\n';
         }
 
-        message += `💵 Total Estimado: $${calculateTotal()}\n\n`;
-        message += `¿Me pueden proporcionar más información sobre los tiempos de entrega y el proceso de desarrollo?`;
+        message += `💵 Total estimado: $${calculateTotal()}\n\n`;
+        message += `🔍 Características incluidas:\n`;
+        serviceData?.features.forEach(feature => {
+            message += `✓ ${feature}\n`;
+        });
+        pathData?.features.forEach(feature => {
+            message += `✓ ${feature}\n`;
+        });
 
-        // Encode the message for WhatsApp
-        const encodedMessage = encodeURIComponent(message);
-        const whatsappUrl = `https://wa.me/593984264910?text=${encodedMessage}`;
-
-        // Open WhatsApp in a new window
+        const whatsappUrl = `https://wa.me/593984264910?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     };
 
+    const renderServiceCard = (service: ServiceOption) => (
+        <BaseCard
+            key={service.id}
+            isSelected={selectedService === service.id}
+            onSelect={() => {
+                if (service.id !== selectedService) {
+                    setSelectedPath('');
+                    setSelectedFeatures([]);
+                }
+                setSelectedService(service.id);
+                setExpandedSection('path');
+            }}
+        >
+            <div className="flex flex-col h-full">
+                <div className="relative w-full h-40 mb-4 rounded-xl overflow-hidden">
+                    <Image
+                        src={service.image}
+                        alt={service.name}
+                        fill
+                        className="object-cover"
+                    />
+                </div>
+                <div className="flex items-center gap-3 mb-3">
+                    <div className={`p-2 rounded-lg
+                        ${selectedService === service.id
+                        ? 'bg-accent-red dark:bg-accent-yellow text-white dark:text-gray-900'
+                        : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400'
+                    }`}
+                    >
+                        <service.icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                        {service.name}
+                    </h3>
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                    {service.description}
+                </p>
+                <div className="space-y-2 flex-grow">
+                    {service.features.map((feature, index) => (
+                        <div
+                            key={index}
+                            className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"
+                        >
+                            <Check className="w-4 h-4 text-accent-red dark:text-accent-yellow" />
+                            <span>{feature}</span>
+                        </div>
+                    ))}
+                </div>
+                <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <span className="text-xl font-bold text-accent-red dark:text-accent-yellow">
+                        Desde ${service.basePrice}
+                    </span>
+                </div>
+            </div>
+        </BaseCard>
+    );
+
+    const renderPathCard = (path: ServicePath) => (
+        <BaseCard
+            key={path.id}
+            isSelected={selectedPath === path.id}
+            onSelect={() => {
+                setSelectedPath(path.id);
+                setExpandedSection('features');
+            }}
+        >
+            {path.image && (
+                <div className="relative w-full h-40 mb-4 rounded-xl overflow-hidden">
+                    <Image
+                        src={path.image}
+                        alt={path.name}
+                        fill
+                        className="object-cover"
+                    />
+                </div>
+            )}
+            <div className="flex flex-col h-full">
+                <div className="flex items-center gap-3 mb-3">
+                    <div className={`p-2 rounded-lg
+                        ${selectedPath === path.id
+                        ? 'bg-accent-red dark:bg-accent-yellow text-white dark:text-gray-900'
+                        : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400'
+                    }`}
+                    >
+                        <path.icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                        {path.name}
+                    </h3>
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                    {path.description}
+                </p>
+                <div className="space-y-2 flex-grow">
+                    {path.features.map((feature, index) => (
+                        <div
+                            key={index}
+                            className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"
+                        >
+                            <Check className="w-4 h-4 text-accent-red dark:text-accent-yellow" />
+                            <span>{feature}</span>
+                        </div>
+                    ))}
+                </div>
+                <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <span className="text-xl font-bold text-accent-red dark:text-accent-yellow">
+                        ${path.basePrice}
+                    </span>
+                </div>
+            </div>
+        </BaseCard>
+    );
+
+    const renderFeatureCard = (feature: AdditionalFeature) => (
+        <BaseCard
+            key={feature.id}
+            isSelected={selectedFeatures.includes(feature.id)}
+            onSelect={() => {
+                const newFeatures = selectedFeatures.includes(feature.id)
+                    ? selectedFeatures.filter(id => id !== feature.id)
+                    : [...selectedFeatures, feature.id];
+                setSelectedFeatures(newFeatures);
+            }}
+        >
+            {feature.popular && (
+                <span className="absolute -top-3 -right-3 px-3 py-1 bg-accent-red dark:bg-accent-yellow
+                    text-white dark:text-gray-900 text-sm font-medium rounded-full shadow-lg">
+                    Popular
+                </span>
+            )}
+            <div className="flex items-start gap-4">
+                <div className={`p-3 rounded-xl shrink-0
+                    ${selectedFeatures.includes(feature.id)
+                    ? 'bg-accent-red dark:bg-accent-yellow text-white dark:text-gray-900'
+                    : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400'
+                }`}
+                >
+                    <feature.icon className="w-5 h-5" />
+                </div>
+                <div>
+                    <div className="flex justify-between items-start">
+                        <h4 className="font-medium text-gray-900 dark:text-white">
+                            {feature.name}
+                        </h4>
+                        <span className="text-lg font-semibold text-accent-red dark:text-accent-yellow">
+                            +${feature.price}
+                        </span>
+                    </div>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                        {feature.description}
+                    </p>
+                </div>
+            </div>
+        </BaseCard>
+    );
+
     return (
-        <section id="cotizador" className="py-20 bg-gray-50 dark:bg-gray-800/50">
-            <div className="max-w-7xl mx-auto px-6">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50/50 to-white dark:from-gray-900/50 dark:to-gray-950">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-12"
                 >
-                    <Calculator className="w-12 h-12 mx-auto mb-4 text-accent-red dark:text-accent-yellow" />
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+                    <span className="inline-flex items-center justify-center p-3 bg-accent-red/10 dark:bg-accent-yellow/10 rounded-xl mb-4">
+                        <Calculator className="w-6 h-6 text-accent-red dark:text-accent-yellow" />
+                    </span>
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                         Cotizador de Proyectos
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                        Calcula el costo estimado de tu proyecto seleccionando el tipo de servicio
-                        y las características adicionales que necesites.
+                    <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        Configura tu proyecto ideal seleccionando las opciones que mejor se adapten a tus necesidades
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-8">
-                    <div className="space-y-6">
-                        <div className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg">
-                            <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-                                Tipo de Proyecto
-                            </h3>
-                            <div className="space-y-3">
-                                {services.map((service) => (
-                                    <motion.div
-                                        key={service.id}
-                                        whileHover={{ scale: 1.02 }}
-                                        whileTap={{ scale: 0.98 }}
-                                        className={`p-4 rounded-lg cursor-pointer border-2 transition-all ${
-                                            selectedService === service.id
-                                                ? 'border-accent-red dark:border-accent-yellow bg-accent-red/5 dark:bg-accent-yellow/5'
-                                                : 'border-gray-200 dark:border-gray-700 hover:border-accent-red dark:hover:border-accent-yellow'
+                <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
+                    <div className="lg:col-span-2 space-y-4">
+                        {sections.map((section) => (
+                            <div
+                                key={section.id}
+                                className={`rounded-2xl border-2 transition-all
+                                    ${expandedSection === section.id
+                                    ? 'border-accent-red dark:border-accent-yellow'
+                                    : 'border-gray-200 dark:border-gray-700'
+                                }
+                                    ${!section.canExpand ? 'opacity-50' : ''}
+                                `}
+                            >
+                                <button
+                                    onClick={() => handleSectionClick(section.id)}
+                                    disabled={!section.canExpand}
+                                    className="w-full p-6 flex items-center justify-between"
+                                >
+                                    <div className="flex items-center gap-4">
+                                        <div className={`w-10 h-10 rounded-full flex items-center justify-center
+                                            ${section.isComplete
+                                            ? 'bg-accent-red dark:bg-accent-yellow text-white dark:text-gray-900'
+                                            : 'bg-gray-100 dark:bg-gray-800 text-gray-400'
                                         }`}
-                                        onClick={() => setSelectedService(service.id)}
-                                    >
-                                        <div className="flex justify-between items-center">
-                                            <div>
-                                                <h4 className="font-medium text-gray-900 dark:text-white">
-                                                    {service.name}
-                                                </h4>
-                                                <p className="text-sm text-gray-600 dark:text-gray-400">
-                                                    {service.description}
-                                                </p>
-                                            </div>
-                                            <div className="text-lg font-semibold text-accent-red dark:text-accent-yellow">
-                                                ${service.basePrice}
-                                            </div>
+                                        >
+                                            {section.isComplete ? (
+                                                <Check className="w-5 h-5" />
+                                            ) : (
+                                                <span>{sections.indexOf(section) + 1}</span>
+                                            )}
                                         </div>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </div>
+                                        <div className="text-left">
+                                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                                                {section.title}
+                                            </h3>
+                                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                                                {section.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {section.canExpand && (
+                                        expandedSection === section.id
+                                            ? <ChevronUp className="w-5 h-5 text-gray-400" />
+                                            : <ChevronDown className="w-5 h-5 text-gray-400" />
+                                    )}
+                                </button>
 
-                        <div className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg">
-                            <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-                                Características Adicionales
-                            </h3>
-                            <div className="space-y-3">
-                                {additionalFeatures.map((feature) => (
-                                    <motion.div
-                                        key={feature.id}
-                                        whileHover={{ scale: 1.02 }}
-                                        whileTap={{ scale: 0.98 }}
-                                        className={`p-4 rounded-lg cursor-pointer border-2 transition-all ${
-                                            selectedFeatures.includes(feature.id)
-                                                ? 'border-accent-red dark:border-accent-yellow bg-accent-red/5 dark:bg-accent-yellow/5'
-                                                : 'border-gray-200 dark:border-gray-700 hover:border-accent-red dark:hover:border-accent-yellow'
-                                        }`}
-                                        onClick={() => toggleFeature(feature.id)}
-                                    >
-                                        <div className="flex justify-between items-center">
-                                            <div>
-                                                <h4 className="font-medium text-gray-900 dark:text-white">
-                                                    {feature.name}
-                                                </h4>
-                                                <p className="text-sm text-gray-600 dark:text-gray-400">
-                                                    {feature.description}
-                                                </p>
+                                <AnimatePresence>
+
+
+
+
+
+                                    {expandedSection === section.id && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: 'auto', opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.3 }}
+                                            className="overflow-hidden"
+                                        >
+                                            <div className="px-6 pb-6 border-t border-gray-200 dark:border-gray-700">
+                                                {section.id === 'service' && (
+                                                    <div className="grid md:grid-cols-3 gap-6 pt-6">
+                                                        {services.map(service => renderServiceCard(service))}
+                                                    </div>
+                                                )}
+
+                                                {section.id === 'path' && selectedService && (
+                                                    <div className="grid md:grid-cols-3 gap-6 pt-6">
+                                                        {services
+                                                            .find(s => s.id === selectedService)
+                                                            ?.paths.map(path => renderPathCard(path))}
+                                                    </div>
+                                                )}
+
+                                                {section.id === 'features' && (
+                                                    <div className="grid sm:grid-cols-2 gap-4 pt-6">
+                                                        {additionalFeatures.map(feature => renderFeatureCard(feature))}
+                                                    </div>
+                                                )}
                                             </div>
-                                            <div className="text-lg font-semibold text-accent-red dark:text-accent-yellow">
-                                                +${feature.price}
-                                            </div>
-                                        </div>
-                                    </motion.div>
-                                ))}
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
                             </div>
-                        </div>
+                        ))}
                     </div>
 
-                    <div className="sticky top-24">
-                        <motion.div
-                            className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg"
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.6 }}
-                        >
-                            <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">
-                                Resumen del Proyecto
-                            </h3>
-                            {selectedService && (
-                                <div className="space-y-4">
-                                    <div className="flex justify-between items-center pb-4 border-b border-gray-200 dark:border-gray-700">
-                                        <span className="text-gray-600 dark:text-gray-400">Servicio Base</span>
-                                        <span className="font-semibold text-gray-900 dark:text-white">
-                                            ${services.find(s => s.id === selectedService)?.basePrice}
-                                        </span>
-                                    </div>
-                                    {selectedFeatures.length > 0 && (
-                                        <div className="space-y-2">
-                                            {selectedFeatures.map(featureId => {
-                                                const feature = additionalFeatures.find(f => f.id === featureId);
-                                                return (
-                                                    <div key={featureId} className="flex justify-between items-center">
-                                                        <span className="text-gray-600 dark:text-gray-400">
-                                                            {feature?.name}
-                                                        </span>
-                                                        <span className="font-semibold text-gray-900 dark:text-white">
-                                                            +${feature?.price}
-                                                        </span>
+                    {/* Floating Summary Card */}
+                    <div className="lg:col-span-1">
+                        <div className="sticky top-24">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-xl"
+                            >
+                                {selectedService && selectedPath ? (
+                                    <>
+                                        <div className="mb-6 space-y-4">
+                                            <div className="flex justify-between items-start">
+                                                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                                                    Resumen del Proyecto
+                                                </h3>
+                                                <span className="text-2xl font-bold text-accent-red dark:text-accent-yellow">
+                                                    ${calculateTotal()}
+                                                </span>
+                                            </div>
+                                            <div className="space-y-3">
+                                                <div className="flex justify-between text-sm">
+                                                    <span className="text-gray-600 dark:text-gray-400">Servicio Base</span>
+                                                    <span className="font-medium text-gray-900 dark:text-white">
+                                                        ${services.find(s => s.id === selectedService)?.basePrice}
+                                                    </span>
+                                                </div>
+                                                <div className="flex justify-between text-sm">
+                                                    <span className="text-gray-600 dark:text-gray-400">Especialización</span>
+                                                    <span className="font-medium text-gray-900 dark:text-white">
+                                                        ${services.find(s => s.id === selectedService)
+                                                        ?.paths.find(p => p.id === selectedPath)?.basePrice}
+                                                    </span>
+                                                </div>
+                                                {selectedFeatures.length > 0 && (
+                                                    <div className="pt-2 border-t border-gray-200 dark:border-gray-700">
+                                                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                                                            Características adicionales:
+                                                        </p>
+                                                        {selectedFeatures.map(featureId => {
+                                                            const feature = additionalFeatures.find(f => f.id === featureId);
+                                                            return (
+                                                                <div key={featureId} className="flex justify-between text-sm">
+                                                                    <span className="text-gray-600 dark:text-gray-400">
+                                                                        {feature?.name}
+                                                                    </span>
+                                                                    <span className="font-medium text-gray-900 dark:text-white">
+                                                                        +${feature?.price}
+                                                                    </span>
+                                                                </div>
+                                                            );
+                                                        })}
                                                     </div>
-                                                );
-                                            })}
+                                                )}
+                                            </div>
                                         </div>
-                                    )}
-                                    <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-                                        <div className="flex justify-between items-center">
-                                            <span className="text-lg font-semibold text-gray-900 dark:text-white">
-                                                Total Estimado
-                                            </span>
-                                            <span className="text-2xl font-bold text-accent-red dark:text-accent-yellow">
-                                                ${calculateTotal()}
-                                            </span>
-                                        </div>
-                                    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                    <motion.button
-                                        onClick={handleRequestQuote}
-                                        whileHover={{ scale: 1.02 }}
-                                        whileTap={{ scale: 0.98 }}
-                                        className="w-full py-3 px-6 mt-6 bg-accent-red dark:bg-accent-yellow
-             text-white dark:text-gray-900 rounded-lg font-medium
-             hover:bg-accent-red/90 dark:hover:bg-accent-yellow/90
-             transition-colors duration-300 flex items-center justify-center gap-2"
-                                    >
-                                        <svg
-                                            className="w-5 h-5"
-                                            fill="currentColor"
-                                            viewBox="0 0 24 24"
+                                        <button
+                                            onClick={handleRequestQuote}
+                                            className="w-full py-3 px-4 bg-accent-red dark:bg-accent-yellow
+                                                text-white dark:text-gray-900 rounded-xl font-medium
+                                                hover:bg-accent-red/90 dark:hover:bg-accent-yellow/90
+                                                transition-colors inline-flex items-center justify-center gap-2"
                                         >
-                                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                                        </svg>
-                                        Solicitar Cotización por WhatsApp
-                                    </motion.button>
+                                            <WhatsAppIcon />
+                                            <span>Solicitar Cotización Personalizada</span>
+                                        </button>
+                                    </>
+                                ) : (
+                                    <div className="text-center py-8 space-y-4">
+                                        <p className="text-gray-600 dark:text-gray-400">
+                                            Personaliza tu proyecto seleccionando las opciones que necesitas.
+                                            Te guiaremos paso a paso en la configuración de tu solución ideal.
+                                        </p>
+                                        <p className="text-sm text-gray-500 dark:text-gray-500">
+                                            Los precios mostrados son referenciales y pueden ajustarse según
+                                            requerimientos específicos de tu proyecto.
+                                        </p>
+                                    </div>
+                                )}
+
+                                <div className="pt-6 border-t border-gray-200 dark:border-gray-700 mt-6">
+                                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 text-center">
+                                        ¿Prefieres contactarnos directamente?
+                                    </p>
+                                    <div className="flex gap-4 justify-center">
+                                        <a
+                                            href="tel:+593984264910"
+                                            className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600
+                                                dark:text-gray-400 hover:bg-accent-red/10 dark:hover:bg-accent-yellow/10
+                                                hover:text-accent-red dark:hover:text-accent-yellow transition-colors
+                                                group relative"
+                                            title="Llamar ahora"
+                                        >
+                                            <Phone className="w-5 h-5" />
+                                            <span className="absolute invisible group-hover:visible bg-gray-900
+                                                text-white text-xs rounded py-1 px-2 -top-8 left-1/2 transform
+                                                -translate-x-1/2 whitespace-nowrap">
+                                                Llamar ahora
+                                            </span>
+                                        </a>
+                                        <a
+                                            href="https://wa.me/593984264910"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600
+                                                dark:text-gray-400 hover:bg-[#25D366]/10 hover:text-[#25D366]
+                                                transition-colors group relative"
+                                            title="Contactar por WhatsApp"
+                                        >
+                                            <WhatsAppIcon />
+                                            <span className="absolute invisible group-hover:visible bg-gray-900
+                                                text-white text-xs rounded py-1 px-2 -top-8 left-1/2 transform
+                                                -translate-x-1/2 whitespace-nowrap">
+                                                WhatsApp
+                                            </span>
+                                        </a>
+                                        <a
+                                            href="mailto:info@torisoftt.com"
+                                            className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600
+                                                dark:text-gray-400 hover:bg-accent-red/10 dark:hover:bg-accent-yellow/10
+                                                hover:text-accent-red dark:hover:text-accent-yellow transition-colors
+                                                group relative"
+                                            title="Enviar email"
+                                        >
+                                            <Mail className="w-5 h-5" />
+                                            <span className="absolute invisible group-hover:visible bg-gray-900
+                                                text-white text-xs rounded py-1 px-2 -top-8 left-1/2 transform
+                                                -translate-x-1/2 whitespace-nowrap">
+                                                Enviar email
+                                            </span>
+                                        </a>
+                                    </div>
                                 </div>
-                            )}
-                            {!selectedService && (
-                                <p className="text-gray-600 dark:text-gray-400 text-center">
-                                    Selecciona un tipo de proyecto para ver el presupuesto estimado
-                                </p>
-                            )}
-                        </motion.div>
+                            </motion.div>
+                        </div>
                     </div>
                 </div>
             </div>

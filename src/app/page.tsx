@@ -252,79 +252,9 @@ export default function Page() {
               </div>
             </div>
           </section>
-          {/* Hero Section */}
+    
 
-
-          {/*<PromoBanner />*/}
-          {/* <section id="servicios" className="py-20 bg-gray-50 dark:bg-gray-800/50">
-            <div className="max-w-7xl mx-auto px-6">
-              <motion.div
-                  initial={{opacity: 0, y: 20}}
-                  whileInView={{opacity: 1, y: 0}}
-                  transition={{duration: 0.6}}
-                  viewport={{once: true}}
-                  className="text-center mb-16"
-              >
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-                  Servicios
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                  Ofrezco soluciones completas desde el diseño hasta la implementación,
-                  asegurando productos digitales de alta calidad.
-                </p>
-              </motion.div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {services.map((service, index) => (
-                    <motion.div
-                        key={service.title}
-                        initial={{opacity: 0, y: 20}}
-                        whileInView={{opacity: 1, y: 0}}
-                        transition={{duration: 0.6, delay: index * 0.1}}
-                        viewport={{once: true}}
-                        whileHover={{y: -5}}
-                    >
-                      <div
-                          className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg dark:shadow-gray-900/50 h-full transform transition-all duration-300 hover:shadow-xl">
-                        <service.icon className="w-12 h-12 mb-4 text-accent-red dark:text-accent-yellow"/>
-                        <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
-                          {service.title}
-                        </h3>
-                        <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          {service.description}
-                        </p>
-                        <div className="flex flex-wrap gap-2 mt-auto">
-                          {service.tags.map((tag) => (
-                              <span
-                                  key={tag}
-                                  className="text-xs px-2 py-1 rounded-full bg-accent-red/10 dark:bg-accent-yellow/10 text-accent-red dark:text-accent-yellow"
-                              >
-                 {tag}
-               </span>
-                          ))}
-                        </div>
-                      </div>
-                    </motion.div>
-                ))}
-              </div>
-
-              <motion.div
-                  initial={{opacity: 0, y: 20}}
-                  whileInView={{opacity: 1, y: 0}}
-                  transition={{delay: 0.3}}
-                  className="text-center mt-16"
-              >
-                <Link
-                    href="/products"
-                    className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white dark:text-gray-900 bg-accent-red dark:bg-accent-yellow rounded-lg shadow-lg hover:opacity-90 transition-all duration-300 gap-2 hover:gap-3"
-                >
-                  Ver todos los servicios
-                  <span aria-hidden="true" className="text-lg">→</span>
-                </Link>
-              </motion.div>
-            </div>
-          </section> */}
-
+     
 
 
 

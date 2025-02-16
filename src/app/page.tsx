@@ -23,11 +23,7 @@ import ContactForm from '@/components/ContactForm';
 import PromoPopup from '@/components/PromoPopup';
 import PromoBanner from "@/components/PromoBanner"; 
 
-import TawkToChat from '@/components/TawkToChat';
 
-import CookieBanner from "@/components/CookieBanner";
-
-// Actualiza la constante de proyectos al inicio del archivo
 const projects = [
   {
     title: "Dashboard Analytics Pro",
@@ -155,8 +151,8 @@ export default function Page() {
   return (
       <>
         <Navbar />
-        <CookieBanner />
-        <TawkToChat />
+
+
         <main className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
 
           {/* Hero Section */}
@@ -251,12 +247,7 @@ export default function Page() {
                 </motion.div>
               </div>
             </div>
-          </section>
-    
-
-     
-
-
+          </section>    
 
 <section id="servicios" className="py-20 bg-gray-50 dark:bg-gray-800/50">
     <div className="max-w-7xl mx-auto px-6">
@@ -351,9 +342,6 @@ export default function Page() {
         </motion.div>
     </div>
 </section>
-
-
-
 
 
           {/* Se acabo la promo, porque duro mucho */}

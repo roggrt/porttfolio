@@ -734,8 +734,8 @@ import Script from 'next/script'
 import { Inter, Montserrat } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import MetaPixel from '@/components/MetaPixel'
-import IubendaBanner from "@/components/IubendaBanner"
-// import TawkMessenger from "@/components/TawkToChat"; // Commented out Tawk.to
+
+
 
 declare global {
     interface Window {
@@ -751,8 +751,7 @@ declare global {
                 };
             };
         };
-        // Tawk_API: any; // Commented out Tawk.to
-        // Tawk_LoadStart: Date; // Commented out Tawk.to
+
         hbspt: any;
         __lc: any; // Added for LiveChat
         LiveChatWidget: any; // Added for LiveChat
@@ -847,13 +846,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <HotjarProvider />
             <MetaPixel />
             <main>{children}</main>
-            {/* <TawkMessenger /> */} {/* Commented out Tawk.to component */}
+
             <SpeedInsights />
             <Analytics />
-            <IubendaBanner />
+          
         </ThemeProvider>
 
-        {/* Google Analytics */}
         <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-8RTG6CG3GF"
             strategy="afterInteractive"
@@ -878,32 +876,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                    });
                `}
         </Script>
-
-        {/* Iubenda Scripts */}
-        <Script id="iubenda-config" strategy="afterInteractive">
-            {`
-                   var _iub = _iub || [];
-                   _iub.csConfiguration = {
-                       "siteId":3912536,
-                       "cookiePolicyId":13487800,
-                       "lang":"es",
-                       "storage":{"useSiteId":true}
-                   };
-               `}
-        </Script>
-        <Script
-            src="https://cs.iubenda.com/autoblocking/3912536.js"
-            strategy="afterInteractive"
-        />
-        <Script
-            src="//cdn.iubenda.com/cs/gpp/stub.js"
-            strategy="afterInteractive"
-        />
-        <Script
-            src="//cdn.iubenda.com/cs/iubenda_cs.js"
-            strategy="afterInteractive"
-            async
-        />
+ 
         </body>
         </html>
     )

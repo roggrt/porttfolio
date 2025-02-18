@@ -895,7 +895,7 @@ export default function PriceCalculator() {
             name: 'Página Web',
             description: 'Desarrollo profesional de sitios web con WordPress o PHP. Ideal para negocios que necesitan una presencia online efectiva.',
             icon: Monitor,
-            image: '/ilustraciones/illustrate-a-wordpress-development-scene-with-a-hi__30684.png',
+            image: '/ilustraciones/illustrate-a-wordpress-development-scene-with-a-hi__30684.webp',
             features: [
                 'Panel de administración intuitivo',
                 'Optimización de velocidad',
@@ -909,7 +909,7 @@ export default function PriceCalculator() {
                     description: 'Página web profesional para presentar tu negocio, servicios y construir presencia online.',
                     icon: Globe,
                     basePrice: 299,
-                    image: '/ilustraciones/an-outdoor-cafe-scene-with-two-middleeastern-men-a__30688.png',
+                    image: '/ilustraciones/an-outdoor-cafe-scene-with-two-middleeastern-men-a__30688.webp',
                     features: [
                         'Hasta 5 páginas principales',
                         'Formulario de contacto avanzado',
@@ -923,7 +923,7 @@ export default function PriceCalculator() {
                     description: 'Página de aterrizaje optimizada para convertir visitantes en clientes potenciales.',
                     icon: Store,
                     basePrice: 199,
-                    image: '/ilustraciones/create-illustrations-for-wordpress-development-fea__30685.png',
+                    image: '/ilustraciones/create-illustrations-for-wordpress-development-fea__30685.webp',
                     features: [
                         'Diseño orientado a conversión',
                         'Formularios de captura de leads',
@@ -937,7 +937,7 @@ export default function PriceCalculator() {
                     description: 'Catálogo interactivo para mostrar productos o servicios con detalles y cotizaciones.',
                     icon: Store,
                     basePrice: 399,
-                    image: '/ilustraciones/diverse-group-of-four-people-in-a-modern-office-__30691.png',
+                    image: '/ilustraciones/diverse-group-of-four-people-in-a-modern-office-__30691.webp',
                     features: [
                         'Catálogo de productos avanzado',
                         'Sistema de filtros y búsqueda',
@@ -952,7 +952,7 @@ export default function PriceCalculator() {
             name: 'Desarrollo a Medida',
             description: 'Soluciones web personalizadas con tecnologías modernas y código optimizado para máximo rendimiento.',
             icon: Code,
-            image: '/ilustraciones/create-an-image-of-an-asian-female-developer-colla__30686.png',
+            image: '/ilustraciones/create-an-image-of-an-asian-female-developer-colla__30686.webp',
             features: [
                 'Arquitectura moderna y escalable',
                 'Código limpio y mantenible',
@@ -1007,7 +1007,7 @@ export default function PriceCalculator() {
             name: 'E-commerce',
             description: 'Tiendas online completas con gestión de productos, pagos y envíos integrados.',
             icon: ShoppingCart,
-            image: '/ilustraciones/design-an-illustration-of-a-black-male-developer-s__30687.png',
+            image: '/ilustraciones/design-an-illustration-of-a-black-male-developer-s__30687.webp',
             features: [
                 'Gestión de productos',
                 'Sistema de pagos',

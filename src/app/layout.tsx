@@ -168,7 +168,7 @@ import { Analytics } from '@vercel/analytics/react'
 import Script from 'next/script'
 import { Inter, Montserrat } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import MetaPixel from '@/components/MetaPixel'
+// import MetaPixel from '@/components/MetaPixel'
 
 declare global {
     interface Window {
@@ -297,7 +297,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <ThemeProvider>
             <HotjarProvider />
-            <MetaPixel />
+            {/*<MetaPixel />*/}
             <main>{children}</main>
 
             <SpeedInsights />

@@ -485,6 +485,9 @@ export default function WebDevelopmentPage() {
                                     Realiza tu pago mediante transferencia bancaria o depósito en cualquiera de nuestros bancos asociados.
                                     Contáctanos para recibir los datos bancarios y completar tu pago.
                                 </p>
+                                <br/>
+
+
 
                                 <div className="grid grid-cols-2 gap-4 mb-8">
                                     <div className="bg-white p-4 rounded-lg flex items-center justify-center">
@@ -542,7 +545,7 @@ export default function WebDevelopmentPage() {
                                     <div className="border-l-4 border-accent-red dark:border-accent-yellow pl-4">
                                         <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Proceso de Desarrollo</h4>
                                         <p className="text-gray-600 dark:text-gray-400">
-                                            Durante el proceso, mantendremos una comunicación constante para asegurar que el resultado final sea exactamente lo que necesitas.
+                                            Durante el proceso, mantendremos una comunicación constante para asegurar que el resultado final sea lo que necesitas.
                                         </p>
                                     </div>
 

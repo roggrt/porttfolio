@@ -32,6 +32,7 @@ export default function Footer() {
 
     const links = [
         { name: '🇪🇨 Web Ecuador', href: '/paginas-web-ecuador' },
+        { name: '🇺🇸 Web English', href: '/en/websites' },
         { name: 'Inicio', href: '/' },
         { name: 'Servicios', href: '/#servicios' },
         { name: 'Proyectos', href: '/#proyectos' },

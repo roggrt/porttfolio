@@ -69,9 +69,9 @@ export default function TestimonialsSection() {
         },
         {
             id: 5,
-            clientName: "Hotel Sig Sig",
+            clientName: "Hotel Sigsig",
             role: "Hotelería y Turismo",
-            location: "Sig Sig",
+            location: "Sigsig",
             website: "hotelsigsig.com",
             websiteUrl: "https://hotelsigsig.com/",
             quote: "La implementación del sistema de reservas ha optimizado nuestra operación diaria. El diseño atractivo y la facilidad de uso han generado comentarios muy positivos de nuestros huéspedes.",

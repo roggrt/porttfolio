@@ -19,7 +19,8 @@ import AboutMe from '@/components/AboutMe';
 import ContactForm from '@/components/ContactForm';
 import HeroSection from '@/components/HeroSection';
 import IdeaSection from "@/components/IdeaSection";
-import ProjectsSection from "@/components/ProjectSection"; // Import the new hero component
+import ProjectsSection from "@/components/ProjectSection";
+import TestimonialsSection from "@/components/Testimonials"; // Import the new hero component
 
 const projects = [
     {
@@ -218,6 +219,8 @@ export default function Page() {
 
                 <PriceCalculator/>
 
+
+
                 {/* Projects Section */}
                 {/*<section id="proyectos" className="py-20 bg-gray-50 dark:bg-gray-800/50">*/}
                 {/*    <div className="max-w-7xl mx-auto px-6">*/}
@@ -325,7 +328,7 @@ export default function Page() {
 
                 <ProjectsSection />
 
-
+                <TestimonialsSection />
                 {/* Contact Section */}
                 <section id="contacto" className="py-10 bg-gray-50 dark:bg-gray-800/50">
                     <div className="max-w-3xl mx-auto px-6">

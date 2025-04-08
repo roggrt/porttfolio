@@ -80,18 +80,20 @@ export default function ProjectsSection() {
             <div className="max-w-7xl mx-auto px-6">
                 {/* Título de la sección */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
+                    initial={{opacity: 0, y: 20}}
+                    whileInView={{opacity: 1, y: 0}}
+                    transition={{duration: 0.6}}
+                    viewport={{once: true}}
                     className="text-center"
                 >
-                    <h2 className="text-4xl font-semibold text-gray-900 dark:text-white">
-                        Proyectos Destacados
-                    </h2>
-                    <p className="mt-4 text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-                        Una selección de proyectos que demuestran mi experiencia en diseño y desarrollo.
-                    </p>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-3 text-gray-900 dark:text-white">
+
+                            Proyectos Destacados
+                        </h2>
+                        <p className="mt-4 text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+                            Una selección de proyectos que demuestran mi experiencia en diseño y desarrollo, estos desarrollos fueron creados para empresas que requerian plantillas
+                            páginas web y sistemas internos.
+                        </p>
                 </motion.div>
 
                 {/* Tarjetas de proyecto */}

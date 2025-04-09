@@ -25,6 +25,9 @@ const IdeaBanner = () => {
         }
     ];
 
+    // URL de WhatsApp con mensaje personalizado
+    const whatsappUrl = "https://api.whatsapp.com/send/?phone=593984264910&text=%C2%A1Hola%21+Me+interesa+conocer+m%C3%A1s+sobre+sus+servicios.&type=phone_number&app_absent=0";
+
     return (
         <section className="py-12 overflow-hidden bg-gray-100 dark:bg-gray-800">
             <div className="max-w-7xl mx-auto px-6">
@@ -55,12 +58,14 @@ const IdeaBanner = () => {
                                     <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                                 </Link>
 
-                                <Link
-                                    href="#proyectos"
+                                <a
+                                    href={whatsappUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200"
                                 >
-                                    Ver ejemplos
-                                </Link>
+                                    Conversemos ahora
+                                </a>
                             </div>
                         </div>
 

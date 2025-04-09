@@ -8,10 +8,10 @@ import { Twitter, Github, Youtube, Instagram, Linkedin } from 'lucide-react';
 
 export default function Footer() {
     const socialLinks = [
-        { href: 'https://twitter.com/roggertzy', icon: Twitter, label: 'Twitter' },
-        { href: 'https://github.com/roggrt', icon: Github, label: 'GitHub' },
+        { href: 'https://twitter.com/torisoftt', icon: Twitter, label: 'Twitter' },
+        { href: 'https://github.com/hostingcuenca', icon: Github, label: 'GitHub' },
         { href: 'https://www.youtube.com/@RogerRojas96', icon: Youtube, label: 'YouTube' },
-        { href: 'https://www.instagram.com/roggertzy', icon: Instagram, label: 'Instagram' },
+        { href: 'https://www.instagram.com/torisoftt', icon: Instagram, label: 'Instagram' },
         { href: 'https://www.linkedin.com/in/roggrt/', icon: Linkedin, label: 'LinkedIn' }
     ];
 

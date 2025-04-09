@@ -169,6 +169,7 @@ import Script from 'next/script'
 import { Inter, Montserrat } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import MetaPixel from '@/components/MetaPixel'
+import TawkMessenger from "@/components/TawkToChat";
 
 declare global {
     interface Window {
@@ -299,6 +300,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <HotjarProvider />
             <MetaPixel />
             <main>{children}</main>
+
+            <TawkMessenger />
 
             <SpeedInsights />
             <Analytics />

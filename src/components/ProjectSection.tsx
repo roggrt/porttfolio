@@ -15,37 +15,37 @@ const projects = [
         category: "Dashboard",
         explanation:
             "Este proyecto cuenta con un panel de control avanzado que integra múltiples vistas y gráficos interactivos, facilitando el análisis y visualización de datos en tiempo real para empresas.",
-        exampleLink: "https://example.com/dashboard-analytics"
+        exampleLink: "https://crm.softlatam.com/dashboard.php"
     },
     {
-        title: "Sistema de Gestión Empresarial",
+        title: "Landing de Gestión Educativa",
         description: "Plataforma integral para la gestión de recursos, reportes y analíticas en tiempo real",
-        image: "/projects/business-dashboard.jpg",
+        image: "/projects/educacion.png",
         tags: ["React", "Node.js", "MongoDB", "Redux"],
         category: "Aplicación Web",
         explanation:
             "Una plataforma completa que optimiza la gestión de recursos y reportes, permitiendo a las empresas tomar decisiones basadas en datos actualizados al instante.",
-        exampleLink: "https://example.com/sistema-gestion"
+        exampleLink: "https://crm.softlatam.com/educational.php"
     },
     {
         title: "E-commerce Calzado",
         description: "Tienda en línea especializada en calzado con sistema de inventario y pasarela de pagos",
-        image: "/projects/shoe-store.jpg",
+        image: "/projects/shoetorisofttnuevo.png",
         tags: ["WordPress", "WooCommerce", "PHP", "MySQL"],
         category: "E-commerce",
         explanation:
             "Tienda en línea diseñada para el sector del calzado, que incorpora un sistema de inventario robusto y pasarelas de pago seguras para ofrecer una experiencia de compra óptima.",
-        exampleLink: "https://example.com/ecommerce-calzado"
+        exampleLink: "https://crm.softlatam.com/shoes/"
     },
     {
         title: "Portfolio Artístico",
         description: "Galería digital para artistas con diseño minimalista y optimización SEO",
-        image: "/projects/artist-portfolio.jpg",
+        image: "/projects/portafolii.png",
         tags: ["WordPress", "CSS3", "JavaScript", "SEO"],
         category: "Portfolio",
         explanation:
             "Una galería digital elegante y minimalista que permite a los artistas exponer su trabajo de forma profesional, con optimización para buscadores.",
-        exampleLink: "https://example.com/portfolio-artistico"
+        exampleLink: "https://crm.softlatam.com/artist/index.php"
     },
     {
         title: "App Móvil Financiera",
@@ -59,13 +59,13 @@ const projects = [
     },
     {
         title: "Landing Page Legal",
-        description: "Página de aterrizaje para despacho de abogados con sistema de citas",
-        image: "/projects/legal-landing.jpg",
+        description: "Página web para despacho de abogados y consultorios jurídicos con sistema de citas",
+        image: "/projects/juridico-torisoftt.png",
         tags: ["HTML5", "CSS3", "JavaScript", "API Integration"],
         category: "Landing Page",
         explanation:
             "Diseñada para despachos de abogados, esta landing page destaca por su interfaz limpia y profesional, integrando un sistema de citas para facilitar el contacto con clientes.",
-        exampleLink: "https://example.com/landing-page-legal"
+        exampleLink: "https://crm.softlatam.com/juridico.php"
     }
 ];
 

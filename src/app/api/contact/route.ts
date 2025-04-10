@@ -12,6 +12,9 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+// Asume que la imagen está disponible públicamente
+const imageUrl = 'https://torisoftt.com/oktori.png';
+
 export async function POST(request: Request) {
   try {
     const { name, email, phone, subject, message } = await request.json();
@@ -32,19 +35,37 @@ export async function POST(request: Request) {
       `
     });
 
-    // Auto-reply to sender
+    // Auto-reply to sender with styled email including the image
     await transporter.sendMail({
       from: 'info@torisoftt.com',
       to: email,
       subject: 'Recibimos tu mensaje - Torisoft',
       html: `
-        <h2>Gracias por contactarnos</h2>
-        <p>Hola ${name},</p>
-        <p>Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.</p>
-        <p>Detalles de tu mensaje:</p>
-        <p><strong>Asunto:</strong> ${subject}</p>
-        <p><strong>Mensaje:</strong></p>
-        <p>${message}</p>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 5px;">
+          <div style="text-align: center; margin-bottom: 20px;">
+            <img src="${imageUrl}" alt="Torisoft" style="max-width: 200px;">
+          </div>
+          
+          <h2 style="color: #333; text-align: center;">¡Gracias por contactarnos!</h2>
+          
+          <p style="color: #555; font-size: 16px;">Hola ${name},</p>
+          
+          <p style="color: #555; font-size: 16px;">Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto. En Torisoft valoramos tu interés y nos esforzamos por brindarte una respuesta rápida y eficiente.</p>
+          
+          <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0;">
+            <p style="color: #555; font-size: 14px; margin: 5px 0;"><strong>Asunto:</strong> ${subject}</p>
+            <p style="color: #555; font-size: 14px; margin: 10px 0;"><strong>Tu mensaje:</strong></p>
+            <p style="color: #555; font-size: 14px; margin: 0; font-style: italic;">${message}</p>
+          </div>
+          
+          <p style="color: #555; font-size: 16px;">Mientras tanto, puedes visitar nuestra web para conocer más sobre nuestros servicios y proyectos.</p>
+          
+          <div style="text-align: center; margin-top: 30px;">
+            <a href="https://torisoftt.com" style="background-color: #6366f1; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">Visitar sitio web</a>
+          </div>
+          
+          <p style="color: #888; font-size: 14px; text-align: center; margin-top: 30px;">© ${new Date().getFullYear()} Torisoft. Todos los derechos reservados.</p>
+        </div>
       `
     });
 

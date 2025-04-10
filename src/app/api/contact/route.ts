@@ -120,7 +120,7 @@ export async function POST(request: Request) {
     // Email al propietario del sitio con mejores prácticas anti-spam
     const ownerMailOptions = {
       from: {
-        name: 'Torisoft Contacto',
+        name: 'Torisoftt Contacto',
         address: 'info@torisoftt.com'
       },
       to: 'hostingcuenca@gmail.com',
@@ -171,18 +171,18 @@ export async function POST(request: Request) {
         'X-Priority': '1',
         'X-MSMail-Priority': 'High',
         'Importance': 'High',
-        'X-Mailer': 'Torisoft Contact System'
+        'X-Mailer': 'Torisoftt Contact System'
       }
     };
 
     // Email de auto-respuesta al remitente
     const userMailOptions = {
       from: {
-        name: 'Torisoft',
+        name: 'Torisoftt',
         address: 'info@torisoftt.com'
       },
       to: email,
-      subject: '✅ Hemos recibido tu mensaje - Torisoft',
+      subject: '✅ Hemos recibido tu mensaje - Torisoftt',
       text: `
         Gracias por contactarnos
         
@@ -195,19 +195,19 @@ export async function POST(request: Request) {
         Mensaje: ${message}
         
         Atentamente,
-        Equipo de Torisoft
+        Equipo de Torisoftt
       `,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 5px;">
           <div style="text-align: center; margin-bottom: 20px;">
-            <img src="cid:companyLogo" alt="Torisoft" style="max-width: 200px;">
+            <img src="cid:companyLogo" alt="Torisoftt" style="max-width: 200px;">
           </div>
           
           <h2 style="color: #333; text-align: center;">¡Gracias por contactarnos!</h2>
           
           <p style="color: #555; font-size: 16px;">Hola ${name},</p>
           
-          <p style="color: #555; font-size: 16px;">Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto. En Torisoft valoramos tu interés y nos esforzamos por brindarte una respuesta rápida y eficiente.</p>
+          <p style="color: #555; font-size: 16px;">Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto. En Torisoftt valoramos tu interés y nos esforzaremos por brindarte una respuesta rápida y eficiente.</p>
           
           <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0;">
             <p style="color: #555; font-size: 14px; margin: 5px 0;"><strong>Asunto:</strong> ${subject}</p>
@@ -221,11 +221,11 @@ export async function POST(request: Request) {
             <a href="https://torisoftt.com" style="background-color: #6366f1; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">Visitar sitio web</a>
           </div>
           
-          <p style="color: #888; font-size: 14px; text-align: center; margin-top: 30px;">© ${new Date().getFullYear()} Torisoft. Todos los derechos reservados.</p>
+          <p style="color: #888; font-size: 14px; text-align: center; margin-top: 30px;">© ${new Date().getFullYear()} Torisoftt. Todos los derechos reservados.</p>
         </div>
       `,
       headers: {
-        'X-Mailer': 'Torisoft Auto-Reply System'
+        'X-Mailer': 'Torisoftt Auto-Reply System'
       },
       attachments: [
         {

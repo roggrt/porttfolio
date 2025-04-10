@@ -12,11 +12,9 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-
-
 export async function POST(request: Request) {
   try {
-    const { name, email, subject, message } = await request.json();
+    const { name, email, phone, subject, message } = await request.json();
 
     // Email to site owner
     await transporter.sendMail({
@@ -27,6 +25,7 @@ export async function POST(request: Request) {
         <h2>Nuevo mensaje de contacto</h2>
         <p><strong>Nombre:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Teléfono:</strong> ${phone || 'No proporcionado'}</p>
         <p><strong>Asunto:</strong> ${subject}</p>
         <p><strong>Mensaje:</strong></p>
         <p>${message}</p>
@@ -53,8 +52,8 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('Error sending email:', error);
     return NextResponse.json(
-      { message: 'Error sending email' },
-      { status: 500 }
+        { message: 'Error sending email' },
+        { status: 500 }
     );
   }
 }

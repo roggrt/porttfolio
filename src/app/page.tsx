@@ -286,6 +286,7 @@ import HeroSection from '@/components/HeroSection';
 import IdeaSection from "@/components/IdeaSection";
 import ProjectsSection from "@/components/ProjectSection";
 import TestimonialsSection from "@/components/Testimonials";
+import WhyUsSection from '@/components/WhyUsSection';
 
 const projects = [
     {
@@ -548,6 +549,8 @@ export default function Page() {
                 <PriceCalculator/>
 
                 <ProjectsSection />
+
+                <WhyUsSection />
 
                 <TestimonialsSection />
 

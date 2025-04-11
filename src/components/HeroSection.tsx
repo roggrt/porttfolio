@@ -207,13 +207,12 @@
 
 // export default HeroSection;
 
-
 'use client';
 
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, ExternalLink, ChevronRight, MessageSquare, Code, CheckCircle } from 'lucide-react';
+import { ArrowRight, ExternalLink, ChevronRight, MessageSquare } from 'lucide-react';
 import TechScroll from './TechScroll';
 import CodeEditor from './CodeEditor';
 
@@ -365,13 +364,16 @@ const HeroSection = () => {
                             transition={{duration: 0.6}}
                             className="text-gray-900 dark:text-white"
                         >
-                            {/* Etiqueta superior - Desarrolladores */}
-                            <div className="inline-flex items-center mb-6 text-gray-900 dark:text-white text-sm bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
-                                <Code className="mr-2 w-4 h-4 text-accent-red dark:text-accent-red" />
-                                <span>Equipo de desarrolladores Full Stack</span>
-                            </div>
+                            {/* Etiqueta superior */}
+                            <Link
+                                href="#sobre-nosotros"
+                                className="inline-flex items-center mb-6 text-accent-red dark:text-white text-sm border border-accent-red dark:border-white px-3 py-1 rounded-full hover:bg-accent-red/10 dark:hover:bg-white/10 transition-colors"
+                            >
+                                <span>Sobre Torisoftt, ¿Quienes somos?</span>
+                                <ChevronRight className="ml-1 w-4 h-4" />
+                            </Link>
 
-                            {/* Título principal con colores originales */}
+                            {/* Título principal */}
                             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
                                 <span className="text-gray-900 dark:text-white">
                                     Diseño de Páginas Web <span className="text-accent-red dark:text-accent-red"> & </span>
@@ -382,23 +384,9 @@ const HeroSection = () => {
                             </h1>
 
                             {/* Subtítulo */}
-                            <h2 className="text-xl text-gray-700 dark:text-gray-300 mb-4">
+                            <h2 className="text-xl text-gray-700 dark:text-gray-300 mb-6">
                                 Diseñamos y desarrollamos sitios web, aplicaciones móviles y arquitectura de software para tu negocio, a tu medida
                             </h2>
-                            
-                            {/* Lo que nos distingue - Breve y convincente */}
-                            <div className="mb-6">
-                                <ul className="space-y-2">
-                                    <li className="flex items-start">
-                                        <CheckCircle className="w-5 h-5 text-accent-red dark:text-accent-red mt-0.5 mr-2 flex-shrink-0" />
-                                        <span className="text-gray-700 dark:text-gray-300">Desarrollamos código limpio y escalable, no usamos plantillas prediseñadas</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <CheckCircle className="w-5 h-5 text-accent-red dark:text-accent-red mt-0.5 mr-2 flex-shrink-0" />
-                                        <span className="text-gray-700 dark:text-gray-300">Soporte técnico incluido y entregas en tiempo récord</span>
-                                    </li>
-                                </ul>
-                            </div>
 
                             {/* Promoción destacada */}
                             <div className="mb-8 p-4 bg-white/90 dark:bg-gray-800/90 rounded-lg shadow-md">
@@ -421,10 +409,10 @@ const HeroSection = () => {
                             {/* Botones de acción */}
                             <div className="flex flex-wrap gap-4">
                                 <Link
-                                    href="#cotizador"
+                                    href="#contacto"
                                     className="group px-6 py-3 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-900 dark:text-white rounded-md font-medium transition-colors inline-flex items-center gap-2"
                                 >
-                                    Cotizar proyecto
+                                    Cotizar Proyecto
                                     <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"/>
                                 </Link>
 

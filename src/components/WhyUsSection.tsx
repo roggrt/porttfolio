@@ -256,7 +256,7 @@ const WhyUsSection = () => {
                         
                         <div className="flex flex-wrap gap-4 mb-8">
                             <Link
-                                href="/nosotros"
+                                href="/"
                                 className="inline-flex items-center text-accent-red dark:text-accent-red hover:text-red-700 dark:hover:text-red-400 font-medium transition-colors"
                             >
                                 <span>Más sobre nosotros</span>
